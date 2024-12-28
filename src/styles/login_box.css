@@ -1,0 +1,135 @@
+.visual-layout-area {
+    margin: 0 auto;
+    display: flex;
+    width: 120rem;
+}
+
+.my-login-wrap {
+    width: 28.2rem;
+    margin-left: 2.4rem;
+}
+
+.outlogin-box {
+    display: flex;
+    padding: 2.4rem;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 2.4rem;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+}
+
+.login-box .main-login-photo {
+    display: block;
+    width: 4.6rem;
+    height: 4.6rem;
+    border-radius: 50%;
+}
+
+
+.login-box .main-login-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.outlogin-box .login-txt {
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 1.8rem;
+    line-height: 150%;
+}
+
+/* 버튼 */
+.main-wrap .visual-layout-area .my-login-wrap .login-box .v-btn a {
+    width: 100%;
+}
+
+.v-btn.v-btn--density-default {
+    height: calc(var(--v-btn-height) + 0px);
+}
+
+.v_btn__overlay {
+    background-color: transparent;
+}
+
+.v_btn.v-btn--density-default {
+    height: calc(var(--v-btn-height) + 0px);
+}
+
+.v-btn--size-large {
+    border-radius: 1.2rem !important;
+    border-color: transparent;
+    --v-btn-size: 1.6rem;
+    --v-btn-height: 4.8rem;
+    font-size: var(--v-btn-size);
+    padding: 0 1.6rem;
+    font-weight: 500;
+}
+
+.v_btn {
+    text-transform: capitalize;
+    letter-spacing: 0;
+    font-weight: 400;
+}
+
+.v_btn__overlay,
+.v_btn__underlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+
+div,
+span {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.v-btn.bg-primary {
+    color: #fff !important;
+    background-color: #356cff !important;
+}
+
+.v-btn {
+    height: calc(var(--v-btn-height) + 0px);
+}
+
+
+
+@media only screen and (max-width: 960px) {
+    .main-wrap .visual-layout-area.mobile-wrap {
+        display: flex;
+    }
+
+    .main-wrap .visual-layout-area {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main-wrap .visual-layout-area {
+        padding: 0 2.4rem;
+    }
+
+    .main-wrap .visual-layout-area .my-login-wrap {
+        margin: 0 0 2.4rem;
+        width: 100%;
+    }
+
+    .visual-layout-area .my-login-wrap .outlogin-box {
+        border-radius: 1.6rem;
+    }
+
+    .v_btn_size_large {
+        --v-btn-size: 1.4rem;
+        --v-btn-height: 4rem;
+        font-size: var(--v-btn-size);
+    }
+}

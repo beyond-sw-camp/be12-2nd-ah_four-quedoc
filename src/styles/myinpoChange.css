@@ -1,0 +1,200 @@
+
+.member .form-box .form-group .ele-tit .v-label {
+    font-size: 1.6rem;
+}
+.member .form-box .form-group .input-wrap {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+.my-page .my-info .member .form-box .check-wrap {
+    display: flex
+;
+    align-items: center;
+    justify-content: space-between;
+    padding: .8rem 0;
+}
+
+.my-page .my-info .member .form-box .check-wrap .form-checkbox .check-all.v-input--density-default:not(.v-autocomplete--multiple) {
+    --v-input-control-height: 3.2rem;
+}
+.my-page .my-info .member .form-box .check-wrap .form-checkbox .check-all {
+    display: block;
+    position: relative;
+}
+.my-page .my-info .member .form-box .check-wrap .form-checkbox .v-divider--vertical {
+    margin: .6rem 3rem;
+    color: #e5e5e5;
+    opacity: 1;
+}
+.my-page .my-info .member .form-box .check-wrap .form-checkbox .check-media {
+    display: block;
+    position: relative;
+}
+.my-page .my-info .member .form-box .check-wrap .form-checkbox .check-media.v-input--density-default:not(.v-autocomplete--multiple) {
+    --v-input-control-height: 2.4rem;
+}
+.my-page .my-info .member .form-box .check-wrap .form-checkbox .check-media+.check-media {
+    margin-left: 2.4rem;
+}
+.my-page .my-info .member .form-box .check-wrap .form-checkbox .check-media {
+    display: block;
+    position: relative;
+}
+.my-page .my-info .member .form-box .check-wrap .form-checkbox .check-all .mdi-checkbox-blank-outline:before {
+    content: "";
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url("data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M6.5%2011L10.8043%2015.5L17.5%208.5'%20stroke='%23CCCCCC'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e");
+    background-size: 100%;
+}
+.my-page .my-info .member .form-box .check-wrap .form-checkbox .check-all .mdi-checkbox-marked:before {
+    content: "";
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url("data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M6.5%2011L10.8043%2015.5L17.5%208.5'%20stroke='%23356CFF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e");
+    background-size: 100%;
+}
+.my-page .my-info .member .form-box .check-wrap .form-checkbox .check-all .v-selection-control__input:before {
+    background-color: transparent;
+}
+.my-page .my-info .member .form-box .check-wrap .form-checkbox .check-all .v-selection-control__input>.v-icon {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}
+.my-page .my-info .member .form-box .check-wrap .form-checkbox .check-all .v-label {
+    position: relative;
+    padding-left: 4rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #333;
+}
+.my-page .my-info .member .form-box .check-wrap .form-checkbox .check-all .v-selection-control {
+    width: 100%;
+}
+.v-checkbox .v-selection-control {
+    min-height: var(--v-input-control-height);
+}
+.v-selection-control--density-default {
+    --v-selection-control-size: 40px;
+}
+.my-page .my-info .member .form-box .check-wrap .form-checkbox .check-all .v-selection-control__wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3.2rem;
+    height: 3.2rem;
+    padding: .4rem;
+}
+
+.my-page .my-info .member .form-box .check-wrap .form-checkbox .check-media .v-selection-control__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+}
+.my-page .my-info .member .form-box .check-wrap .form-checkbox .check-media .v-selection-control__input:before {
+    background-color: transparent;
+}
+.my-page .my-info .member .form-box .check-wrap .form-checkbox .check-media .mdi-checkbox-blank-outline:before {
+    content: "";
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKiSURBVHgB7ZndbSIxFIUvw/I+JUw64F/iaTMVLCWQCpKtAKhg2QrCVhC2AtgnJECCDpYSeEdAziFGmngcSObPRJlPQtwZG3SO7fFc2yI5OV+bwqUK8/n81nGcHwjbh8PBk2xY8bPdbvutVmt9ruKbBpbLpbvb7XoI78UihUJhgAbsVyqVjbHcdFOJHyMs47Phn+AzqVar/yQDZrNZuVgs3qPHO+rWCte+yYTRwGKxGMhLy6/Rjf6lbkwLNKS33+/HHLpsxFqt9lOvUzD9CK3/nzHE39gSr+lZInRhxG80GpNguaP/AI67KhzaFk8wbNZsfcZqMnlFyABcctzTyG+5EqDl+OxBW1svcwz1jwaazeZKroTAsPH0Mkc+ObkB2+QGbPNNLIF0oYN5/RdCpge9er3+RyJgpQeU+EeErrxMjQOJSOYGmKgp8UE2EpFYBrhWQOLXfm99JX5sKOpJRCIbYMaKHIVinhA/XqofEO9qRQ9Rxz+J0wPBhU7nnAlmlMjnn0QTjwbgwxsr54pjYKJddzCkenqlYE4fvE/xyO/7EpPIBtCidxCxDt7DdTdoIm3xJLIB5ukY0/5bJrIQT2LNQudMcBWVtngS+z1wMiHhuVx/YAdJiyeJvMhoAsPFZOIIxA9NC/IkSOxNzBWcyYQSfycpkWgqYTAxSVM8STwXoglMsTd4Ljy8pHxJmVTSabWDFjlB+wj5isw2uQHbhAyc0gIuVuRK4FpChaHdQlMPjI4FjvNdrgSeFajwsgG8iP7yG4nYw3Q69cQyzGpPBx08ctLLQwa4kaq2s91SqTS2aeKUkjOmJtN2/3uOmMiQ2+1Z7Vir5+8Wojl0mNV+7IiJ0AQPOziUxCKRDvmCqG7sqoOPsmSAmglH+B5ldbCYk/NZeQYEC0hPaxHmwQAAAABJRU5ErkJggg==);
+    background-size: 100%;
+}
+.my-page .my-info .member .form-box .check-wrap .form-checkbox .check-media .v-label {
+    position: relative;
+    padding-left: 3.2rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #333;
+}
+.my-page .my-info .member .form-box .check-wrap .agree-btn .v-btn {
+    height: 2rem;
+    padding: 0;
+    color: #111518;
+    font-size: 1.4rem;
+    line-height: 100%;
+}
+.my-page .my-info .member .form-box .check-wrap .form-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.v-locale--is-ltr {
+    direction: ltr;
+}
+
+
+
+
+/* media query */
+@media only screen and (max-width: 960px) {
+    .member .form-box .form-group .ele-tit {
+        display: block;
+        position: static;
+        width: auto;
+        padding: 0 0 .8rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .member .form-box .form-group .ele-tit .v-label {
+        font-size: 1.4rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .member .form-box .form-group .data-wrap {
+        height: auto;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .member .form-box .form-group .data-wrap {
+        height: auto;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .member .form-box .form-group .data-wrap .data {
+        display: block;
+        width: 100%;
+        font-size: 1.4rem;
+    }
+}
+
+
+@media only screen and (max-width: 960px) {
+    .my-page .my-info .member .form-box .check-wrap .form-checkbox .v-divider--vertical {
+        margin: .6rem 1.4rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .my-page .my-info .member .form-box .check-wrap .form-checkbox .check-all .v-label {
+        font-size: 1.4rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .my-page .my-info .member .form-box .check-wrap .form-checkbox .check-media .v-label {
+        font-size: 1.2rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .my-page .my-info .member .form-box .check-wrap .agree-btn .v-btn {
+        height: 2.4rem;
+        font-size: 1.2rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .v-btn.v-btn--size-default {
+        --v-btn-size: 1.2rem;
+        --v-btn-height: 3.2rem;
+        padding: 0 .8rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .my-page .my-info .member .form-box .check-wrap {
+        display: block;
+        padding: 0;
+    }
+}

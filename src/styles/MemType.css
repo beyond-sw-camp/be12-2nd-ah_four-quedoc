@@ -1,0 +1,129 @@
+.member {
+    position: relative;
+    max-width: 79.2rem;
+    margin: 0 auto;
+    padding: 0;
+}
+.member .member-header {
+    position: relative;
+    width: 100%;
+    margin-bottom: 4rem;
+}
+.member .member-header .h-title {
+    font-family: OneShinhan,sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #111518;
+}
+.member .member-step {
+    overflow: hidden;
+    margin-bottom: 1.6rem;
+}
+.member .member-step .step-txt {
+    float: left;
+    font-size: 3.2rem;
+    font-weight: 500;
+    color: #111518;
+}
+.member .member-text {
+    margin-bottom: 4.8rem;
+}
+.member .member-text .text {
+    font-size: 1.8rem;
+    color: #111518;
+}
+
+.mb-type-radio {
+    padding: 2.4rem 3.2rem 2.4rem 8.8rem;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    border-radius: 1.6rem;
+    border: .1rem solid #e5e5e5;
+  }
+  .mb-type-radio .mb-type-stit {
+    padding-top: 1.6rem;
+    font-size: 1.6rem;
+    color: #111518;
+    border-top: .1rem solid #f0f0f0;
+    word-break: keep-all;
+}
+.btn-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6.4rem;
+}   
+.v-btn.bg-primary.v-btn--disabled {
+    color: #98a2bc !important;
+    background-color: #dee6f1 !important;
+}
+.v-btn.bg-primary {
+    color: #fff!important;
+    background-color: #356cff!important;
+}
+.btn-wrap .default {
+    width: 22.4rem;
+}
+.rounded-lg {
+    border-radius: 1.2rem!important;
+}
+.mb-type-radio.v-selection-control--dirty {
+    border: .2rem solid #356cff;
+}
+
+
+
+/* media query */
+@media only screen and (max-width: 960px) {
+    .member {
+        width: 100%;
+        padding: 0 2.4rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .member .member-header {
+        margin-bottom: 2.4rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .member .member-header .h-title {
+        font-size: 2rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .member .member-step {
+        margin-bottom: 2.4rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .member .member-step .step-txt {
+        float: none;
+        font-size: 2rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .member .member-text {
+        margin-bottom: 3.2rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .member .member-text .text {
+        font-size: 1.6rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .mb-type-radio .mb-type-stit {
+        padding-top: 1.2rem;
+        font-size: 1.4rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .btn-wrap {
+        margin-top: 4rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .btn-wrap .default {
+        width: 100%;
+    }
+}

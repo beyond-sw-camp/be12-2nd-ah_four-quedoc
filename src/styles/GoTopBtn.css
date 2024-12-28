@@ -1,0 +1,93 @@
+/*  GoTopBtn  */
+
+.v-btn.v-btn--size-default.v-btn--variant-flat.top-btn {
+    min-width: 5.6rem;
+    height: 5.6rem!important;
+}
+
+.v-btn.v-btn--density-default.top-btn {
+    position: fixed;
+    bottom: 4rem;
+    right: 4rem;
+    color: #fff;
+    border: 1px solid var(--primary-darkblue-d_blue020, #ccd1e1);
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 1000;
+}
+.v-btn.v-btn--size-default.v-btn--variant-flat {
+    min-width: 5.8rem;
+}
+.v-btn.v-btn--size-default {
+    --v-btn-size: 1.4rem;
+}
+.v-btn__content {
+    grid-area: content;
+    justify-content: center;
+    white-space: nowrap;
+}
+.v-btn__content, .v-btn__prepend, .v-btn__append {
+    align-items: center;
+    display: flex;
+    transition: transform,opacity .2s cubic-bezier(.4,0,.2,1);
+}
+.v-btn.top-btn .v-icon {
+    --v-icon-size-multiplier: 0;
+}
+.v-btn.top-btn .btn-arrow-top {
+    width: 1.6rem;
+    height: 1.6rem;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAD+SURBVHgB7ZU9DoIwFIDf8y0MmEAMkdFJHD0KNxBHj+BpxBvpZlzUDRONDAxs2MZgiIaftjTGpN/UBtLvo5ACYDAY/hXHny7ccfBw/eDExyAJgQRciIAxIFh8ysahZY/OeXbfgyDCAW/5B7IRQgF1cpWIzgFtctkI7HJTnbwAXL4WKTbf14ooTY5baKF1B5rkaXKI8+y2s2zvwp4krF7vuhOkIi/nKhGkKleNoD7kKhHUl1w2gvqUy0RQ33LRCNIhF4lAXfIqjj+L6g4r5L9TNp7okjdGIKQDZnN0yzl8zfLorshSsobelb2jOZtAgbjSIS+pfBOlbw0Gg+HXPAGG0tYrYL8/eQAAAABJRU5ErkJggg==);
+    background-size: 100%;
+}
+
+.sr-only {
+    overflow: hidden;
+    position: absolute;
+    top: auto;
+    left: auto;
+    width: .1rem;
+    height: .1rem;
+    margin: 0;
+    padding: 0;
+    color: transparent;
+    background: transparent;
+    border: 0 none;
+    clip: rect(.1rem,.1rem,.1rem,.1rem);
+}
+
+
+
+
+
+/*  media query for GoTopBtn  */
+@media only screen and (max-width: 960px) {
+    .v-btn.v-btn--size-default.v-btn--variant-flat.top-btn {
+        min-width: 4rem;
+        height: 4rem !important;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .v-btn.v-btn--density-default.top-btn {
+        bottom: 1.6rem;
+        right: 1.6rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .v-btn.v-btn--size-default.v-btn--variant-flat {
+        min-width: 5.6rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .v-btn.v-btn--size-default {
+        --v-btn-size: 1.2rem;
+        --v-btn-height: 3.2rem;
+        padding: 0 .8rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .v-btn.top-btn .btn-arrow-top {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+}

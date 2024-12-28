@@ -1,0 +1,76 @@
+.service-search-area {
+    display: flex
+;
+    flex-direction: column;
+    margin-bottom: 4.8rem;
+    padding: 1.6rem 3.2rem 3.2rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 2.4rem;
+}
+.service-search-area .search-row {
+    display: flex
+;
+    align-items: center;
+    padding: 1.6rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.service-search-area .search-row .search-title {
+    flex-shrink: 0;
+    width: 12.4rem;
+    padding: .4rem 0;
+    color: #111518;
+    font-size: 1.6rem;
+    line-height: 150%;
+}
+.service-search-area .search-row .filtering {
+    display: flex
+;
+    flex-wrap: wrap;
+    gap: .8rem;
+}
+.service-search-area .search-row .search-form {
+    flex: 1;
+    padding: 0 2.4rem;
+    border-left: 1px solid #e5e5e5;
+}
+.service-search-area .search-row .filtering .chk-btn.v-input--density-default:not(.v-autocomplete--multiple) {
+    --v-input-control-height: auto;
+    --v-input-padding-top: 0;
+}
+.service-search-area .search-row .filtering .chk-btn {
+    border-radius: 4.8rem;
+    background-color: #f2f3f6;
+    cursor: pointer;
+}
+.v-input--density-default:not(.v-autocomplete--multiple), .v-field--variant-solo, .v-field--variant-filled {
+    --v-input-control-height: 2.4375rem;
+    --v-input-padding-top: .125rem;
+}
+.service-search-area .search-row .filtering .chk-btn .v-selection-control--density-default {
+    --v-selection-control-size: auto;
+}
+.service-search-area .search-row .filtering .chk-btn .v-selection-control--density-default .v-selection-control__wrapper {
+    opacity: 0;
+}
+.service-search-area .search-row .filtering .chk-btn .v-selection-control--density-default .v-selection-control__wrapper .v-icon {
+    width: 0;
+    min-width: auto;
+    height: 0;
+}
+.service-search-area .search-row .filtering .chk-btn .v-selection-control--density-default .v-label {
+    padding: 1rem 1.6rem;
+    color: #666;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 100%;
+    white-space: nowrap;
+}
+.service-search-area .btn-area {
+    display: flex
+;
+    justify-content: center;
+    padding-top: 2.4rem;
+}
+.service-search-area .search-row .filtering .chk-btn.v-btn--active {
+    background-color: #383b5a;
+}

@@ -1,0 +1,207 @@
+.my-page .my-info>.title {
+    display: flex
+;
+    align-items: center;
+    padding: 2.4rem 0;
+    color: #111518;
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 150%;
+    border-bottom: .1rem solid #e5e5e5;
+}
+.my-page .my-info>.title .v-icon.icon-quit {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQSSURBVHgB7ZnNVtNAFMf/k7bH6kFPqhbrLr5B3blTlq7UJxCewLJ0ZXkC8A3wCaw7XYFvwNIdcWUVhCyA1tOS650AxyQlJZlMUpD5nZNzmklnkrlz5879AAwGg8FgMBgMhmuJQAHYDKo3FoWFp/yKNghO8IDIgxBbRPiKMdY9r+9ixmgVgG23HKuGdwQspvk/v3zdH2FlloKoQBN2s/VaWNTjFX6SoVtbVNC5NTeHweHBV8wALQKw51vveDXXePJ1qPFsVkKwkBN7fv6lIHTj7bzPN4lomUZ4tL/TF/IiHD/m7bEkn53z/6794GEHJZPLBsg9L2rY4J9OuJ1ILHu7P9am9m22FgXRKmuNHenLQvJ2drZQErk0QBo8xCfvY+miyUu8nf46CX8hOBlCCFRWUSLKGnC6+tuRwQgre7v9LjJg3+MtZFkfw228HRa83f4mSkBdA2p4Fmtxs05e4v3+1WO7sBluswS9REkoC4D374vwPe/791DnQ2QsSAeqHPLYACd6S+qGazTsRRssByWhLoCY9cZYbEMRj4m2kI2SyO0HXHX0CaA2bkCRIHiaEeoCoOiet6iibrlr9VhfuvyOEFvqiN9OAq+hTqSviI1dJOoaMP6zHvPiHBVfPnCJEfUp/Iq40JPUhbIApOUmIT6F24RPqzI4SjuG3Wy2g3ggDAdKXr+8/EA+IzgadiZ8ebI+ptGEkyjS2pgIhqpYQonkEkCgBUQTHyw1odFsbUv1lqt81i7jB/v+gw4/25CCik9exhJTVl/aiX0E5ifTtQ0k2yctKTH7fqsrRBAZKpMikJITcaCG1NJzj2ktfgBHbl3y/Vf800VWeAvJ/EGKQCqPr+AlPdCWExwODr/V78x9YqVrsFq10/QJMkNV8dz71f+c4u8/cTJuVkHIyb/l61zfopi0eKvlYCxDWvGCt4aDf6rr8qRdyHNeHPfKzPwYDAbDeWQ2gol1P12c1Q9lmmzEbnHBZbNMArjLFSDyqTORDSoQAbHmjwYrk1kjXeOn4CQFLjh1TanO9wJwucK0UIQ2XCiApOrPDChECBcKQAY1iE9euq/gNHgBzsxJ8FRp84dNVJ0QCGH4WOd2mOoKn1Z9I/E9++09jIcL3t7u5+HRUR+akWMOjw62+Hpfv3m7wZ5kuNxuW5VafXB08AWamKoB8dWXk+e63yuUiH3v4Zqw6E24jbWgoUsLEqNBGcsjqoIuqrSMsjkedBGLMq1qPXPqLYlEAUyUvlBuquqM06RLpOzGCVhtpbNp+QAnckfR+l2pyARsBKHtOE4WgMbSV16KLJ2lzgh53o/v+A8xtUFcc4wAcFWIFWB0YSW/T4R9fBczhmBthm5daGKqKxx4g8RHDp/DRcXjWbhs32MwGAwGwxXnL7gdvB887BoVAAAAAElFTkSuQmCC);
+}
+.my-page .my-info .quit-guide {
+    padding: 4rem 0;
+}
+.my-page .my-info .quit-guide>li {
+    position: relative;
+    margin-bottom: .8rem;
+    padding-left: 2rem;
+    font-size: 1.6rem;
+    color: #111518;
+}
+.my-page .my-info .quit-guide>li:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 1.1rem;
+    left: .7rem;
+    width: .3rem;
+    height: .3rem;
+    background-color: #666;
+    border-radius: 50%;
+}
+.my-page .my-quit {
+    margin-top: 3.2rem;
+}
+.my-page .my-quit .title {
+    margin-bottom: 1.6rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.my-page .my-quit .check-quit.v-input--density-default:not(.v-autocomplete--multiple) {
+    --v-input-control-height: 3.2rem;
+}
+.my-page .my-quit .check-quit {
+    display: block;
+    position: relative;
+}
+.my-page .my-quit .check-quit .v-selection-control__input>.v-icon {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}
+.my-page .my-quit .check-quit .v-selection-control__input:before {
+    background-color: transparent;
+}
+.v-selection-control__input:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-color: currentColor;
+    opacity: 0;
+    pointer-events: none;
+}
+.my-page .my-quit .check-quit .mdi-checkbox-blank-outline:before {
+    content: "";
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url("data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='12'%20cy='12'%20r='11.5'%20fill='white'%20stroke='%23CCCCCC'/%3e%3cpath%20d='M6.5%2011L10.8043%2015.5L17.5%208.5'%20stroke='%23CCCCCC'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e");
+    background-size: 100%;
+}
+.my-page .my-quit .check-quit .mdi-checkbox-marked:before {
+    content: "";
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url("data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='12'%20cy='12'%20r='12'%20fill='%23356CFF'/%3e%3cpath%20d='M6.5%2011L10.8043%2015.5L17.5%208.5'%20stroke='white'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e");
+    background-size: 100%;
+}
+.my-page .my-quit .check-quit .v-label {
+    position: relative;
+    padding-left: 4rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #111518;
+}
+.my-page .my-quit .check-quit .v-selection-control__wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3.2rem;
+    height: 3.2rem;
+    padding: .4rem;
+}
+.v-btn.bg-secondary {
+    color: #494f60 !important;
+    background-color: #e9edfb !important;
+}
+.v-btn.v-btn--density-default {
+    height: calc(var(--v-btn-height) + 0px);
+}
+.v-btn.bg-primary {
+    color: #fff !important;
+    background-color: #356cff !important;
+}
+.my-page .my-info .member .form-box .check-wrap .agree-btn .v-btn .btn-arrow {
+    width: 2rem;
+    height: 2rem;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADlSURBVHgB7di7DcIwFIXhY2hQSBEigjxORmAENiFMwiqwASvQUSCq8OiMrwQdBZIfV5bOJ7lJk/vLhS0DREREVLimsxtZUDBFIBncAHu/1lVd43kfj8hogoicw9Cu7BYZBe/A6zGeZlVtjEH/+dTn3IngAOEjDloRUQKEVkS0AKERETVA5I6IHiByRiQJELkikgWIHBFJA0TqiOQBImVElgDxK2I2r89ykiNA1LvQH39zKFXjL3mLzrrvapd2QCk4vBYOr4XDa+HwWsoe3r8LaQ4f9S5kHHa362VAaTSfFomIiEjTG+b9ozhftIqVAAAAAElFTkSuQmCC);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.v-btn .v-icon {
+    --v-icon-size-multiplier: .8571428571;
+}
+
+
+
+  /* @media 모음   */
+  @media only screen and (max-width: 960px) {
+    .my-page .my-info>.title {
+        padding: 1.6rem 0;
+        font-size: 1.8rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .my-page .my-info>.title .v-icon {
+        width: 2.4rem;
+        height: 2.4rem;
+        margin-right: .8rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .my-page .my-info .quit-guide {
+        padding: 3.2rem 0;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .my-page .my-info .quit-guide>li {
+        padding-left: 1.8rem;
+        font-size: 1.4rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .my-page .my-info .quit-guide>li:after {
+        top: 1rem;
+        left: .6rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .my-page .my-quit {
+        margin-top: 2.4rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .my-page .my-quit .title {
+        margin-bottom: 1.2rem;
+        font-size: 1.5rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .my-page .my-quit .check-quit .v-label, .my-page .bottom-btn .v-btn {
+        font-size: 1.4rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .my-page .btn-wrap .default.prev {
+        width: calc(35% - .4rem);
+    }
+}
+@media only screen and (max-width: 960px) {
+    .btn-wrap .default {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .my-page .btn-wrap .default.next {
+        width: calc(65% - .4rem);
+    }
+}
+@media only screen and (max-width: 960px) {
+    .btn-wrap .default+.default {
+        margin-left: .8rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .sub-group-mypage{
+        padding: 0 2.4rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .my-page .my-info .member .form-box .check-wrap .agree-btn .v-btn .btn-arrow {
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .my-page .my-info .member .form-box .check-wrap {
+        display: block;
+        padding: 0;
+    }
+}

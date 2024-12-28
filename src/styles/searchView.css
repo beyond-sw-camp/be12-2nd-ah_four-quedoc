@@ -1,0 +1,125 @@
+.inner-wrapper {
+    display: flex;
+    max-width: 120rem;
+    margin: 0 auto;
+    padding-top: 3.2rem;
+}
+.inner-wrapper .sub-group {
+    flex: 1;
+}
+.search-wrap .search-box {
+    padding: 1.6rem;
+    border-radius: 1.6rem;
+    background-color: #f7f8fc;
+}
+.search-wrap .search-box .inp {
+    max-width: 79.2rem;
+    margin: auto;
+}
+.search-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 7.2rem 3.2rem 4.8rem;
+    border-bottom: 1px solid #e5e5e5;
+}
+.search-result .text {
+    color: #111518;
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 150%;
+}
+.search-result .desc {
+    margin-top: 1.2rem;
+    color: #666;
+    font-size: 1.6rem;
+    line-height: 150%;
+}
+.btn-list {
+    display: flex;
+    justify-content: center;
+    margin-top: 6.4rem;
+    margin-bottom: 3rem;
+}
+
+/* media query */
+@media only screen and (max-width: 960px) {
+    .inner-wrapper {
+        flex-direction: column;
+        padding: .8rem 0 0;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .sub-group {
+        padding: 0 2.4rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .sub-title-area {
+        margin-bottom: 2.4rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .sub-title {
+        font-size: 2rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .search-wrap {
+        margin-bottom: 3.2rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .search-wrap .search-box {
+        border-radius: .8rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .search-result {
+        padding: 4.8rem 0 3.2rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .search-result .text {
+        font-size: 1.8rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .search-result .desc {
+        margin-top: .4rem;
+        font-size: 1.4rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .btn-list {
+        margin-top: 3.5rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .btn-list .v-btn {
+        min-width: 100%;
+    }
+}
+
+/* hashtag */
+
+.search-wrap .hashtag-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 79.2rem;
+    margin: 1.2rem auto -.4rem;
+}
+@media only screen and (max-width: 960px) {
+    .search-wrap .search-box .hashtag-area .hashtag {
+        margin: 0 .4rem;
+        padding: .2rem 0;
+        font-size: 1.4rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .search-wrap .search-box .hashtag-area {
+        margin: 1.4rem auto -.2rem;
+    }
+}

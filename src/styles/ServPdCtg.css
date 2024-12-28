@@ -1,0 +1,38 @@
+
+.service-list-area {
+    margin-top: 2.4rem;
+}
+.service-list-area .v-card.service-list {
+    padding: 3.2rem;
+    border-radius: 2.4rem!important;
+}
+.service-list-area .v-card {
+    border-color: #e5e5e5;
+}
+img {
+    display: block;
+}
+
+/* media query */
+
+@media only screen and (max-width: 960px) {
+    .service-list-area {
+        margin-top: 1.6rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .service-list-area .v-row {
+        margin: -.8rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .service-list-area .v-row [class^=v-col-] {
+        padding: .8rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .service-list-area .v-card.service-list {
+        padding: 2.4rem;
+        border-radius: 1.6rem !important;
+    }
+}

@@ -1,0 +1,375 @@
+@import url(https://db.onlinewebfonts.com/c/67f9be25cebb2b86b67d7e4f824751fd?family=OneShinhan+Bold);
+
+.v-theme--DefaultTheme {
+    color-scheme: normal;
+    --v-theme-background: 255, 255, 255;
+    --v-theme-background-overlay-multiplier: 1;
+    --v-theme-surface: 255, 255, 255;
+    --v-theme-surface-overlay-multiplier: 1;
+    --v-theme-surface-bright: 255, 255, 255;
+    --v-theme-surface-bright-overlay-multiplier: 1;
+    --v-theme-surface-light: 238, 238, 238;
+    --v-theme-surface-light-overlay-multiplier: 1;
+    --v-theme-surface-variant: 66, 66, 66;
+    --v-theme-surface-variant-overlay-multiplier: 2;
+    --v-theme-on-surface-variant: 255, 255, 255;
+    --v-theme-primary: 53, 108, 255;
+    --v-theme-primary-overlay-multiplier: 1;
+    --v-theme-primary-darken-1: 31, 85, 146;
+    --v-theme-primary-darken-1-overlay-multiplier: 2;
+    --v-theme-secondary: 233, 237, 251;
+    --v-theme-secondary-overlay-multiplier: 1;
+    --v-theme-secondary-darken-1: 1, 135, 134;
+    --v-theme-secondary-darken-1-overlay-multiplier: 1;
+    --v-theme-error: 255, 54, 54;
+    --v-theme-error-overlay-multiplier: 1;
+    --v-theme-info: 62, 201, 214;
+    --v-theme-info-overlay-multiplier: 1;
+    --v-theme-success: 44, 168, 127;
+    --v-theme-success-overlay-multiplier: 1;
+    --v-theme-warning: 229, 138, 0;
+    --v-theme-warning-overlay-multiplier: 1;
+    --v-theme-lightprimary: 233, 240, 255;
+    --v-theme-lightprimary-overlay-multiplier: 1;
+    --v-theme-lightsecondary: 248, 249, 250;
+    --v-theme-lightsecondary-overlay-multiplier: 1;
+    --v-theme-lightsuccess: 192, 229, 217;
+    --v-theme-lightsuccess-overlay-multiplier: 1;
+    --v-theme-lightinfo: 197, 239, 243;
+    --v-theme-lightinfo-overlay-multiplier: 1;
+    --v-theme-lighterror: 245, 190, 190;
+    --v-theme-lighterror-overlay-multiplier: 1;
+    --v-theme-lightwarning: 247, 220, 179;
+    --v-theme-lightwarning-overlay-multiplier: 1;
+    --v-theme-darkText: 29, 38, 48;
+    --v-theme-darkText-overlay-multiplier: 2;
+    --v-theme-lightText: 17, 21, 24;
+    --v-theme-lightText-overlay-multiplier: 2;
+    --v-theme-darkprimary: 63, 120, 255;
+    --v-theme-darkprimary-overlay-multiplier: 1;
+    --v-theme-darksecondary: 62, 72, 83;
+    --v-theme-darksecondary-overlay-multiplier: 2;
+    --v-theme-darkinfo: 48, 188, 204;
+    --v-theme-darkinfo-overlay-multiplier: 1;
+    --v-theme-darksuccess: 33, 151, 108;
+    --v-theme-darksuccess-overlay-multiplier: 1;
+    --v-theme-darkwarning: 222, 119, 0;
+    --v-theme-darkwarning-overlay-multiplier: 1;
+    --v-theme-darkerror: 211, 28, 28;
+    --v-theme-darkerror-overlay-multiplier: 2;
+    --v-theme-borderLight: 232, 235, 238;
+    --v-theme-borderLight-overlay-multiplier: 1;
+    --v-theme-inputBorder: 221, 221, 221;
+    --v-theme-inputBorder-overlay-multiplier: 1;
+    --v-theme-containerBg: 255, 255, 255;
+    --v-theme-containerBg-overlay-multiplier: 1;
+    --v-theme-facebook: 66, 103, 178;
+    --v-theme-facebook-overlay-multiplier: 2;
+    --v-theme-twitter: 29, 161, 242;
+    --v-theme-twitter-overlay-multiplier: 1;
+    --v-theme-linkedin: 14, 118, 168;
+    --v-theme-linkedin-overlay-multiplier: 2;
+    --v-theme-gray100: 243, 245, 247;
+    --v-theme-gray100-overlay-multiplier: 1;
+    --v-theme-primary200: 184, 206, 255;
+    --v-theme-primary200-overlay-multiplier: 1;
+    --v-theme-secondary200: 216, 218, 221;
+    --v-theme-secondary200-overlay-multiplier: 1;
+    --v-theme-warning200: 250, 175, 0;
+    --v-theme-warning200-overlay-multiplier: 1;
+    --v-theme-on-background: 0, 0, 0;
+    --v-theme-on-surface: 0, 0, 0;
+    --v-theme-on-surface-bright: 0, 0, 0;
+    --v-theme-on-surface-light: 0, 0, 0;
+    --v-theme-on-primary: 255, 255, 255;
+    --v-theme-on-primary-darken-1: 255, 255, 255;
+    --v-theme-on-secondary: 0, 0, 0;
+    --v-theme-on-secondary-darken-1: 255, 255, 255;
+    --v-theme-on-error: 255, 255, 255;
+    --v-theme-on-info: 0, 0, 0;
+    --v-theme-on-success: 255, 255, 255;
+    --v-theme-on-warning: 255, 255, 255;
+    --v-theme-on-lightprimary: 0, 0, 0;
+    --v-theme-on-lightsecondary: 0, 0, 0;
+    --v-theme-on-lightsuccess: 0, 0, 0;
+    --v-theme-on-lightinfo: 0, 0, 0;
+    --v-theme-on-lighterror: 0, 0, 0;
+    --v-theme-on-lightwarning: 0, 0, 0;
+    --v-theme-on-darkText: 255, 255, 255;
+    --v-theme-on-lightText: 255, 255, 255;
+    --v-theme-on-darkprimary: 255, 255, 255;
+    --v-theme-on-darksecondary: 255, 255, 255;
+    --v-theme-on-darkinfo: 0, 0, 0;
+    --v-theme-on-darksuccess: 255, 255, 255;
+    --v-theme-on-darkwarning: 255, 255, 255;
+    --v-theme-on-darkerror: 255, 255, 255;
+    --v-theme-on-borderLight: 0, 0, 0;
+    --v-theme-on-inputBorder: 0, 0, 0;
+    --v-theme-on-containerBg: 0, 0, 0;
+    --v-theme-on-facebook: 255, 255, 255;
+    --v-theme-on-twitter: 255, 255, 255;
+    --v-theme-on-linkedin: 255, 255, 255;
+    --v-theme-on-gray100: 0, 0, 0;
+    --v-theme-on-primary200: 0, 0, 0;
+    --v-theme-on-secondary200: 0, 0, 0;
+    --v-theme-on-warning200: 0, 0, 0;
+    --v-border-color: 232, 235, 238;
+    --v-border-opacity: 0.12;
+    --v-high-emphasis-opacity: 0.87;
+    --v-medium-emphasis-opacity: 0.6;
+    --v-disabled-opacity: 0.38;
+    --v-idle-opacity: 0.04;
+    --v-hover-opacity: 0.04;
+    --v-focus-opacity: 0.12;
+    --v-selected-opacity: 0.08;
+    --v-activated-opacity: 0.12;
+    --v-pressed-opacity: 0.12;
+    --v-dragged-opacity: 0.08;
+    --v-theme-kbd: 33, 37, 41;
+    --v-theme-on-kbd: 255, 255, 255;
+    --v-theme-code: 245, 245, 245;
+    --v-theme-on-code: 0, 0, 0;
+    --v-carousel-control-size: 10;
+    --v-gradient: linear-gradient(to right, #3F78FF, #356CFF);
+    --v-card-shadow: 0px 8px 24px rgba(19, 25, 32, 0.08);
+}
+
+.main-card-wrap {
+    position: relative;
+    margin-top: 3.2rem;
+    padding: 2.4rem 0 6.4rem;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #f7f8fc;
+}
+
+.main-card-wrap .main-card-inner {
+    display: flex;
+    justify-content: space-between;
+    
+    /* 개수에 따라 30rem 늘리면 됨. */
+    width: 60rem;
+    margin: 0 auto;
+}
+
+.main-card-wrap .main-card-inner .card-box+.card-box {
+    margin-left: 2.4rem;
+}
+
+.main-card-inner .card-box {
+    all: unset;
+    position: relative;
+    margin-top: 4rem;
+    padding: 3.2rem;
+    width: 28.2rem;
+    height: 29.3rem;
+    border-radius: 2.4rem;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.v_btn.btn_size_default {
+    --v-btn-size: 1.4rem;
+}
+
+.v_btn_overlay {
+    background-color: transparent;
+    transition: none;
+    border-radius: inherit;
+    opacity: 0;
+}
+
+.v_btn_overlay,
+.v_btn_underlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* card */
+.main-card-wrap .main-card-inner .card-box .v-btn__content {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.card-box .title-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.main-card-wrap .main-card-inner .card-box .title-area .card-stit {
+    font-family: OneShinhan, sans-serif;
+    font-size: 2rem;
+    line-height: 150%;
+}
+
+.main-card-wrap .main-card-inner .card-box .title-area .card-title {
+    display: block;
+    font-family: OneShinhan, sans-serif;
+    font-size: 2.4rem;
+    line-height: 150%;
+}
+
+b,
+strong {
+    font-weight: 500;
+}
+
+.card-box .ico-main-data {
+    background-image: url(data:image/png;base64,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);
+}
+
+.main-card-wrap .main-card-inner .card-box .card-icon {
+    width: 12rem;
+    height: 12rem;
+    background-size: 100%;
+}
+
+.main-card-wrap .main-card-inner .card-box .card-text {
+    display: flex;
+    padding: .8rem 0;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    font-size: 1.8rem;
+    border-radius: 9.9rem;
+    background: #f1f4fb;
+}
+
+.main-card-wrap .main-card-inner .card-box .icon-card-arrow {
+    position: absolute;
+    right: 3.2rem;
+    top: 3.2rem;
+    position: absolute;
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAD8SURBVHgB7dZNDoIwFATghy40ygKNGo7DUbyJeAOPpDfwGCyIbvBnhx0iLgzGtrwujPMlTRoCLzPpgooQERERERFZSJbpGksCCTofg2fLtMaar9KNKEvMzHa+S4mBeKhryTVLIHxkZoqHoe2L92t1HE/iKIokez7KJnEst0t1kB7ew5v99lwWO9vvrQuAKbHXLNEV/lQWucsMpwKgVUIjPDgXgL4ltMKDVwHwLaEZHrwLgGsJ7fDQqwDYlggRHnoXgG8lQoUHlQLwqcRoGmehwjfzRFmySHNTovMvrR0e1E6g1XESjRDhg8JJvC5/Zi+/KPT1m4iIiIiI/tsDSnenBaZDEmYAAAAASUVORK5CYII=);
+    background-size: 100%;
+    transform: rotate(-90deg);
+}
+
+/* 공통 */
+/* 모바일 화면 */
+@media only screen and (max-width: 360px) {
+    html {
+        font-size: 2.7778vw !important;
+    }
+}
+
+@media (min-width: 960px) and (max-width: 1279px) {
+    html {
+        font-size: .7813vw !important
+    }
+}
+
+@media only screen and (max-width: 960px) {
+
+    .main_wrap .visual-layout-area.mobile-wrap {
+        display: flex;
+    }
+
+    .main-wrap .visual-layout-area {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 2.4rem;
+    }
+
+    .main-wrap .main-card-wrap .main-card-inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .main-wrap .main-card-wrap .main-card-inner .card-box {
+        position: relative;
+        margin-top: 0;
+        margin-left: 0 !important;
+        padding: 1.6rem;
+        width: calc(50% - 4rem);
+        height: 16rem;
+        border-radius: 1.6rem;
+    }
+
+    .main-wrap .main-card-wrap {
+        position: relative;
+        margin-top: 0;
+        padding: 2.4rem;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        background: #f7f8fc;
+    }
+
+    .v_btn.btn_size_default {
+        --v-btn-size: 1.2rem;
+        --v-btn-height: 3.2rem;
+        padding: 0 .8rem;
+    }
+
+    .main-wrap .main-card-wrap .main-card-inner .card-box .v-btn__content {
+        all: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .main-wrap .main-card-wrap .main-card-inner .card-box .title-area {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .main-wrap .main-card-wrap .main-card-inner .card-box .title-area .card-stit {
+        font-size: 1.4rem;
+    }
+
+    .main-wrap .main-card-wrap .main-card-inner .card-box .title-area .card-title {
+        font-size: 1.6rem;
+    }
+
+    .main-wrap .main-card-wrap .main-card-inner .card-box .card-icon {
+        margin-top: 1.6rem;
+        width: 5.6rem;
+        height: 5.6rem;
+    }
+
+    .main-wrap .main-card-wrap .main-card-inner .card-box .card-text {
+        margin-top: 1.6rem;
+        padding: .8rem 0;
+        font-size: 1.1rem;
+        letter-spacing: -.55px;
+    }
+
+
+    .main-wrap .main-card-wrap .main-card-inner .card-box {
+        position: relative;
+        margin-top: 0;
+        margin-left: 0 !important;
+        padding: 1.6rem;
+        width: calc(50% - 4rem);
+        height: 16rem;
+        border-radius: 1.6rem;
+    }
+
+}

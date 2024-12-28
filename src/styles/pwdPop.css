@@ -1,0 +1,186 @@
+.popup-wrap.medium {
+    width: 79.2rem;
+    max-width: 100%;
+    max-height: 75rem;
+}
+.popup-wrap {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 1.6rem;
+    transition: all .3s ease;
+}
+.member {
+    position: relative;
+    max-width: 79.2rem;
+    margin: 0 auto;
+    padding: 0;
+}
+.popup-wrap .popup-head {
+    flex: none;
+    overflow: hidden;
+    position: relative;
+    padding: 2.4rem 3.2rem;
+    border-radius: 1.6rem 1.6rem 0 0;
+}
+.popup-wrap .popup-head .h-title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: #111518;
+}
+.popup-wrap.medium .popup-cont {
+    margin-bottom: 2.4rem;
+}
+.popup-wrap.fixed .popup-cont {
+    margin-bottom: 0;
+}
+.popup-wrap .popup-cont {
+    overflow: auto;
+    overflow-x: hidden;
+    position: relative;
+    padding: 0 3.2rem;
+}
+.popup-wrap .popup-cont .form-box.form-type {
+    margin-top: .8rem;
+    padding-top: 2.4rem;
+    border-top: .1rem solid #111518;
+}
+.popup-wrap .popup-cont .form-box {
+    padding: .8rem 0;
+    border: none;
+}
+.member .form-box {
+    padding: 2.4rem 0 3.2rem;
+    border-top: .1rem solid #111518;
+    border-bottom: .1rem solid #e5e5e5;
+}
+.popup-wrap .popup-cont .form-box .form-group {
+    padding-left: 14rem!important;
+}
+.member .form-box .form-group {
+    position: relative;
+    padding-left: 20.4rem!important;
+}   
+.popup-wrap .popup-cont .form-box .form-group .ele-tit {
+    width: 14rem;
+}   
+.popup-wrap.fixed .popup-cont .btn-popwrap {
+    display: none;
+}
+.v-btn.bg-primary.v-btn--disabled {
+    color: #98a2bc !important;
+    background-color: #dee6f1 !important;
+}
+.popup-wrap.fixed .popup-foot {
+    padding-top: 1.6rem;
+}
+.popup-wrap .popup-foot {
+    position: relative;
+    width: 100%;
+    padding: 0 3.2rem;
+}
+   
+/* media query */
+
+@media only screen and (max-width: 960px) {
+    .popup-wrap.medium {
+        min-height: 30rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .popup-wrap.large, .popup-wrap.medium {
+        width: 100%;
+        height: 100%;
+        max-height: 100vh;
+        padding: 0;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .popup-wrap {
+        border-radius: 0;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .member {
+        width: 100%;
+        padding: 0 2.4rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .popup-wrap .popup-head {
+        padding: 1.4rem 2.4rem 1.5rem;
+        border-radius: 0;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .popup-wrap .popup-head .h-title {
+        font-size: 1.8rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .popup-wrap.large .popup-cont, .popup-wrap.medium .popup-cont {
+        margin-bottom: 0;
+        padding-bottom: 2.4rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .popup-wrap.fixed .popup-cont {
+        margin-bottom: 2.4rem;
+        padding-bottom: 0;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .popup-wrap .popup-cont {
+        padding: 0 2.4rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .popup-wrap .popup-cont .form-box {
+        padding-bottom: .8rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .member .form-box {
+        padding-bottom: 2.4rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .popup-wrap .popup-cont .form-box .form-group {
+        padding-left: 0 !important;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .member .form-box .form-group {
+        padding-left: 0 !important;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .popup-wrap.fixed .popup-cont .btn-popwrap {
+        display: flex;
+        margin-top: 1.6rem;
+        padding-top: 1.6rem;
+        border-top: 1px solid #e5e5e5;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .popup-wrap.fixed .popup-cont .btn-popwrap .v-btn {
+        flex: 1;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .popup-wrap.fixed .popup-foot {
+        display: none;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: #fff;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .popup-wrap .popup-foot {
+        padding: 0 2.4rem;
+    }
+}

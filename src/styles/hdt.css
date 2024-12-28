@@ -1,0 +1,128 @@
+.product-area+.static-content {
+    margin-top: 8rem;
+}
+.static-content .cnt-group [class*=-title] {
+    display: flex;
+    margin-bottom: 1.6rem;
+}
+.static-content .cnt-group .cnt-title .num {
+    color: #356cff;
+}
+.finace-list-area .finace-box {
+    padding: 4rem;
+    background-color: #f2f3f6;
+    border-radius: 1.6rem;
+}
+.finace-list-area .finace-box .v-row {
+    margin: -2.4rem -3.2rem;
+}
+.finace-list-area .finace-box .v-row [class^=v-col-] {
+    padding: 2.4rem 3.2rem;
+}
+.finace-list-area .finace-box .v-card.finace-list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+    border-radius: 0!important;
+}
+.finace-list-area .title {
+    margin-bottom: 1.6rem;
+}
+.subtitle-18 {
+    color: #111518;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 150%;
+}
+.finace-list-area .finace-box .v-card.finace-list .text-16 {
+    flex-grow: 1;
+}
+.finace-list-area .finace-box .v-card.finace-list .title {
+    margin-bottom: 1.6rem;
+}
+.finace-list-area .finace-box .v-card.finace-list .img {
+    width: 100%;
+    height: auto;
+    margin-top: 1.6rem!important;
+}
+.static-content .cnt-group .cnt-text .img {
+    margin-top: 4rem;
+}
+.finace-list-area .finace-box .v-card.finace-list .img img {
+    width: 100%;
+}
+.static-content .cnt-group .img-data img, .static-content .cnt-group img {
+    width: 100%;
+}
+.mgb40 {
+    margin-bottom: 4rem!important;
+}
+@media only screen and (max-width: 960px) {
+    .mgb40 {
+        margin-bottom: 3.2rem !important;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .static-content .cnt-group .cnt-text .img {
+        margin-top: 3.2rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .text-16 {
+        font-size: 1.4rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .finace-list-area .title {
+        margin-bottom: 1.2rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .finace-list-area .finace-box .v-card.finace-list .subtitle-18 {
+        font-size: 1.5rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .finace-list-area .finace-box .v-card.finace-list .title {
+        margin-bottom: 1.2rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .finace-list-area .finace-box .v-row {
+        margin: -2rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .finace-list-area .finace-box .v-row [class^=v-col-] {
+        padding: 2rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .finace-list-area .subtitle-22 {
+        font-size: 1.6rem;
+    }
+}
+/* media query */ 
+
+@media only screen and (max-width: 960px) {
+    .product-area+.static-content {
+        margin-top: 5.6rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .static-content .cnt-group [class*=-title] {
+        margin-bottom: 1.2rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .static-content .cnt-group .cnt-title {
+        font-size: 1.8rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .finace-list-area .finace-box {
+        padding: 2.4rem;
+        border-radius: .8rem;
+    }
+}

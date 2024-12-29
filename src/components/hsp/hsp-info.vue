@@ -2,7 +2,7 @@
 <template>
     <div class="sub-group data-service">
         <div class="sub-title-area">
-            <h4 class="sub-title">솔루션상품</h4>
+            <h4 class="sub-title">병원예약</h4>
         </div>
 
         <!-- 상품 카드 -->
@@ -68,20 +68,20 @@ const prodInfo = ref({
     productEtcLink: '',
     linkPopupYn: 'N',
     analysisTypeCodeList: [
-        { analysisColorGroup: '01', analysisTypeNm: '시장분석' },
-        { analysisColorGroup: '02', analysisTypeNm: '지역경제' },
-        { analysisColorGroup: '03', analysisTypeNm: '대안신용' },
-        { analysisColorGroup: '04', analysisTypeNm: '마이데이터' },
-        { analysisColorGroup: '05', analysisTypeNm: '카드데이터' }
+        { analysisColorGroup: '01', analysisTypeNm: '어린이 국가예방접종' },
+        { analysisColorGroup: '02', analysisTypeNm: '실손청구가능' },
+        { analysisColorGroup: '03', analysisTypeNm: '영유아검진' },
+        { analysisColorGroup: '04', analysisTypeNm: '주차장' },
+        { analysisColorGroup: '05', analysisTypeNm: '전문의' }
     ],
-    productNm: '상품명은 로 제한 한줄 초과 시 말줄임처리 말줄임처리 말줄임처리 말줄임처리',
+    productNm: '아주대학교병원',
     productDesc:
-        '2024 전국 스타벅스 매장 연령별 결제 데이터 두줄일 경우 2024 전국 스타벅스 매장 연령별 결제 데이터 두줄일 2024 전국 스타벅스 매장 연령별 결제 데이터 두줄일 경우',
+        '병원 상세 정보',
     productTagList: [
-        { productTag: '스타벅스' },
-        { productTag: '전국' },
-        { productTag: '시간대별결제데이터' },
-        { productTag: '해시태그 한줄까지' }
+        { productTag: '문의처 : 1688-6114' },
+        { productTag: '' },
+        { productTag: '' },
+        { productTag: '' }
     ],
     productInfo1: '',
     productInfoImgPath1: '',

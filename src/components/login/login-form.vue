@@ -118,6 +118,13 @@ const submitForm = async () => {
             console.log(s.value);
             loginStore.setLogin(!s);
             //메인 페이지 이동
+
+            console.log(data.user);
+            loginStore.setInfo(data.user);
+            console.log(loginStore.getName());
+            console.log(loginStore.getUserType());
+
+
             router.push({ name: 'home' })
         } else {
             //에러 처리

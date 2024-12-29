@@ -18,15 +18,8 @@
         <div class="member-text">
             <p class="text">회원가입을 위한 정보를 입력해주세요.</p>
         </div>
-        <v-form
-            ref="memPsnInfoPutForm"
-            autocomplete="off"
-            class="form-wrap"
-            fast-fail
-            validate-on="blur lazy"
-            @keypress.enter.prevent
-            @submit.prevent="submitForm"
-        >
+        <v-form ref="memPsnInfoPutForm" autocomplete="off" class="form-wrap" fast-fail validate-on="blur lazy"
+            @keypress.enter.prevent @submit.prevent="submitForm">
             <div class="form-box">
                 <div class="form-group">
                     <div class="ele-tit">
@@ -35,42 +28,21 @@
                     <div class="email-wrap">
                         <div class="first">
                             <div class="input-wrap">
-                                <v-text-field
-                                    v-model="memPsnInfoPutInfo.em"
-                                    :readonly="formCntrObj['noCertLockEmailSend'].disabled"
-                                    :rules="validateEm"
-                                    aria-label="이메일(아이디)"
-                                    color="primary"
-                                    density="comfortable"
-                                    hide-details="none"
-                                    maxlength="30"
-                                    name="em"
-                                    placeholder=""
-                                    required
-                                    title="이메일(아이디) 숫자 최대 50자리 입력"
-                                    variant="outlined"
-                                    @input="[lowerCase('em', memPsnInfoPutInfo.em)]"
-                                ></v-text-field>
+                                <v-text-field v-model="memPsnInfoPutInfo.em"
+                                    :readonly="formCntrObj['noCertLockEmailSend'].disabled" :rules="validateEm"
+                                    aria-label="이메일(아이디)" color="primary" density="comfortable" hide-details="none"
+                                    maxlength="30" name="em" placeholder="" required title="이메일(아이디) 숫자 최대 50자리 입력"
+                                    variant="outlined" @input="[lowerCase('em', memPsnInfoPutInfo.em)]"></v-text-field>
                             </div>
                         </div>
                         <span class="space">@</span>
                         <div class="last">
                             <div class="input-wrap">
-                                <v-text-field
-                                    v-model="memPsnInfoPutInfo.dns"
-                                    :readonly="formCntrObj['noCertLockEmailSend'].disabled"
-                                    :rules="validateDns"
-                                    aria-label="도메인명"
-                                    color="primary"
-                                    density="comfortable"
-                                    hide-details="none"
-                                    maxlength="30"
-                                    name="dns"
-                                    placeholder="도메인명"
-                                    required
-                                    variant="outlined"
-                                    @input="[lowerCase('dns', memPsnInfoPutInfo.dns)]"
-                                ></v-text-field>
+                                <v-text-field v-model="memPsnInfoPutInfo.dns"
+                                    :readonly="formCntrObj['noCertLockEmailSend'].disabled" :rules="validateDns"
+                                    aria-label="도메인명" color="primary" density="comfortable" hide-details="none"
+                                    maxlength="30" name="dns" placeholder="도메인명" required variant="outlined"
+                                    @input="[lowerCase('dns', memPsnInfoPutInfo.dns)]"></v-text-field>
                             </div>
                         </div>
                     </div>
@@ -78,28 +50,16 @@
                         {{ memInfoErrorObject['em']?.errorMessage }}
                     </p>
                 </div>
-                
+
                 <div class="form-group">
                     <div class="ele-tit">
                         <v-label>비밀번호</v-label>
                     </div>
                     <div class="input-wrap">
-                        <v-text-field
-                            v-model="memPsnInfoPutInfo.pin1"
-                            :rules="pinRules"
-                            aria-label="비밀번호"
-                            color="primary"
-                            density="comfortable"
-                            hide-details="none"
-                            maxlength="20"
-                            name="pin1"
-                            placeholder="비밀번호 입력"
-                            required
-                            title="비밀번호 입력"
-                            type="password"
-                            variant="outlined"
-                            @input="submitBtnAct()"
-                        ></v-text-field>
+                        <v-text-field v-model="memPsnInfoPutInfo.pin1" :rules="pinRules" aria-label="비밀번호"
+                            color="primary" density="comfortable" hide-details="none" maxlength="20" name="pin1"
+                            placeholder="비밀번호 입력" required title="비밀번호 입력" type="password" variant="outlined"
+                            @input="submitBtnAct()"></v-text-field>
                     </div>
 
                     <p class="text-tip message">
@@ -113,36 +73,17 @@
                         <v-label>비밀번호 확인</v-label>
                     </div>
                     <div class="input-wrap">
-                        <v-text-field
-                            v-model="memPsnInfoPutInfo.pin2"
-                            :rules="pinChkRules"
-                            aria-label="비밀번호 확인"
-                            color="primary"
-                            density="comfortable"
-                            hide-details="none"
-                            maxlength="20"
-                            name="pin2"
-                            placeholder="비밀번호 재입력"
-                            required
-                            title="비밀번호 재입력"
-                            type="password"
-                            variant="outlined"
-                            @input="submitBtnAct()"
-                        ></v-text-field>
+                        <v-text-field v-model="memPsnInfoPutInfo.pin2" :rules="pinChkRules" aria-label="비밀번호 확인"
+                            color="primary" density="comfortable" hide-details="none" maxlength="20" name="pin2"
+                            placeholder="비밀번호 재입력" required title="비밀번호 재입력" type="password" variant="outlined"
+                            @input="submitBtnAct()"></v-text-field>
                     </div>
                     <p class="text-tip error">{{ memInfoErrorObject['pin2'].errorMessage }}</p>
                 </div>
             </div>
             <div class="btn-wrap">
-                <v-btn
-                    :disabled="formCntrObj['submitBtn'].disabled"
-                    class="default"
-                    color="primary"
-                    rounded="lg"
-                    size="x-large"
-                    type="submit"
-                    variant="flat"
-                >
+                <v-btn :disabled="formCntrObj['submitBtn'].disabled" class="default" color="primary" rounded="lg"
+                    size="x-large" type="submit" variant="flat">
                     다음
                 </v-btn>
             </div>
@@ -159,6 +100,9 @@ import popUpAlert from '../../etc/pop-up/pop-up-alert.vue'
 import validateUtil from '../../../utils/validateUtil'
 import messageUtil from '../../../utils/messageUtil'
 import commonUtil from '../../../utils/commonUtil'
+import { getCurrentInstance } from 'vue';
+import api from '../../api/mem'
+const { proxy } = getCurrentInstance();
 
 //라우터 정보 객체
 const router = useRouter()
@@ -194,8 +138,7 @@ const memPsnInfoPutInfo = reactive({
     pin1: '', //비밀번호1
     pin2: '', //비밀번호2
     ctserverkeyem: '', //인증key(server) 이메일인증
-    clnTcd: 'U', //고객유형코드(고객유형코드, U: 일반사용자, B: 개인사업자, C: 법인사업자)
-    emType: 'L' //메일타입. 회원가입:L, 사업자전환:C
+    clnTcd: 'B', //고객유형코드(고객유형코드, U: 일반사용자, B: 사업자)
 })
 
 //인증번호 전송 여부
@@ -218,7 +161,7 @@ const formCntrObj = reactive({
     noCertLockEmailSend: { disabled: false },
     noCertLockEmailCert: { disabled: false },
     noStyl: { text: 'text-tip error' },
-    submitBtn: { disabled: true  }
+    submitBtn: { disabled: true }
 })
 
 //약관동의 팝업 정보 객체
@@ -233,18 +176,18 @@ let popUpAlertInfo = reactive({
  *
  * 이메일(아이디) 유효성 룰을 정의한다.
  */
- const regexEm = /^[a-zA-Z0-9](\.?[a-zA-Z0-9_-])*$/;
+const regexEm = /^[a-zA-Z0-9](\.?[a-zA-Z0-9_-])*$/;
 const validateEm = [
     console.log('validateEm'),
     (value) => {
         if (value) {
-            if(regexEm.test(value)===false) {
+            if (regexEm.test(value) === false) {
                 memInfoErrorObject['em'].errorMessage = '이메일 형식이 올바르지 않습니다.'
                 return false;
 
-            }else {
-            memInfoErrorObject['em'].errorMessage = null
-            return true
+            } else {
+                memInfoErrorObject['em'].errorMessage = null
+                return true
             }
         } else {
             memInfoErrorObject['em'].errorMessage = '이메일주소는 필수 입력입니다.'
@@ -258,18 +201,18 @@ const validateEm = [
  *
  * 도메인 유효성 룰을 정의한다.
  */
- const regexDns = /^(?!:\/\/)([a-zA-Z0-9]+(-[a-zA-Z0-9]+)*\.)+[a-zA-Z]{2,}$/;
+const regexDns = /^(?!:\/\/)([a-zA-Z0-9]+(-[a-zA-Z0-9]+)*\.)+[a-zA-Z]{2,}$/;
 const validateDns = [
     (value) => {
         if (value) {
             if (regexDns.test(value) === false) {
-            
+
                 memInfoErrorObject['em'].errorMessage = '도메인명 형식이 올바르지 않습니다.'
                 return false;
-            }else{
+            } else {
 
                 memInfoErrorObject['em'].errorMessage = null
-            return true
+                return true
             }
         } else {
             memInfoErrorObject['em'].errorMessage = '도메인명은 필수 입력입니다.'
@@ -309,16 +252,16 @@ const validateCtsn = [
  *
  * 비밀번호 유효성 룰을 정의한다.
  */
- const regexPin = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()]).{8,20}$/;
+const regexPin = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()]).{8,20}$/;
 const pinRules = [
     (value) => {
         if (value) {
-            if(regexPin.test(value)===false) {
+            if (regexPin.test(value) === false) {
                 memInfoErrorObject['pin1'].errorMessage = '비밀번호는 형식이 올바르지않습니다.'
                 return false;
-            }else {
-            memInfoErrorObject['pin1'].errorMessage = null
-            return true
+            } else {
+                memInfoErrorObject['pin1'].errorMessage = null
+                return true
             }
         } else {
             memInfoErrorObject['pin1'].errorMessage = '비밀번호를 입력해주세요.'
@@ -336,13 +279,13 @@ const pinChkRules = [
     (value) => {
         if (value) {
             console.log(value === memPsnInfoPutInfo.pin1)
-            if(value === memPsnInfoPutInfo.pin1) { 
+            if (value === memPsnInfoPutInfo.pin1) {
                 memInfoErrorObject['pin2'].errorMessage = null
                 return true
             }
             else {
-            memInfoErrorObject['pin2'].errorMessage = '비밀번호가 일치하지 않습니다. 입력하신 비밀번호와 동일하게 입력해 주세요.'
-            return false
+                memInfoErrorObject['pin2'].errorMessage = '비밀번호가 일치하지 않습니다. 입력하신 비밀번호와 동일하게 입력해 주세요.'
+                return false
 
             }
         } else {
@@ -421,7 +364,7 @@ const validationWithVerificationNumber = async () => {
     let validation = true
 
     //폼 아이템 검증 배열
-    const targets = ['em', 'dns','pin1', 'pin2']
+    const targets = ['em', 'dns', 'pin1', 'pin2']
     //필수 입력 검증 여부
     validation = await commonUtil.isRequiredInputValidation(memPsnInfoPutForm, targets, memInfoErrorObject)
 
@@ -434,14 +377,14 @@ const validationWithVerificationNumber = async () => {
  * 비밀번호 및 비밀번호 확인 입력 이벤트 리스너
  * 다음 버튼 활성화를 제어한다.
  */
- const submitBtnAct = async () => {
+const submitBtnAct = async () => {
     const validation = await validationWithVerificationNumber();
     console.log(validation);
-            if(validation) {
-                formCntrObj['submitBtn'].disabled = false;
-            } else {
-                formCntrObj['submitBtn'].disabled = true;
-            }
+    if (validation) {
+        formCntrObj['submitBtn'].disabled = false;
+    } else {
+        formCntrObj['submitBtn'].disabled = true;
+    }
 }
 
 /**
@@ -453,7 +396,7 @@ const validationWithVerificationNumber = async () => {
 const submitForm = async () => {
 
     const { valid } = await memPsnInfoPutForm.value.validate();
-    
+
     if (!validateUtil.password(memPsnInfoPutInfo.pin1)) {
         memInfoErrorObject['pin1'].errorMessage = messageUtil.getMessage('COM00003')
     }
@@ -462,18 +405,30 @@ const submitForm = async () => {
             '비밀번호가 일치하지 않습니다. 입력하신 비밀번호와 동일하게 입력해 주세요.'
     }
 
-    if(valid) {
-          //1단계 내용 pinia 저장
-          joinPsnCusStore.setJoinPsnCusStore(commonUtil.updateObejctValue(joinPsnInfo, memPsnInfoPutInfo))
+    if (valid) {
+        //1단계 내용 pinia 저장
+        joinPsnCusStore.setJoinPsnCusStore(commonUtil.updateObejctValue(joinPsnInfo, memPsnInfoPutInfo))
 
-            //pinia 초기화전 로그찍기
-const joinPsnInfoReq = joinPsnCusStore.getJoinPsnCusStore()
+        //pinia 초기화전 로그찍기
+        const joinPsnInfoReq = joinPsnCusStore.getJoinPsnCusStore()
 
-console.log('joinPsnInfoReq', joinPsnInfoReq);
+
+        const data = await api.signUp(proxy, joinPsnInfoReq);
+
+        if (data.status === "ok") {
+            
+        console.log('joinPsnInfoReq', joinPsnInfoReq);
+            console.log("Qrqwqwr");
+            console.log(data);
+            emits('nextEvent', 2)
+            return false
+        } else {
+            //에러 처리
+            console.log(data);
+            //오류 메시지 출력
+        }
 
     }
-    emits('nextEvent', 2)
-    return false
 }
 
 </script>

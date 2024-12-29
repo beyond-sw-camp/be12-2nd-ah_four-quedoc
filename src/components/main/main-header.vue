@@ -86,7 +86,7 @@ onMounted(() => {
         </ul>
         <ul v-else>
           <li>
-              <RouterLink :to="{name:''}" @click="logOut()">로그아웃</RouterLink>
+              <RouterLink :to="{name:'home'}" @click="logOut()">로그아웃</RouterLink>
           </li>
           <li>
             <RouterLink :to="{ name: 'mypage' }">마이페이지</RouterLink>

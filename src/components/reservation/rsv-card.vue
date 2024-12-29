@@ -149,7 +149,7 @@ fieldset {
 }
 
 .icon-reload {
-    background-image: url('../../images/reload.png');
+    background-image: url('../../assets/images/reload.png');
     width: 4rem !important;
     height: 4rem !important;
     transform-origin: center center;

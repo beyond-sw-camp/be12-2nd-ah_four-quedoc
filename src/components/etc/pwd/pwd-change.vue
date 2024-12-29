@@ -138,11 +138,18 @@
 </template>
 
 <script setup>
-import { onMounted, onUpdated, reactive, ref } from 'vue'
+import { onMounted, onUpdated, reactive, ref, getCurrentInstance } from 'vue'
 import commonUtil from '../../../utils/commonUtil'
 import validateUtil from '../../../utils/validateUtil'
 import messageUtil from '../../../utils/messageUtil'
 import popUpAlert from '../pop-up/pop-up-alert.vue'
+import api from '../../api/mem'
+import useAuthStore from '../../../stores/useAuthStore';
+
+
+const { proxy } = getCurrentInstance();
+
+const loginStore = useAuthStore();
 
 //에러 객체 정보 객체
 const memInfoErrorObject = reactive({})
@@ -161,6 +168,7 @@ onMounted(() => {})
 
 //회원가입(개인사용자) 본인확인 정보 객체
 const memPsnInfoPutInfo = reactive({
+    email: loginStore.getEmail(),
     curPin: '', //현재비밀번호
     pin1: '', //비밀번호1
     pin2: '' //비밀번호2
@@ -171,7 +179,7 @@ const memPsnInfoPutInfo = reactive({
  * 버튼 활성화 및 텍스트를 제어한다.
  */
 const formCntrObj = reactive({
-    submitBtn: { disabled: true }
+    submitBtn: { disabled: false }
 })
 
 //popUpAlert 정보 객체
@@ -343,10 +351,19 @@ const submitForm = async () => {
 
     if (valid) {
         //API: 회원가입(개인사용자)
+        
+        const data = await api.update(proxy,memPsnInfoPutInfo);
+        if(data) {
             popUpAlertInfo.toggle = true
             popUpAlertInfo.result = true
             popUpAlertInfo.text = '비밀번호가 변경 되었습니다.'
             return true
+        } else {
+            popUpAlertInfo.toggle = true
+            popUpAlertInfo.result = true
+            popUpAlertInfo.text = '변경 안됐습니다.'
+            return false
+        }
     }
 
     return false

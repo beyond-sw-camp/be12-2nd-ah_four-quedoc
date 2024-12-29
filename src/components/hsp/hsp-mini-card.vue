@@ -104,22 +104,24 @@ const props = defineProps({
             productId: 0,
             productTypeCode: '00',
             productIconImgPath: '',
-            productTypeNm: '병원종류',
+            productTypeNm: '대학병원',
             productPick: 'N',
             productLink: '',
             linkPopupYn: 'N',
             analysisTypeCodeList: [
-                { analysisColorGroup: '01', analysisTypeNm: '좋은병원' },
-                { analysisColorGroup: '02', analysisTypeNm: '인기병원' },
-                { analysisColorGroup: '03', analysisTypeNm: '이런것들' }
+            { analysisColorGroup: '01', analysisTypeNm: '어린이 국가예방접종' },
+        { analysisColorGroup: '02', analysisTypeNm: '실손청구가능' },
+        { analysisColorGroup: '03', analysisTypeNm: '영유아검진' },
+        { analysisColorGroup: '04', analysisTypeNm: '주차장' },
+        { analysisColorGroup: '05', analysisTypeNm: '전문의' }
             ],
-            productNm: '병원이름 - 한줄까지가능',
+            productNm: '아주대학교병원',
             productDesc:
-                '간단한 병원 설명 두줄까지 가능',
+                '최고의 의료진을 보유한 대학병원입니다.',
             productTagList: [
-                { productTag: '영업시간?' },
-                { productTag: '대기열?' },
-                { productTag: '추가정보?' }
+                { productTag: '문의처 : 1688-6114' },
+                { productTag: '' },
+                { productTag: '' }
             ]
         }
     },

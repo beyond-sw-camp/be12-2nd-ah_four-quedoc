@@ -58,6 +58,22 @@
 .mgb40 {
     margin-bottom: 4rem!important;
 }
+.img {
+    text-align: center;
+}
+#time {
+    
+    width: 50%;
+    height: 50%;
+}
+.finace-box{
+    text-align: center;
+}
+#doctor{
+    width: 30%;
+    height: 30%;
+}
+
 @media only screen and (max-width: 960px) {
     .mgb40 {
         margin-bottom: 3.2rem !important;

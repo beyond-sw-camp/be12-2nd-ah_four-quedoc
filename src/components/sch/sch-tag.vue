@@ -3,7 +3,7 @@
     <!-- search - pc -->
     <div class="service-search-area">
         <div class="search-row">
-            <div class="search-title">병원 규모</div>
+            <div class="search-title">병원 종류</div>
             <div class="search-form filtering">
                 <v-checkbox
                 v-for="item in store"
@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="search-row">
-            <div class="search-title">병원</div>
+            <div class="search-title">진료과목</div>
             <div class="search-form filtering">
                 <v-checkbox
                 v-for="item in store2"
@@ -36,7 +36,7 @@
             </div>
         </div>
         <div class="search-row">
-            <div class="search-title">병원과 종류</div>
+            <div class="search-title">지역</div>
             <div class="search-form filtering">
                 <v-checkbox
                 v-for="item in store3"
@@ -67,9 +67,9 @@ const emits = defineEmits(['searchEvent'])
 
 const store = ['한의원', '일반병원', '대학병원', '종합병원', '진료소']
 
-const store2 = ['병원1', '병원22', '병원3', '병원4', '병원5']
+const store2 = ['내과', '외과', '마취과', '물리학과', '소아과']
 
-const store3 = ['내과', '외과', '마취과', '물리학과', '소아과']
+const store3 = ['경기도', '서울', '인천','충청도', '강원도', '전라도','경상도']
 
 /**
  * 분석목적 전체버튼 선택시

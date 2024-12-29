@@ -80,7 +80,8 @@ const submitForm = () => {
         router.push({ name: usertype.value })
         //개인사업자 회원
     } else if (usertype.value == 'memPsnEtk') {
-        usertype.value = 'memPsn'
+        usertype.value = 'memPsnBs'
+        console.log(usertype.value);
         router.push({ name: usertype.value })
     } else {
         return false

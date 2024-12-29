@@ -2,7 +2,7 @@
 <template>
     <div class="member">
         <div class="member-header">
-            <h3 class="h-title">회원가입 (개인)</h3>
+            <h3 class="h-title">회원가입 (사업자)</h3>
         </div>
         <div class="member-step">
             <div class="step-txt">정보 입력</div>

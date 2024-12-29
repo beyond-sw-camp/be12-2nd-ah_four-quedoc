@@ -1,29 +1,15 @@
 
-
-const memPsnRegReq = async (req) => {
-    //요청 정보
-    const memPsnInfo = {
-        cusNm: req.nm,
-        vrfRqSsn: `${req.bdy}${req.sex}`,
-        hon: req.hon,
-
-        clnEmAr: `${req.em}${'@'}${req.dns}`,
-        pin: req.pin1,
-
-        rePin: req.pin2,
-        cusTcd: req.clnTcd,
-
-        etkEmAr: req.clnTcd === 'U' ? '' : `${req.em}${'@'}${req.dns}`
+import { getCurrentInstance } from 'vue';
+const login = async (proxy, ui) => {
+    const loginUserInfo = {
+        acc: ui.acc, //이메일주소
+        pin: ui.pin, //비밀번호
+        ecrPin: '', //암호화비밀번호
     }
-
-    //결과
     let data = {}
-
-    //전송데이터 조회
-
-    //API 호출
-    await $axios
-        .post('/api/v1/user/join', memPsnInfo)
+   
+    await proxy.$axios
+        .post('http://localhost:8080/api/data', loginUserInfo)
         .then((res) => {
             //성공
             data = res.data
@@ -35,4 +21,4 @@ const memPsnRegReq = async (req) => {
 
     return data
 }
-export default {memPsnRegReq} 
+export default { login} 

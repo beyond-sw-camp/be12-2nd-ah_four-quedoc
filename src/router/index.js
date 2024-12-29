@@ -1,4 +1,5 @@
 import { createMemoryHistory, createRouter, createWebHistory } from 'vue-router'
+import useAuthStore from '../stores/useAuthStore';
 
 import innerMain from '../views/inner-main.vue';
 import mainMain from '../views/main-main.vue';
@@ -7,6 +8,7 @@ import loginForm from '../components/login/login-form.vue';
 import main from '../components/main/main.vue';
 import memType from '../components/mem/mem-type.vue';
 import memSignUp from '../components/mem/mem-sign-up.vue';
+import memSignUpBs from '../components/mem/mem-sign-up-bs.vue';
 import sch from '../components/sch/sch.vue';  
 import hspInfo from '../components/hsp/hsp-info.vue';
 import hspRsv from '../components/reservation/hsp-rsv.vue';
@@ -40,11 +42,20 @@ const routes = createRouter({
       { path: '', component: () => loginForm, name: 'login' },
       { path: 'memType', component: () => memType, name: 'memType' },
       { path: 'memPsn', component: () => memSignUp, name: 'memPsn' },
+      { path: 'memPsnBs', component: () => memSignUpBs, name: 'memPsnBs' },
       { path: 'serv', component: () => hspInfo, name: 'serv' },
       { path: 'reserv', component: () => hspRsv, name: 'reserv' },
       { path: 'comp', component: () => rsvCmp, name: 'comp' },  
       { path: 'mypage',
         component: () => myPageHeader,
+        beforeEnter: (to, from, next) => {
+          const authStore = useAuthStore();  // Pinia 스토어에서 로그인 상태 확인
+          if (authStore.getLogin()) {
+            next();  // 로그인되어 있으면 mypage로 이동
+          } else {
+          next({ name: 'login' });  // 로그인 안 되어 있으면 로그인 페이지로 리디렉션
+          }
+        },
         children: [
           {path: '', component: () => myRsv, name: 'mypage'},
       { path: 'changeInfo', component: () => myPageMain, name: 'changeInfo' },

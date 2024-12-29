@@ -69,10 +69,18 @@
 <script setup>
 import { ref, reactive } from 'vue'
 import { useRouter } from 'vue-router'
+import api from '../api/mem'
 
+import { getCurrentInstance } from 'vue';
+import useAuthStore from '../../stores/useAuthStore';
+const { proxy } = getCurrentInstance();
 
 //라우터 정보 객체
 const router = useRouter()
+
+// 로그인 상태 관리
+
+const loginStore = useAuthStore();
 
 //로딩상태(토글)
 const loginTry = ref(false)
@@ -97,22 +105,25 @@ const accRules = [
     (v) => !!v || '아이디는 필수 입력입니다.',
     (v) => /.+@.+\..+/.test(v) || '이메일 형식으로 입력해주세요.'
 ]
-
 const submitForm = async () => {
     const { valid } = await loginUserForm.value.validate()
 
+    const data = await api.login(proxy,loginUserInfo);
     //폼 유효성 및 api pending으로 인한 로그인 중복오류 방지
     /*if (valid && !loginTry.value) {
         loginTry.value = true*/
-        if (valid) {
+        if (data.status === "ok") {
             //로그인
-
+            const s = loginStore.getLogin();
+            console.log(s.value);
+            loginStore.setLogin(!s);
             //메인 페이지 이동
             router.push({ name: 'home' })
         } else {
             //에러 처리
             
 
+            console.log(data);
             //오류 메시지 출력
         }
     //}

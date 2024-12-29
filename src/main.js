@@ -12,9 +12,17 @@ import router from './router'
 import { createMetaManager } from 'vue-meta'
 import { createPinia } from 'pinia'
 import vuetify from './plugins/vuetify'
-
+import axios from 'axios'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
 const pinia = createPinia();
+pinia.use(piniaPluginPersistedstate);
 const app = createApp(App);
+const axiosInstance = axios.create({
+    baseURL: 'http://localhost:8080',
+    timeout: 10000,
+    headers: { 'Content-Type': 'application/json' },
+  });
+app.config.globalProperties.$axios=axiosInstance;
 app.use(router);
 app.use(pinia);
 app.use(createMetaManager);

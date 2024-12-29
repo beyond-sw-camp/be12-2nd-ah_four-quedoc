@@ -10,7 +10,10 @@ import { onMounted, onUpdated, ref, shallowRef } from 'vue'
 import myInfoCheck from './my-info-check.vue'
 import myInfoChange from './my-info-change.vue'
 import myPageQuit from './my-page-quit.vue'
+import myInfoCheckBs from './my-info-check-bs.vue'
+import myInfoChangeBs from './my-info-change-bs.vue'
 
+import useAuthStore from '../../stores/useAuthStore'
 import commonUtil from '../../utils/commonUtil'
 
 const ctsN = ref('')
@@ -19,6 +22,11 @@ const memInfo = ref({})
 
 const srchComponent = shallowRef(null)
 const updComponent = shallowRef(null)
+
+
+// 로그인 상태 관리
+
+const loginStore = useAuthStore();
 
 /**
  * 회원정보변경  전체 탭
@@ -53,10 +61,14 @@ onUpdated(() => {
  */
  const authView = () => {
     //고객유형코드
-    if (true) {
+    const code = loginStore.getUserType();
+    if (code === 'U') {
         // U: 개인
         srchComponent.value = myInfoCheck
         updComponent.value = myInfoChange
+    } else {
+        srchComponent.value = myInfoCheckBs
+        updComponent.value = myInfoChangeBs
     }
     tabs.push(
         {

@@ -6,7 +6,7 @@
     <div class="my-info">
         <div class="title">
             <v-icon class="icon-member" size="md" />
-            회원정보
+            회원정보(사업자)
         </div>
         <div class="member">
             <div class="form-box">
@@ -15,7 +15,7 @@
                         <v-label>로그인아이디</v-label>
                     </div>
                     <div class="data-wrap">
-                        <span class="data">{{ memInfo.email }}</span>
+                        <span class="data">{{ memInfo.clnEmAr }}</span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -23,7 +23,7 @@
                         <v-label>이름</v-label>
                     </div>
                     <div class="data-wrap">
-                        <span class="data">{{ memInfo.name }}</span>
+                        <span class="data">{{ memInfo.cusNm }}</span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -32,6 +32,14 @@
                     </div>
                     <div class="data-wrap">
                         <span class="data">{{ memInfo.hon }}</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="ele-tit">
+                        <v-label>마케팅동의</v-label>
+                    </div>
+                    <div class="data-wrap">
+                        <span class="data">{{ mktGeTxt }}</span>
                     </div>
                 </div>
             </div>
@@ -76,20 +84,15 @@
 import { onMounted, reactive, ref } from 'vue'
 import pwdChange from '../etc/pwd/pwd-change.vue'
 import pwdCon from '../etc/pwd/pwd-con.vue'
-import useAuthStore from '../../stores/useAuthStore'
 
-const loginStore = useAuthStore();
 
 //회원정보
-const memInfo = ref({
-    email: loginStore.getEmail(),
-    name: loginStore.getName(),
-    hon: loginStore.getHon()
-})
-
+const memInfo = ref({})
 
 //마케팅동의 문구
 const mktGeTxt = ref('')
+
+
 
 const emits = defineEmits(['nextEvent'])
  

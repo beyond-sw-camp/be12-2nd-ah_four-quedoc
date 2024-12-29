@@ -8,7 +8,7 @@
     <div class="my-case-info">
         <div class="case-member">
             <p class="member-title">
-                <span>테스트</span
+                <span>{{loginStore.getName()}}</span
                 >님 안녕하세요!
             </p>
 
@@ -51,7 +51,14 @@
 <script setup>
 import { inject, onMounted, reactive, ref } from 'vue'
 import { RouterView, useRouter } from 'vue-router'
+import useAuthStore from '../../stores/useAuthStore';
 import popUpAlert from '../etc/pop-up/pop-up-alert.vue';
+
+
+
+// 로그인 상태 관리
+
+const loginStore = useAuthStore();
 
 //라우터 정보 객체
 const router = useRouter()
@@ -62,9 +69,9 @@ const memInfo = ref({})
 //메뉴 설정
 const items = ref([
     {
-        link: { name: 'mypage' },
+        link: loginStore.getUserType() === 'U' ? { name: 'mypage' } : {name:'myHsp'},
         icon: 'my-contract',
-        text: 'MY예약',
+        text: loginStore.getUserType() === 'U' ? 'MY예약' : '병원관리',
         select: ''
     },
     {
@@ -76,7 +83,7 @@ const items = ref([
     {
         link: { name: 'fvHospital' },
         icon: 'my-wishlist',
-        text: '관심병원',
+        text: loginStore.getUserType() === 'U' ? '관심병원' : '예약현황',
         select: ''
     },
     {
@@ -86,6 +93,12 @@ const items = ref([
         select: ''
     }
 ])
+const code = loginStore.getUserType();
+console.log("hit"+code);
+
+
+
+
 
 let popUpAlertInfo = reactive({
     toggle: false,

@@ -9,7 +9,7 @@ const login = async (proxy, ui) => {
     let data = {}
    
     await proxy.$axios
-        .post('http://localhost:8080/api/data', loginUserInfo)
+        .post('http://localhost:8080/api/user/login', loginUserInfo)
         .then((res) => {
             //성공
             data = res.data
@@ -21,4 +21,52 @@ const login = async (proxy, ui) => {
 
     return data
 }
-export default { login} 
+const signUp = async (proxy, ui) => {
+    const signUpUserInfo = {
+        email: ui.em+"@"+ui.dns,
+        name: ui.nm,
+        password: ui.pin1,
+        nickname: ui.nick,
+        birthDate: "010101",
+        gender: ui.sex,
+        phoneNumber: ui.hon,
+        customerTypeCode: ui.clnTcd,
+        emailDomain: ui.dns
+    }
+    let data = {}
+   
+    await proxy.$axios
+        .post('http://localhost:8080/api/user/register', signUpUserInfo)
+        .then((res) => {
+            //성공
+            data = res.data
+        })
+        .catch((error) => {
+            //실패
+            data = error.data
+        })
+
+    return data
+}
+const update = async (proxy, ui) => {
+    const updateInfo = {
+        email: ui.email,
+        pass: ui.curPin,
+        newpass: ui.pin1
+    }
+    let data = {}
+   
+    await proxy.$axios
+        .post('http://localhost:8080/api/user/update', updateInfo)
+        .then((res) => {
+            //성공
+            data = res.data
+        })
+        .catch((error) => {
+            //실패
+            data = error.data
+        })
+
+    return data
+}
+export default { login,signUp,update} 

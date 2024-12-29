@@ -20,6 +20,7 @@ import myPageMain from '../components/mypage/my-page-main.vue';
 import hspMiniCard from '../components/hsp/hsp-mini-card.vue';
 import myReview from '../components/mypage/my-review-list.vue';
 import myRsvDt from '../components/mypage/my-rsv-dt.vue';
+import myHsp from '../components/mypage/my-hsp.vue';
 
 const routes = createRouter({ 
   history: createWebHistory(), //createWebHistory(), -> for browser history
@@ -60,7 +61,8 @@ const routes = createRouter({
           {path: '', component: () => myRsv, name: 'mypage'},
       { path: 'changeInfo', component: () => myPageMain, name: 'changeInfo' },
       { path: 'fv', component: () => hspMiniCard, name: 'fvHospital' },
-      { path: 'rv', component: () => myReview, name: 'myRv' }
+      { path: 'rv', component: () => myReview, name: 'myRv' },
+      { path: 'mh', component: () => myHsp, name: 'myHsp' }
         ] },
         { path: 'detail', component: () => myRsvDt, name: 'reservDetail' },
     ]

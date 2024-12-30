@@ -87,30 +87,6 @@
                 <v-divider vertical />
                 <div class="title">진료시간</div>
             </div>
-            <div class="example-list">
-                <v-list>
-                    <v-list-item>
-                        <div class="item-avatar">
-                            <div class="img">
-                                <img id="time"
-                                    src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDEyMjRfMjcg%2FMDAxNjA4ODAwMzQyMjY1.DOXrErjmCg7dXP2ksq7_k3mTnX6f-KLbzXuKj-4BK2Ig.Eu4Qq4RBR8OxHoPPQvCgsJb3CdVSUSi0uyPEbT-6ZZIg.JPEG.parkah177%2F%25C1%25F8%25B7%25E1%25BD%25C3%25B0%25A3%25BE%25C8%25B3%25BB.jpg&type=sc960_832" />
-                            </div>
-                            <div class="subtitle-16">Hello</div>
-                        </div>
-                        <div class="item-content">
-                            <div class="title subtitle-22">저 모눈종이 샀어요</div>
-                            <ul class="list-dot text-16">
-                                <li>
-                                    어제 짜장면 먹었어요
-                                </li>
-                                <li>
-                                    귤에 하얀거 이름은 귤락이래요
-                                </li>
-                            </ul>
-                        </div>
-                    </v-list-item>
-                </v-list>
-            </div>
         </div>
     </div>
 </template>

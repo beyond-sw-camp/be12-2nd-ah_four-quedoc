@@ -81,7 +81,7 @@ const items = ref([
         select: ''
     },
     {
-        link: { name: 'fvHospital' },
+        link: loginStore.getUserType() === 'U' ? { name: 'fvHospital' } : {name:'fvHospital'},
         icon: 'my-wishlist',
         text: loginStore.getUserType() === 'U' ? '관심병원' : '예약현황',
         select: ''

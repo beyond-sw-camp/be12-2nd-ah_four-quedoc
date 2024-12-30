@@ -17,7 +17,7 @@ import myPageHeader from '../components/mypage/my-page-header.vue';
 import myRsv from '../components/mypage/my-rsv.vue';
 import intro from '../components/intro/introduce.vue';
 import myPageMain from '../components/mypage/my-page-main.vue';
-import hspMiniCard from '../components/hsp/hsp-mini-card.vue';
+import myFv from '../components/hsp/mini-card-container.vue';
 import myReview from '../components/mypage/my-review-list.vue';
 import myRsvDt from '../components/mypage/my-rsv-dt.vue';
 import myHsp from '../components/mypage/my-hsp.vue';
@@ -73,6 +73,13 @@ const routes = createRouter({
             { path: 'mh', component: () => myHsp, name: 'myHsp' }
           ]
         },
+        children: [
+          {path: '', component: () => myRsv, name: 'mypage'},
+      { path: 'changeInfo', component: () => myPageMain, name: 'changeInfo' },
+      { path: 'fv', component: () => myFv, name: 'fvHospital' },
+      { path: 'rv', component: () => myReview, name: 'myRv' },
+      { path: 'mh', component: () => myHsp, name: 'myHsp' }
+        ] },
         { path: 'detail', component: () => myRsvDt, name: 'reservDetail' },
       ]
     }

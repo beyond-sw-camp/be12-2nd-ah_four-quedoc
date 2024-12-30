@@ -8,16 +8,20 @@
 
             <!-- 상품 카드 -->
             <hspDtCard :prodInfo="prodInfo" />
+            <!-- 공지사항 -->
+            <hspNotice />
             <!--// 상품 카드 -->
             <hspDt :prodInfo="prodInfo" />
 
-            <!--// 상품 상세 -->
-
-            <div class="btn-list">
-                <v-btn color="primary" rounded="lg" size="x-large" variant="flat"
-                    @click=" $router.push({ name: 'search' })">돌아가기
-                </v-btn>
-            </div>
+        <div class="btn-list">
+            <v-btn
+                color="primary"
+                rounded="lg"
+                size="x-large"
+                variant="flat"
+                @click=" $router.push({ name: 'search' })"
+                >돌아가기
+            </v-btn>
         </div>
         <!-- 팝업 -->
         <popUpAlert :dialog-info="popUpAlertInfo" @confirm-event="movePage" />
@@ -32,6 +36,7 @@ import { useRoute } from 'vue-router'
 import hspDtCard from './hsp-dt-card.vue'
 import popUpAlert from '../etc/pop-up/pop-up-alert.vue'
 import hspDt from './hsp-dt.vue'
+import hspNotice from './hsp-dt-notice.vue'
 import { useHospitalStore } from '../../stores/UseHospitalStore';
 
 
@@ -64,6 +69,11 @@ onMounted(async () => {
 
     console.log('Final prodInfo:', prodInfo.value);
 });
+
+
+//라우터 정보 객체
+const router = useRouter()
+
 
 
 //기본 팝업 정보 객체

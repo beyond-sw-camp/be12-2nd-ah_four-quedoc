@@ -73,17 +73,11 @@ const routes = createRouter({
             { path: 'mh', component: () => myHsp, name: 'myHsp' }
           ]
         },
-        children: [
-          {path: '', component: () => myRsv, name: 'mypage'},
-      { path: 'changeInfo', component: () => myPageMain, name: 'changeInfo' },
-      { path: 'fv', component: () => myFv, name: 'fvHospital' },
-      { path: 'rv', component: () => myReview, name: 'myRv' },
-      { path: 'mh', component: () => myHsp, name: 'myHsp' }
-        ] },
+        
         { path: 'detail', component: () => myRsvDt, name: 'reservDetail' },
       ]
     }
-
+  
   ],
 });
 

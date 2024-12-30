@@ -28,10 +28,7 @@
             <template v-if="hspStore.getLength() > 0">
                 <div class="service-list-area" style="margin-top: 3rem;">
                     <v-row>
-                        <v-col cols="12" md="6" >
-                            <hspMiniCard :keySet="keySet" :hsp-info="item" />
-
-                        </v-col>
+                        <hspMiniCard :keySet="keySet" :hsp-info="item" />
                     </v-row>
                 </div>
             </template>

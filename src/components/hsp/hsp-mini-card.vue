@@ -1,5 +1,4 @@
 <template>
-    <v-divider class="svc-divide" />
     <div class="service-list-area" style="margin-top: 3rem;">
         <v-row>
             <v-col v-for="hospital in hospitals" :key="hospital.productId" cols="12" md="6">
@@ -108,6 +107,15 @@ const analysisClass = ['', 'blue', 'violet', 'green', 'yellow', 'pink'];
 </script>
 
 <style scoped>
+.v-row {
+    margin-bottom: 5rem;
+}
+@media (min-width: 960px) {
+    .v-col-md-6 {
+        flex: 50%;
+        max-width: 100%;
+    }
+}
 img {
     display: block;
 }

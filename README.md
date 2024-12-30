@@ -34,13 +34,13 @@
 
 ## 🎨 Prototype
 프로젝트 설계를 확인할 수 있습니다.  
-*TODO: [피그마 링크](#)*
+🌈 <a href= 'https://www.figma.com/design/YpDRCaAzeEMd8AUxfkHWls/Untitled?node-id=12-2&t=l34PCIrujESynnln-1'>피그마링크</a>
 
 ---
 
 ## 🌐 서버 배포
 서비스에 접속해보세요!  
-*TODO: [서버 링크](#)*
+🏣 <a href='http://www.quedoc.kro.kr'> 큐닥</a>
 
 ---
 

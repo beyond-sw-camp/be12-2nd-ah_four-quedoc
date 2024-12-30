@@ -7,6 +7,10 @@
 
         <!-- 상품 카드 -->
         <hspDtCard :prodInfo="prodInfo" />
+
+        <!-- 공지사항 -->
+        <hspNotice />
+
         <!--// 상품 카드 -->    
         <hspDt/>
 
@@ -35,6 +39,7 @@ import { useRouter } from 'vue-router'
 import hspDtCard from './hsp-dt-card.vue'
 import popUpAlert from '../etc/pop-up/pop-up-alert.vue'
 import hspDt from './hsp-dt.vue'
+import hspNotice from './hsp-dt-notice.vue'
 //라우터 정보 객체
 const router = useRouter()
 

@@ -69,4 +69,30 @@ const update = async (proxy, ui) => {
 
     return data
 }
-export default { login,signUp,update} 
+const getHsp = async (proxy) => {
+    let data= {};
+
+    await proxy.$axios
+    .get('http://localhost:8080/hospitals')
+    .then((res)=>{
+        data=res.data;
+    })
+    .catch((error) => {
+        data=error.data
+    })
+    return data;
+}
+const registerFav = async (proxy,fav) => {
+    let data = {};
+    console.log(fav);
+    await proxy.$axios
+    .post('http://localhost:8080/fav/register',fav)
+    .then((res)=>{
+        data = res.data;
+    })
+    .catch((error)=>{
+        data=error.data;
+    })
+    return data;
+}
+export default { login,signUp,update,getHsp,registerFav} 

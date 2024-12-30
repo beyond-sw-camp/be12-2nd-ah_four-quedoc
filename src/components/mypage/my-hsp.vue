@@ -12,26 +12,26 @@
            <div class="form-box">
                <div class="form-group">
                    <div class="ele-tit">
-                       <v-label>로그인아이디</v-label>
+                       <v-label>병원 이름</v-label>
                    </div>
                    <div class="data-wrap">
-                       <span class="data">{{ memInfo.email }}</span>
+                       <div id = 'hspname'>아주대학교병원</div>
                    </div>
                </div>
                <div class="form-group">
                    <div class="ele-tit">
-                       <v-label>이름</v-label>
+                       <v-label>주소</v-label>
                    </div>
                    <div class="data-wrap">
-                       <span class="data">{{ memInfo.name }}</span>
+                       <div id = 'hspaddress'>경기도 수원시 영통구 월드컵로 164</div>
                    </div>
                </div>
                <div class="form-group">
                    <div class="ele-tit">
-                       <v-label>휴대폰번호</v-label>
+                       <v-label>병원 번호</v-label>
                    </div>
                    <div class="data-wrap">
-                       <span class="data">{{ memInfo.hon }}</span>
+                    <div id = 'hspnum'>1688-6114</div>
                    </div>
                </div>
            </div>

@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import { reactive, ref } from 'vue';
 
 
-const userAuthStore = defineStore('login',()=> {
+const useAuthStore = defineStore('login',()=> {
 
     const loginOrNot = ref(false);
 
@@ -68,4 +68,4 @@ const userInfo = defineStore('info',(info)=> {
         ]
     }
 })*/
-export default  userAuthStore;
+export default  useAuthStore;

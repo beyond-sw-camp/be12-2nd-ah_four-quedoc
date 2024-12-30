@@ -37,6 +37,29 @@
            </div>
        </div>
    </div>
+   <!--// 회원정보 -->
+   <div class="btn-wrap">
+       <v-btn
+           class="default complete"
+           color="secondary"
+           rounded="lg"
+           size="x-large"
+           variant="flat"
+           @click="pwdUpdPopBtn"
+       >
+           비밀번호 변경
+       </v-btn>
+       <v-btn
+           class="default complete"
+           color="primary"
+           rounded="lg"
+           size="x-large"
+           variant="flat"
+           @click="pwdConfPopBtn('memInfoChg')"
+       >
+           정보 변경
+       </v-btn>
+   </div>
    <div class="bottom-btn">
        <v-btn variant="text" @click="pwdConfPopBtn('memCncl')">
            회원탈퇴

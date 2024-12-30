@@ -9,7 +9,7 @@ const login = async (proxy, ui) => {
     let data = {}
    
     await proxy.$axios
-        .post('http://localhost:8080/api/user/login', loginUserInfo)
+        .post('http://122.40.225.54:3333/api/user/login', loginUserInfo)
         .then((res) => {
             //성공
             data = res.data
@@ -36,7 +36,7 @@ const signUp = async (proxy, ui) => {
     let data = {}
    
     await proxy.$axios
-        .post('http://localhost:8080/api/user/register', signUpUserInfo)
+        .post('http://122.40.225.54:3333/api/user/register', signUpUserInfo)
         .then((res) => {
             //성공
             data = res.data
@@ -57,7 +57,7 @@ const update = async (proxy, ui) => {
     let data = {}
    
     await proxy.$axios
-        .post('http://localhost:8080/api/user/update', updateInfo)
+        .post('http://122.40.225.54:3333/api/user/update', updateInfo)
         .then((res) => {
             //성공
             data = res.data
@@ -73,7 +73,7 @@ const getHsp = async (proxy) => {
     let data= {};
 
     await proxy.$axios
-    .get('http://localhost:8080/hospitals')
+    .get('http://122.40.225.54:3333/hospitals')
     .then((res)=>{
         data=res.data;
     })
@@ -86,7 +86,7 @@ const registerFav = async (proxy,fav) => {
     let data = {};
     console.log(fav);
     await proxy.$axios
-    .post('http://localhost:8080/fav/register',fav)
+    .post('http://122.40.225.54:3333/fav/register',fav)
     .then((res)=>{
         data = res.data;
     })

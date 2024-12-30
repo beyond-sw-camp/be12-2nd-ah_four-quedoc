@@ -67,11 +67,6 @@ onMounted(async () => {
 });
 
 
-//라우터 정보 객체
-const router = useRouter()
-
-
-
 //기본 팝업 정보 객체
 let popUpAlertInfo = reactive({
     toggle: false,

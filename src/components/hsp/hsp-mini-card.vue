@@ -72,10 +72,14 @@ const hospitals = computed(() => hospitalStore.hospitals);
 // 병원 데이터 로드
 onMounted(async () => {
     if (hospitalStore.hospitals.length === 0) {
-        await hospitalStore.fetchHospitals(); // Pinia에서 데이터 로드
+        console.log('Fetching hospitals...');
+        await hospitalStore.fetchHospitals();
+        console.log('Hospitals loaded:', hospitals.value);
+    } else {
+        console.log('Hospitals already loaded:', hospitals.value);
     }
-    console.log('Hospitals loaded:', hospitals.value);
 });
+
 
 // 병원 상세 페이지로 이동
 const navigateToDetails = (hospital) => {

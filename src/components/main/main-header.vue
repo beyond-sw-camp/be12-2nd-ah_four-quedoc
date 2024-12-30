@@ -112,10 +112,10 @@ onMounted(() => {
                 <h2 class="title"><span class="title-link">소개</span></h2>
                 <ul class="dep1-list">
                   <li class="item">
-                    <RouterLink @click='pop' @click.stop="show = false" :to="{ name: '' }">Quedoc 소개 </RouterLink>
+                    <RouterLink  @click.stop="show = false" :to="{ name: 'qI' }">Quedoc 소개 </RouterLink>
                   </li>
                   <li class="item">
-                    <RouterLink @click.stop="show = false" :to="{ name: '' }">인삿말 </RouterLink>
+                    <RouterLink @click.stop="show = false" :to="{ name: 'it' }">인삿말 </RouterLink>
                   </li>
                   <li class="item">
                     <RouterLink @click.stop="show = false" :to="{ name: 'hi' }">만든이 </RouterLink>

@@ -21,6 +21,10 @@ import myFv from '../components/hsp/mini-card-container.vue';
 import myReview from '../components/mypage/my-review-list.vue';
 import myRsvDt from '../components/mypage/my-rsv-dt.vue';
 import myHsp from '../components/mypage/my-hsp.vue';
+import introment from '../components/intro/introment.vue';
+import quedocIntorduce from '../components/intro/quedoc-introduce.vue';
+import myHspRsv from '../components/mypage/my-hsp-rsv.vue'
+import myHspRv from '../components/mypage/my-hsp-rv.vue'
 
 const routes = createRouter({
   history: createWebHistory(), //createWebHistory(), -> for browser history
@@ -37,43 +41,54 @@ const routes = createRouter({
       ]
     },
     // main container -> inner
-    {
-      path: '/login',
-      component: innerMain,
-      children: [
-        { path: '', component: () => loginForm, name: 'login' },
-        { path: 'memType', component: () => memType, name: 'memType' },
-        { path: 'memPsn', component: () => memSignUp, name: 'memPsn' },
-        { path: 'memPsnBs', component: () => memSignUpBs, name: 'memPsnBs' },
-        {
+  {
+    path: '/login',
+    component: innerMain,
+    children: [
+      { path: '', component: () => loginForm, name: 'login' },
+      { path: 'memType', component: () => memType, name: 'memType' },
+      { path: 'memPsn', component: () => memSignUp, name: 'memPsn' },
+      { path: 'memPsnBs', component: () => memSignUpBs, name: 'memPsnBs' },
+      {
           path: 'serv/:id?', // 동적 경로로 설정
           component: () => hspInfo,
           name: 'serv',
           props: true, // Route Params를 props로 전달
         },
-        
-        { path: 'reserv', component: () => hspRsv, name: 'reserv' },
-        { path: 'comp', component: () => rsvCmp, name: 'comp' },
-        {
-          path: 'mypage',
-          component: () => myPageHeader,
-          beforeEnter: (to, from, next) => {
-            const authStore = useAuthStore();  // Pinia 스토어에서 로그인 상태 확인
-            if (authStore.getLogin()) {
-              next();  // 로그인되어 있으면 mypage로 이동
-            } else {
-              next({ name: 'login' });  // 로그인 안 되어 있으면 로그인 페이지로 리디렉션
-            }
-          },
-          children: [
-            { path: '', component: () => myRsv, name: 'mypage' },
-            { path: 'changeInfo', component: () => myPageMain, name: 'changeInfo' },
-            { path: 'fv', component: () => hspMiniCard, name: 'fvHospital' },
-            { path: 'rv', component: () => myReview, name: 'myRv' },
-            { path: 'mh', component: () => myHsp, name: 'myHsp' }
-          ]
+      { path: 'serv', component: () => hspInfo, name: 'serv' },
+      { path: 'reserv', component: () => hspRsv, name: 'reserv' },
+      { path: 'comp', component: () => rsvCmp, name: 'comp' },  
+      { path: 'it', component: () => introment , name: 'it'},
+      { path: 'qi', component: () => quedocIntorduce , name: 'qI'},
+      { path: 'mypage',
+        component: () => myPageHeader,
+        beforeEnter: (to, from, next) => {
+          const authStore = useAuthStore();  // Pinia 스토어에서 로그인 상태 확인
+          if (authStore.getLogin()) {
+            next();  // 로그인되어 있으면 mypage로 이동
+          } else {
+          next({ name: 'login' });  // 로그인 안 되어 있으면 로그인 페이지로 리디렉션
+          }
         },
-        
+        children: [
+          {path: '', 
+            beforeEnter: (to, from, next) => {
+              const authStore = useAuthStore(); 
+              if (authStore.getUserType() === 'U') {
+                next({ name: 'myRsv' });  // 로그인되어 있으면 mypage로 이동
+              } else {
+                
+              next({ name: 'myHsp' });  // 로그인 안 되어 있으면 로그인 페이지로 리디렉션
+              }
+            }, name: 'mypage'},
+      { path: 'changeInfo', component: () => myPageMain, name: 'changeInfo' },
+      { path: 'fv', component: () => myFv, name: 'fvHospital' },
+      { path: 'rv', component: () => myReview, name: 'myRv' },
+      { path: 'mh', component: () => myHsp, name: 'myHsp' },
+      { path: 'mr', component: () => myRsv, name: 'myRsv' },
+      { path: 'ms', component: () => myHspRsv, name: 'myHspRsv' },
+      { path: 'mrv', component: () => myHspRv, name: 'myHspRv' }
+        ] },
         { path: 'detail', component: () => myRsvDt, name: 'reservDetail' },
       ]
     }

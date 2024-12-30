@@ -139,7 +139,7 @@ const reset = () => {
     //검색어 초기화
     historyStore.state[keySet]['word'] = null
     //분석목적 초기화
-    selectAllAnalysis.value = false
+    selectAllAnalysis.value = true
     toggleSelectAllAnalysis()
     //데이터기준 초기화
     selectAllData.value = false

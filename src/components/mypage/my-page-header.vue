@@ -75,13 +75,13 @@ const items = ref([
         select: ''
     },
     {
-        link: { name: 'myRv' },
+        link: loginStore.getUserType() === 'U' ? { name: 'myRv' } : {name:'myHspRv'},
         icon: 'my-target',
         text: 'MY리뷰',
         select: ''
     },
     {
-        link: loginStore.getUserType() === 'U' ? { name: 'fvHospital' } : {name:'fvHospital'},
+        link: loginStore.getUserType() === 'U' ? { name: 'fvHospital' } : {name:'myHspRsv'},
         icon: 'my-wishlist',
         text: loginStore.getUserType() === 'U' ? '관심병원' : '예약현황',
         select: ''

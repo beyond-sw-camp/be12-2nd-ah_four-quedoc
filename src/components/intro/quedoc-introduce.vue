@@ -1,7 +1,5 @@
 <template>
     <!-- tab4 - 데이터전문기관 -->
-    <v-main class="container">
-        <div class="ly-inner">
             <div class="data-consultant">
                 <div class="sub-gruop">
                     <div class="static-content">
@@ -60,8 +58,6 @@
                 </div>
             </div>
         </div>
-        </div>
-    </v-main>
 
 </template>
 
@@ -72,3 +68,6 @@ const active = ref(true)
 const expandRow = ref(false)
 
 </script>
+<style scoped>
+@import '../../styles/quedocIntroduce.css';
+</style>

@@ -28,12 +28,10 @@
             <template v-if="hspStore.getLength() > 0">
                 <div class="service-list-area" style="margin-top: 3rem;">
                     <v-row>
-                        <template v-for="(item,index) in hspStore.getHospital()" :key="index">
                         <v-col cols="12" md="6" >
                             <hspMiniCard :keySet="keySet" :hsp-info="item" />
 
                         </v-col>
-                    </template>
                     </v-row>
                 </div>
             </template>

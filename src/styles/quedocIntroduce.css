@@ -1,0 +1,125 @@
+.text-16 {
+    color: #111518;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 150%;
+}
+.static-content .cnt-group .card-list-area {
+    margin-top: 4rem;
+}
+.v-row {
+    display: flex
+;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    margin: -12px;
+}
+.static-content .cnt-group .card-list-area .v-col-12 {
+    display: flex
+;
+}
+.static-content .cnt-group .card-list-area .v-sheet.outlined {
+    flex-grow: 1;
+    padding: 1.6rem;
+    border: 1px solid #e5e5e5;
+}
+.static-content .cnt-group .card-list-area .v-sheet.rounded-lg {
+    border-radius: 1.6rem !important;
+}
+.static-content .cnt-group .card-list-area .v-sheet.outlined .col {
+    padding: 1.6rem;
+    text-align: center;
+}
+
+.static-content .cnt-group .card-list-area .v-sheet.outlined .col .v-icon.why01 {
+    background-image: url(https://search.pstatic.net/sunny/?src=https%3A%2F%2Fpng.pngtree.com%2Fpng-vector%2F20230505%2Fourmid%2Fpngtree-analysis-flat-icon-vector-png-image_7087142.png&type=sc960_832);
+}
+.static-content .cnt-group .card-list-area .v-sheet.outlined .col .v-icon.why02 {
+    background-image: url(https://search.pstatic.net/sunny/?src=https%3A%2F%2Fcdn2.iconfinder.com%2Fdata%2Ficons%2Fcontact-61%2F64%2FContact_Location-512.png&type=sc960_832);
+}
+.static-content .cnt-group .card-list-area .v-sheet.outlined .col .v-icon.why03 {
+    background-image: url(https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA4MjhfMTcg%2FMDAxNjYxNjg3OTY1Mjc0.6N4lGCLL03MrWkN62RJXfN2JPropaqaQqMl-wUtjSAog.NyJuutIqAg_k4HBziX2pgTvJvbRvQwrKi2rMOiHDpQkg.JPEG.488mbj%2FCK_psxtg0648699.jpg&type=sc960_832);
+    
+}
+.static-content .cnt-group .card-list-area .v-sheet.outlined .col .v-icon.why04 {
+    background-image: url(https://search.pstatic.net/sunny/?src=https%3A%2F%2Fcdn-icons-png.freepik.com%2F256%2F11477%2F11477162.png&type=sc960_832);
+}
+.static-content .cnt-group .card-list-area .v-sheet.outlined .col .v-icon {
+    width: 12rem;
+    height: 12rem;
+}
+.static-content .cnt-group .card-list-area .v-sheet.outlined .col .subtitle-18, .static-content .cnt-group .card-list-area .v-sheet.outlined .col .subtitle-22 {
+    margin: 3.2rem 0 1.6rem;
+    color: #011b6a;
+}
+.subtitle-22 {
+    color: #111518;
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 150%;
+}
+.text-18 {
+    color: #111518;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 150%;
+}
+.static-content .cnt-group [class*=-title] {
+    display: flex
+;
+    margin-bottom: 1.6rem;
+}
+.static-content .cnt-group .cnt-title .num {
+    color: #356cff;
+}
+.static-content .cnt-group .v-divider--vertical {
+    color: #ccc;
+    opacity: 1;
+}
+.shinhan-life--text {
+    color: #656ce1;
+}
+
+ /* @media query */
+ @media (min-width: 960px) {
+    .v-col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .static-content .cnt-group [class*=-title] {
+        margin-bottom: 1.2rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .static-content .cnt-group .cnt-title {
+        font-size: 1.8rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .static-content .cnt-group .cnt-title .v-divider--vertical {
+        max-height: 1.8rem;
+        margin: .45rem .8rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .text-16 {
+        font-size: 1.4rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .static-content .cnt-group .card-list-area {
+        margin-top: 3.2rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .static-content .cnt-group .card-list-area .v-sheet.rounded-lg {
+        border-radius: .8rem !important;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .static-content .cnt-group .card-list-area .v-sheet.outlined {
+        padding: 1.2rem;
+    }
+}

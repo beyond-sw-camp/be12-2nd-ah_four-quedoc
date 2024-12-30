@@ -86,6 +86,18 @@
                 <v-divider vertical />
                 <div class="title">진료시간</div>
             </div>
+            <div class="example-list">
+                <v-list>
+                    <v-list-item>
+                        <div class="item-avatar">
+                            <div class="img">
+                                <img id="time"
+                                    src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDEyMjRfMjcg%2FMDAxNjA4ODAwMzQyMjY1.DOXrErjmCg7dXP2ksq7_k3mTnX6f-KLbzXuKj-4BK2Ig.Eu4Qq4RBR8OxHoPPQvCgsJb3CdVSUSi0uyPEbT-6ZZIg.JPEG.parkah177%2F%25C1%25F8%25B7%25E1%25BD%25C3%25B0%25A3%25BE%25C8%25B3%25BB.jpg&type=sc960_832" />
+                            </div>
+                        </div>
+                    </v-list-item>
+                </v-list>
+            </div>
         </div>
     </div>
 </template>

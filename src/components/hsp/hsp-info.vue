@@ -13,20 +13,16 @@
             <!--// 상품 카드 -->
             <hspDt :prodInfo="prodInfo" />
 
-        <div class="btn-list">
-            <v-btn
-                color="primary"
-                rounded="lg"
-                size="x-large"
-                variant="flat"
-                @click=" $router.push({ name: 'search' })"
-                >돌아가기
-            </v-btn>
+            <div class="btn-list">
+                <v-btn color="primary" rounded="lg" size="x-large" variant="flat"
+                    @click=" $router.push({ name: 'search' })">돌아가기
+                </v-btn>
+            </div>
+            <!-- 팝업 -->
+            <popUpAlert :dialog-info="popUpAlertInfo" @confirm-event="movePage" />
+            <!-- 토스트팝업 -->
+            <BaseSnackBar />
         </div>
-        <!-- 팝업 -->
-        <popUpAlert :dialog-info="popUpAlertInfo" @confirm-event="movePage" />
-        <!-- 토스트팝업 -->
-        <BaseSnackBar />
     </div>
 </template>
 

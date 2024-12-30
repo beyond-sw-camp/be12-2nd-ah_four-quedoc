@@ -9,7 +9,7 @@ import main from '../components/main/main.vue';
 import memType from '../components/mem/mem-type.vue';
 import memSignUp from '../components/mem/mem-sign-up.vue';
 import memSignUpBs from '../components/mem/mem-sign-up-bs.vue';
-import sch from '../components/sch/sch.vue';  
+import sch from '../components/sch/sch.vue';
 import hspInfo from '../components/hsp/hsp-info.vue';
 import hspRsv from '../components/reservation/hsp-rsv.vue';
 import rsvCmp from '../components/reservation/rsv-cmp.vue';
@@ -26,7 +26,7 @@ import quedocIntorduce from '../components/intro/quedoc-introduce.vue';
 import myHspRsv from '../components/mypage/my-hsp-rsv.vue'
 import myHspRv from '../components/mypage/my-hsp-rv.vue'
 
-const routes = createRouter({ 
+const routes = createRouter({
   history: createWebHistory(), //createWebHistory(), -> for browser history
   // main main
   routes: [
@@ -35,8 +35,9 @@ const routes = createRouter({
       component: mainMain,
       children: [
         { path: '', component: () => main, name: 'home' },
-      { path: 'search', component: () => sch , name: 'search'},
-      { path: 'hi', component: () => intro , name: 'hi'}
+        { path: 'search', component: () => sch, name: 'search' },
+
+        { path: 'hi', component: () => intro, name: 'hi' }
       ]
     },
     // main container -> inner
@@ -48,6 +49,12 @@ const routes = createRouter({
       { path: 'memType', component: () => memType, name: 'memType' },
       { path: 'memPsn', component: () => memSignUp, name: 'memPsn' },
       { path: 'memPsnBs', component: () => memSignUpBs, name: 'memPsnBs' },
+      {
+          path: 'serv/:id?', // 동적 경로로 설정
+          component: () => hspInfo,
+          name: 'serv',
+          props: true, // Route Params를 props로 전달
+        },
       { path: 'serv', component: () => hspInfo, name: 'serv' },
       { path: 'reserv', component: () => hspRsv, name: 'reserv' },
       { path: 'comp', component: () => rsvCmp, name: 'comp' },  
@@ -83,10 +90,10 @@ const routes = createRouter({
       { path: 'mrv', component: () => myHspRv, name: 'myHspRv' }
         ] },
         { path: 'detail', component: () => myRsvDt, name: 'reservDetail' },
-    ]
-  }
+      ]
+    }
   
-],
+  ],
 });
 
 

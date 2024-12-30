@@ -25,7 +25,7 @@ const searchService = async () => {
         hspStore.resetHospitalList();
         data.forEach(element => {
             hspStore.addHospital(element);
-            
+
         });
         console.log(hspStore.getLength());
         router.push({ name: 'search' })

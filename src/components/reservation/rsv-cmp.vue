@@ -1,7 +1,7 @@
 <!-- 예약 완료 페이지-->
 <template>
     <div class="img-wrapper">
-        <img  src="../../images/gif/complete.gif" >
+        <img  src="../../assets/images/gif/complete.gif" >
     </div>
     <div class="text-wrapper">
         <p class="font-weight-bold">

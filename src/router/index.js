@@ -34,9 +34,9 @@ const routes = createRouter({
       path: '/',
       component: mainMain,
       children: [
-        { path: '', component: () => main, name: 'home' },
-      { path: 'search', component: () => sch , name: 'search'},
-      { path: 'hi', component: () => intro , name: 'hi'}
+        { path: '', component:   main, name: 'home' },
+      { path: 'search', component:   sch , name: 'search'},
+      { path: 'hi', component:   intro , name: 'hi'}
       ]
     },
     // main container -> inner
@@ -44,17 +44,17 @@ const routes = createRouter({
     path: '/login',
     component: innerMain,
     children: [
-      { path: '', component: () => loginForm, name: 'login' },
-      { path: 'memType', component: () => memType, name: 'memType' },
-      { path: 'memPsn', component: () => memSignUp, name: 'memPsn' },
-      { path: 'memPsnBs', component: () => memSignUpBs, name: 'memPsnBs' },
-      { path: 'serv', component: () => hspInfo, name: 'serv' },
-      { path: 'reserv', component: () => hspRsv, name: 'reserv' },
-      { path: 'comp', component: () => rsvCmp, name: 'comp' },  
-      { path: 'it', component: () => introment , name: 'it'},
-      { path: 'qi', component: () => quedocIntorduce , name: 'qI'},
+      { path: '', component: loginForm, name: 'login' },
+      { path: 'memType', component: memType, name: 'memType' },
+      { path: 'memPsn', component: memSignUp, name: 'memPsn' },
+      { path: 'memPsnBs', component:  memSignUpBs, name: 'memPsnBs' },
+      { path: 'serv', component: hspInfo, name: 'serv' },
+      { path: 'reserv', component: hspRsv, name: 'reserv' },
+      { path: 'comp', component: rsvCmp, name: 'comp' },  
+      { path: 'it', component:  introment , name: 'it'},
+      { path: 'qi', component: quedocIntorduce , name: 'qI'},
       { path: 'mypage',
-        component: () => myPageHeader,
+        component:myPageHeader,
         beforeEnter: (to, from, next) => {
           const authStore = useAuthStore();  // Pinia 스토어에서 로그인 상태 확인
           if (authStore.getLogin()) {
@@ -74,15 +74,15 @@ const routes = createRouter({
               next({ name: 'myHsp' });  // 로그인 안 되어 있으면 로그인 페이지로 리디렉션
               }
             }, name: 'mypage'},
-      { path: 'changeInfo', component: () => myPageMain, name: 'changeInfo' },
-      { path: 'fv', component: () => myFv, name: 'fvHospital' },
-      { path: 'rv', component: () => myReview, name: 'myRv' },
-      { path: 'mh', component: () => myHsp, name: 'myHsp' },
-      { path: 'mr', component: () => myRsv, name: 'myRsv' },
-      { path: 'ms', component: () => myHspRsv, name: 'myHspRsv' },
-      { path: 'mrv', component: () => myHspRv, name: 'myHspRv' }
+      { path: 'changeInfo', component: myPageMain, name: 'changeInfo' },
+      { path: 'fv', component: myFv, name: 'fvHospital' },
+      { path: 'rv', component:   myReview, name: 'myRv' },
+      { path: 'mh', component:   myHsp, name: 'myHsp' },
+      { path: 'mr', component:   myRsv, name: 'myRsv' },
+      { path: 'ms', component:   myHspRsv, name: 'myHspRsv' },
+      { path: 'mrv', component:   myHspRv, name: 'myHspRv' }
         ] },
-        { path: 'detail', component: () => myRsvDt, name: 'reservDetail' },
+        { path: 'detail', component:   myRsvDt, name: 'reservDetail' },
     ]
   }
   

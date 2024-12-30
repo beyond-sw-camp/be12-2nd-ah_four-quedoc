@@ -21,12 +21,12 @@
             </div>
             <template v-if="prodInfo.productIconImgPath">
                 <div class="img">
-                    <img src="../../images/calm.png" alt="썸네일이미지" />
+                    <img src="../../assets/images/calm.png" alt="썸네일이미지" />
                 </div>
             </template>
             <template v-else>
                 <div class="img">
-                    <img alt="썸네일이미지" src="../../images/calm.png" />
+                    <img alt="썸네일이미지" src="../../assets/images/calm.png" />
                 </div>
             </template>
         </div>

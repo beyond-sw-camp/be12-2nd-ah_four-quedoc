@@ -7,15 +7,8 @@
             <div class="popup-head">
                 <h3 class="h-title">비밀번호 확인</h3>
             </div>
-            <v-form
-                ref="memPsnInfoPutForm"
-                autocomplete="off"
-                class="form-wrap"
-                fast-fail
-                validate-on="blur lazy"
-                @keypress.enter.prevent="submitForm"
-                @submit.prevent="submitForm"
-            >
+            <v-form ref="memPsnInfoPutForm" autocomplete="off" class="form-wrap" fast-fail validate-on="blur lazy"
+                @keypress.enter.prevent="submitForm" @submit.prevent="submitForm">
                 <div class="popup-cont">
                     <div class="form-box form-type">
                         <div class="form-group">
@@ -23,37 +16,17 @@
                                 <v-label>비밀번호 확인</v-label>
                             </div>
                             <div class="input-wrap">
-                                <v-text-field
-                                    ref="curPinRef"
-                                    v-model="memPsnInfoPutInfo.curPin"
-                                    :rules="curPinRules"
-                                    aria-label="비밀번호"
-                                    clearable
-                                    color="primary"
-                                    density="comfortable"
-                                    hide-details="none"
-                                    maxlength="20"
-                                    name="curPin"
-                                    placeholder="비밀번호 입력"
-                                    required
-                                    title="현재 비밀번호 입력"
-                                    type="password"
-                                    variant="outlined"
-                                ></v-text-field>
+                                <v-text-field ref="curPinRef" v-model="memPsnInfoPutInfo.curPin" :rules="curPinRules"
+                                    aria-label="비밀번호" clearable color="primary" density="comfortable"
+                                    hide-details="none" maxlength="20" name="curPin" placeholder="비밀번호 입력" required
+                                    title="현재 비밀번호 입력" type="password" variant="outlined"></v-text-field>
                             </div>
                             <p class="text-tip error">{{ memInfoErrorObject['curPin']?.errorMessage }}</p>
                         </div>
                     </div>
                     <div class="btn-popwrap">
-                        <v-btn
-                            :disabled="formCntrObj['submitBtn'].disabled"
-                            class="default"
-                            color="primary"
-                            rounded="lg"
-                            size="x-large"
-                            type="submit"
-                            variant="flat"
-                        >
+                        <v-btn :disabled="formCntrObj['submitBtn'].disabled" class="default" color="primary"
+                            rounded="lg" size="x-large" type="submit" variant="flat">
                             확인
                         </v-btn>
                     </div>
@@ -61,15 +34,8 @@
 
                 <div class="popup-foot">
                     <div class="btn-popwrap">
-                        <v-btn
-                            :disabled="formCntrObj['submitBtn'].disabled"
-                            class="default"
-                            color="primary"
-                            rounded="lg"
-                            size="x-large"
-                            type="submit"
-                            variant="flat"
-                        >
+                        <v-btn :disabled="formCntrObj['submitBtn'].disabled" class="default" color="primary"
+                            rounded="lg" size="x-large" type="submit" variant="flat">
                             확인
                         </v-btn>
                     </div>
@@ -86,6 +52,9 @@
 <script setup>
 import { onMounted, onUpdated, reactive, ref } from 'vue'
 import commonUtil from '../../../utils/commonUtil'
+import useAuthStore from '../../../stores/useAuthStore'
+
+const loginStore = useAuthStore();
 
 //에러 객체 정보 객체
 const memInfoErrorObject = reactive({})
@@ -102,7 +71,7 @@ const emits = defineEmits(['confirmEvent'])
 const curPinRef = ref()
 
 // 초기설정
-onMounted(() => {})
+onMounted(() => { })
 
 //회원가입(개인사용자) 본인확인 정보 객체
 const memPsnInfoPutInfo = reactive({
@@ -114,7 +83,7 @@ const memPsnInfoPutInfo = reactive({
  * 버튼 활성화 및 텍스트를 제어한다.
  */
 const formCntrObj = reactive({
-    submitBtn: { disabled: false }
+    submitBtn: { disabled: true }
 })
 
 //닫기 버튼 이벤트
@@ -129,17 +98,19 @@ const closeBtn = () => {
 const curPinRules = ref([
     (value) => {
         if (value) {
-            return true
+            console.log(value)
+            console.log(loginStore.getPw());
+            //다음 버튼 활성화
+            if (value === loginStore.getPw()) {
+                formCntrObj['submitBtn'].disabled = false
+                return true
+            }
+            else {
+            }
+           return true;
         } else {
             memInfoErrorObject['curPin'].errorMessage = '비밀번호를 입력해주세요.'
             return false
-        }
-    },
-    (value) => {
-        if (memPsnInfoPutInfo.curPin.value != '') {
-            //다음 버튼 활성화
-            formCntrObj['submitBtn'].disabled = false
-            return true
         }
     }
 ])
@@ -163,7 +134,7 @@ const submitForm = async () => {
 
     if (valid) {
         //API: 회원가입(개인사용자)
-            emits('confirmEvent','U')
+        emits('confirmEvent', 'U')
     }
 
     return true
@@ -183,10 +154,8 @@ onUpdated(() => {
 </script>
 <style scoped>
 @import '../../../styles/pwdPop.css';
+
 .v-btn--size-default {
     font-size: 1.4rem;
 }
-
 </style>
-
-

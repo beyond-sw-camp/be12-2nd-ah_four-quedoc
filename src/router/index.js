@@ -6,9 +6,9 @@ import mainMain from '../views/main-main.vue';
 
 import loginForm from '../components/login/login-form.vue';
 import main from '../components/main/main.vue';
-import memType from '../components/mem/mem-type.vue';
+import memType from '../components/mem/mem-type.vue';``
 import memSignUp from '../components/mem/mem-sign-up.vue';
-import memSignUpBs from '../components/mem/mem-sign-up-bs.vue;
+import memSignUpBs from '../components/mem/mem-sign-up-bs.vue';
 import sch from '../components/sch/sch.vue';  
 import recommend from '../components/sch/recommend.vue';
 import hspInfo from '../components/hsp/hsp-info.vue';

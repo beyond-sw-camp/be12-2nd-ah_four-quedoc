@@ -16,15 +16,16 @@
 
 ## 👪 팀원 소개
 
-| 이름       | 역할              |
-|------------|-------------------|
-| 🤸 **서찬영** | 팀장  |
-| 🏃 **김지원** | 팀원  |
-| 🏃 **박동휘** | 팀원     |
-| 🏃 **김기성** | 팀원       |
-| 🏃 **정지수** | 팀원    |
+<div align="center">
 
----
+|   <img src="./src/assets/profile/chan.webp" width="100" height="100"/>   |   <img src="./src/assets/profile/bart.gif" width="100" height="100"/>   | <img src="./src/assets/profile/risa.png" width="100" height="100"/>  |  <img src="./src/assets/profile/merge.png" width="100" height="100"/>  |    <img src="./src/assets/profile/ki.png" width="100" height="100"/>    | 
+| :--------------------------------------------------------: | :--------------------------------------------------------: | :--------------------------------------------------------: | :------------------------------------------------------: | :----------------------------------------------------------: | 
+|  **서찬영**<br/>[@chan0o0](https://github.com/chan0o0seo) |  **박동휘**<br/>[@parkdonghwi-git](https://github.com/parkdonghwi-git) |  **김지원**<br/>[@J0a0J](https://github.com/J0a0J) |  **정지수**<br/>[@s00ya](https://github.com/s00ya) |  **김기성**<br/>[@saway126](https://github.com/saway126) | 
+
+
+
+</div>
+
 
 ## 🎥 시연 영상
 실제 페이지 시연 영상을 확인하세요!  

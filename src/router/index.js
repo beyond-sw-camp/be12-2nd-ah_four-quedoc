@@ -10,6 +10,7 @@ import memType from '../components/mem/mem-type.vue';
 import memSignUp from '../components/mem/mem-sign-up.vue';
 import memSignUpBs from '../components/mem/mem-sign-up-bs.vue';
 import sch from '../components/sch/sch.vue';  
+import recommend from '../components/sch/recommend.vue';
 import hspInfo from '../components/hsp/hsp-info.vue';
 import hspRsv from '../components/reservation/hsp-rsv.vue';
 import rsvCmp from '../components/reservation/rsv-cmp.vue';
@@ -36,6 +37,7 @@ const routes = createRouter({
       children: [
         { path: '', component:   main, name: 'home' },
       { path: 'search', component:   sch , name: 'search'},
+      { path: 'recommend', component:   recommend , name: 'recommend'},
       { path: 'hi', component:   intro , name: 'hi'}
       ]
     },

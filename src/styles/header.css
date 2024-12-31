@@ -33,6 +33,7 @@
   margin-left: 2.4rem;
 }
 .header .gnb-wrap {
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,6 +41,7 @@
   padding: 0;
 }
 .gnb-menu {
+  z-index: 1;
   cursor: pointer;
   width: 60%;
 }
@@ -62,6 +64,7 @@ v-btn {
   margin-left: 2.4rem;
 }
 .gnb-wrap .menu-list li:first-child a {
+  z-index: 1;
   padding: 2.5rem 2.8rem;
   display: flex;
   align-items: center;
@@ -70,6 +73,7 @@ v-btn {
   font-weight: 500;
 }
 .gnb-wrap .menu-list li:not(:first-child) a {
+  z-index: 2;
   margin-left: 11rem;
   padding: 2.5rem 2.8rem;
   display: flex;
@@ -83,6 +87,7 @@ v-btn {
 }
 .gnb-wrap .logo,
 .allmenu .logo {
+  z-index: 3;
   width: 6rem;
   height: 6rem;
 }
@@ -105,23 +110,28 @@ fieldset {
   z-index: 99;
 }
 .gnb-menu .gnb-menu-wrap .gnb-menu-inner {
+  z-index: 4;
   padding: 4rem 0 4rem 25rem;
   margin: 0 auto;
   display: flex;
   width: 120rem;
 }
 .gnb-menu .gnb-menu-wrap .gnb-menu-inner .gnb-menu-list:not(:last-child) {
+  z-index: 5;
   margin-right: 4rem;
 }
 .gnb-menu .gnb-menu-wrap .gnb-menu-inner .gnb-menu-list:last-child {
+  z-index: 6;
   border-right: 0;
 }
 .gnb-menu .gnb-menu-wrap .gnb-menu-inner .gnb-menu-list {
+  z-index: 8;
   padding-right: 2.4rem;
   width: 20.8rem;
   border-right: 1px solid #e5e5e5;
 }
 .gnb-menu .gnb-menu-wrap .gnb-menu-inner .gnb-menu-list .title .title-link {
+  z-index: 9;
   display: block;
   padding: 1.6rem 0;
   font-family: OneShinhan, sans-serif;
@@ -130,6 +140,7 @@ fieldset {
   line-height: 150%;
 }
 .gnb-menu .gnb-menu-wrap .gnb-menu-inner .gnb-menu-list .dep1-list .item {
+  z-index: 10;
   padding: 0.8rem 0;
   font-family:
     Spoqa Han Sans Neo,
@@ -139,6 +150,7 @@ fieldset {
   line-height: 150%;
 }
 .gnb-menu.active .gnb-menu-wrap {
+  z-index: 11;
   visibility: visible;
   max-height: 35rem;
 }
@@ -186,6 +198,7 @@ fieldset {
 }
 
 .gnb-menu .gnb-menu-wrap:before {
+  z-index: 12;
   content: '';
   position: absolute;
   top: 0;
@@ -195,6 +208,7 @@ fieldset {
   background-color: #e5e5e5;
 }
 .gnb-menu .gnb-menu-wrap:after {
+  z-index: 14;
   content: '';
   position: absolute;
   bottom: 0;
@@ -272,6 +286,7 @@ fieldset {
 @media only screen and (max-width: 960px) {
   .header .gnb-wrap .menu-list,
   .header .out-login-wrap {
+    z-index: 15;
     display: none;
   }
 }

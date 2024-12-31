@@ -2,7 +2,8 @@ img:not(.kpd-image-button) {
     max-width: 100%;
 }
 .searchArea2 a {
-    top: 123px;
+    top: 42px;
+    left: 320px;
     position: absolute;
     right: 20px;
 }
@@ -17,6 +18,7 @@ img:not(.kpd-image-button) {
     vertical-align: middle;
     position: absolute;
     margin: 300;
+
 }
 
 img, input, select, textarea, button {
@@ -56,9 +58,12 @@ a {
 }
 
 .searchArea2 {
-    background-color: #e4f1fb;
     border-bottom: #d9e5ef solid 1px;
     padding: 15px 65px 14px 20px;
+    background-color: #e0f0ff;  /* 연한 하늘색 배경 */
+    color: #1565c0;             /* 진한 파란색 글자 */
+    padding: 10px;
+    font-size: 16px;
 }
 
 .searchArea2 input[type='text'] {
@@ -104,7 +109,6 @@ a:-webkit-any-link {
     cursor: pointer;
 }
 
-
 li{
     margin: 0;
     padding: 0;
@@ -127,24 +131,6 @@ ul {
     list-style-type: disc;
 }
 
-.hiraMenu > ul > li::after, .hiraMenu > ul > li::before {
-    position: absolute;
-    content: '';
-    display: block;
-    left: 9px;
-    width: 90px;
-    height: 1px;
-}
-.hiraMenu > ul > li a {
-    color: #fff;
-    text-align: center;
-    display: block;
-    background-position: center 30px;
-    background-repeat: no-repeat;
-    padding: 66px 0 28px 0;
-    font-weight: 500;
-}
-
 .hiraMenu {
     position: fixed;
     left: 0;
@@ -154,21 +140,6 @@ ul {
     z-index: 999;
     border-right: #015fa4 solid 1px;
     background-color: #0083e4;
-}
-
-.hiraMenu > ul > li:nth-child(1) a {
-    background-image: url(https://www.hira.or.kr/images/icon/hiraMap_01.png);
-}
-
-.hiraMenu > ul > li:nth-child(2) a {
-    background-image: url(https://www.hira.or.kr/images/icon/hiraMap_02.png);
-}
-
-.hiraMenu > ul > li:nth-child(3) a {
-    background-image: url(https://www.hira.or.kr/images/icon/hiraMap_03.png);
-}
-.hiraMenu > ul > li:nth-child(4) a {
-    background-image: url(https://www.hira.or.kr/images/icon/hiraMap_04.png);
 }
 
 .hiraMenu > ul > li a {
@@ -185,19 +156,6 @@ a {
     word-break: break-all;
 }
 
-.hiraMenu > ul > li.on a, .hiraMenu > ul > li a:hover {
-    background-color: #005c9f;
-}
-
-.hiraCont > div:nth-child(1) .mScroll > * {
-    height: calc(100vh - 295px);
-    /* height: calc((var(--vh, 1vh)* 100) - 235px); */
-}
-.hiraCont .mScroll > * {
-    overflow-y: auto;
-    height: calc(100vh - 265px);
-}
-
 [class^="icon-"] {
     text-indent: -999999999999999px;
 }
@@ -210,10 +168,6 @@ a {
 }
 
 .hiraCont {
-    left: 110px;
-    padding-top: 64px;
-}
-.hiraCont {
     position: absolute;
     z-index: 998;
     top: 0;
@@ -224,11 +178,26 @@ a {
     background-color: #fff;
     box-shadow: rgb(0 0 0 / 12%) 2px 2px 2px;
     transition-duration: .6s;
-    overflow: hidden;
 }
 .hiraCont .searchArea2 {
     border-top: #d4d4d6 solid 1px;
 }
+
+/* 검색 결과 스타일 */
+.search-results {
+    color: #0d47a1;             /* 결과 글씨 어두운 파란색 */
+    font-weight: bold;
+}
+
+/* 네비게이션 바 링크 스타일 */
+.nav-link {
+    color: #1976d2;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
 
 @media screen and (max-width: 1023px) {
     .hiraMap {

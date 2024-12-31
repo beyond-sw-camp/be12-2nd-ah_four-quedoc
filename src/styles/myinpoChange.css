@@ -23,10 +23,18 @@
     position: relative;
 }
 .my-page .my-info .member .form-box .check-wrap .form-checkbox .v-divider--vertical {
-    margin: .6rem 3rem;
+    margin: .6rem 1rem;
     color: #e5e5e5;
     opacity: 1;
 }
+.my-page .my-info .member .form-box .check-wrap .form-checkbox .check-media .mdi-checkbox-marked:before {
+    content: "";
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAJ+SURBVHgB7Zk9aBRBGIbfuVyEgEKIVcQiFmlFMGI6z9IfULERFExzIKjxsLHz7lKKovEHggpRiIiFckLUSnJlAkbSp9lCSKUcBLS4n/H7OBd3b3aOY/Zvovs0tzs7B++zM7Nztx+QkfF/IwbpNHVNFoTEZeRQgMQEkmGD0tWHmphfXRCOrlNfgemSnGi3sEiHBaSIBKpfHotK0DWtAIfvtLEik7vjfdFJ5HRfsCk8Q3e6PHVVlgLaVY5clzOkvAj7aDTzOLDxQDTchuARkLgBOxkdbtHDxIMicKgkR/kDtiL92RSBfMvi8IQU/nWZww4nE0ibTCBtUhM4NQ18vgPUqnR8FMakIsDhyxeBPSPAvjHg5nkYk7jA5P5ueC/bP2FMKIHDk8Cxg4P35/ALs2r7s08wJg9DeNgvFLrHy2vA3FL//m54njZe7r0FPqzBGOMRcMMzp2kR3r6k7zu+F7hbVMM//Qi8qSMUxgLrm/5zliieVPtxeL7z42P+dg7/PMTUcTEW4Cmz9d3fVjzhl4g7PGMssPUDuPJQL5FEeCbUU6ifxNKt+MMzofcBV2L7l7+9d8G+Xok+PBPJRqaTcFleBe6/QyxEthNvfguW4PBzrxAbkf6U6JXgR22c4RnjnVgHS5wtA7tHulMrbiIXYHgEdOsharI/NGnz7wmIDhrYQSgCzV1wYDe+G6wI/HnzW4el0Cv/mvc8cA20BV7CRiSc9jDee5sCBb4+Ei/ANSrL6AAVb22A0T6FqJBwjsofDiyBSkyV9SdCmRlaATJ1mkM4jpTXg+wu2hLVx6pB1wcrs87KMzR+M0JQ7SCBuhmHpmAOfdZaecz3TpuMjIy//AbAasgcheXT1QAAAABJRU5ErkJggg==);
+    background-size: 100%;
+}
+
 .my-page .my-info .member .form-box .check-wrap .form-checkbox .check-media {
     display: block;
     position: relative;
@@ -128,9 +136,13 @@
     direction: ltr;
 }
 
-
-
-
+.my-page .submenu-list .v-avatar {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 0;
+    position: relative;
+    top: -1px;
+}
 /* media query */
 @media only screen and (max-width: 960px) {
     .member .form-box .form-group .ele-tit {
@@ -196,5 +208,58 @@
     .my-page .my-info .member .form-box .check-wrap {
         display: block;
         padding: 0;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .my-page .my-info .member .form-box .check-wrap .form-checkbox {
+        justify-content: flex-start;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .btn-wrap .default.complete {
+        width: calc(50% - .4rem);
+    }
+}
+@media only screen and (max-width: 960px) {
+    .my-page .submenu-list .v-list .v-list-item {
+        display: block;
+        padding: 1.2rem .8rem;
+        min-height: 7.2rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .my-page .submenu-list .v-list .v-list-item .v-list-item__content {
+        position: absolute;
+        bottom: 1.2rem;
+        left: 50%;
+        transform: translate(-50%);
+    }
+}
+@media only screen and (max-width: 960px) {
+    .my-page .submenu-list .v-list-item-title, .my-page .total-area .total {
+        font-size: 1.4rem !important;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .my-page .submenu-list .v-list .v-list-item .v-list-item__append {
+        justify-content: center;
+        margin-bottom: 1.8rem;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .my-page .submenu-list .v-avatar {
+        width: 2.4rem !important;
+        height: 2.4rem !important;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .my-page .submenu-list .v-list .v-list-item .v-list-item__append>.v-avatar~.v-list-item__spacer {
+        width: 0;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .my-page .submenu-list .v-list {
+        height: 7.2rem !important;
+        border-radius: .8rem !important;
     }
 }

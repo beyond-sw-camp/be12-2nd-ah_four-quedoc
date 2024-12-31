@@ -24,7 +24,7 @@
                             <v-label>로그인아이디</v-label>
                         </div>
                         <div class="data-wrap">
-                            <span class="data">test@test.com</span>
+                            <span class="data">{{ memPsnIdentVerfInfo.em }}</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -32,7 +32,7 @@
                             <v-label>이름</v-label>
                         </div>
                         <div class="data-wrap">
-                            <span class="data">test</span>
+                            <span class="data">{{ memPsnIdentVerfInfo.nm }}</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -66,48 +66,6 @@
                         </div>
                         <p class="text-tip message">번호변경은 본인인증을 통해 진행할 수 있습니다.</p>
                     </div>
-                    <div class="form-group">
-                        <div class="ele-tit">
-                            <v-label>마케팅동의</v-label>
-                        </div>
-                        <div class="check-wrap">
-                            <div class="form-checkbox">
-                                <v-checkbox
-                                    v-model="memPsnIdentVerfInfo.svUeGeMktGeAll"
-                                    class="check-all"
-                                    hide-details
-                                    label="전체동의"
-                                    name="svUeGeMktGeAll"
-                                    @change="checkedMktGe"
-                                ></v-checkbox>
-                                <v-divider vertical />
-                                <v-checkbox
-                                    v-model="memPsnIdentVerfInfo.svUeGeMktGeEm"
-                                    class="check-media"
-                                    hide-details
-                                    label="이메일"
-                                    name="svUeGeMktGeEm"
-                                    @change="uncheckedMktlGe"
-                                ></v-checkbox>
-                                <v-checkbox
-                                    v-model="memPsnIdentVerfInfo.svUeGeMktGeChgMsg"
-                                    class="check-media"
-                                    hide-details
-                                    label="휴대폰메시지"
-                                    name="svUeGeMktGeChgMsg"
-                                    @change="uncheckedMktlGe"
-                                ></v-checkbox>
-                            </div>
-                            <div class="agree-btn">
-                                <v-btn variant="text">
-                                    <span @click="agreePop('svUeGeMktGe', '마케팅 목적의 수집 및 이용 동의')"
-                                        >마케팅 목적의 수집 및 이용 동의</span
-                                    >
-                                    <v-icon class="btn-arrow" />
-                                </v-btn>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -118,63 +76,48 @@
             </v-btn>
         </div>
 
-        <IdentVerf :dialog-info="IdentVerfInfo" @confirm-event="closeIdentVerfPop" />
     </v-form>
     </div>
+    <popUpAlert :dialog-info="popUpAlertInfo" @confirm-event="closeAlertPop" />
 </template>
 
-<script>
-import { reactive } from 'vue'
-let IdentVerfInfo = reactive({
-    toggle: false,
-    text: ''
+<script setup>
+import { reactive, ref } from 'vue'
+import popUpAlert from '../etc/pop-up/pop-up-alert.vue';
+import useAuthStore from '../../stores/useAuthStore';
+import { useRouter } from 'vue-router'
+
+const loginStore = useAuthStore();
+
+const router = useRouter();
+
+const memPsnInfoPutForm = ref();
+
+let popUpAlertInfo = reactive({
+  toggle: false,
+  text: '준비중입니다',
+  url: ''
+});
+
+const memPsnIdentVerfInfo = reactive({
+    nm: loginStore.getName(), //이름
+    em: loginStore.getEmail(), //이메일
+    hon: loginStore.getHon() //휴대전화번호
 })
-export default {
-  data() {
-    return {
-      memInfo: {},
-      memPsnIdentVerfInfo: {},
-      IdentVerfInfo: {},
-      BasePupScrollObj: {},
-      BasePupAlertInfo: {},
-      BasePupConfirmInfo: {},
-      BasePupConfirmInfoOne: {}
-    };
-  },
-  methods: {
-    submitForm() {
-      // Add your form submission logic here
-      console.log('Form submitted');
-    },
-    identVerfPop() {
-        console.log('IdentVerfInfo', IdentVerfInfo.toggle);
-        IdentVerfInfo.toggle = true
-        console.log('IdentVerfInfo', IdentVerfInfo.toggle);
-    },
-    checkedMktGe() {
-      // Add your logic for checkedMktGe here
-    },
-    uncheckedMktlGe() {
-      // Add your logic for uncheckedMktlGe here
-    },
-    agreePop(type, message) {
-      // Add your logic for agreePop here
-    },
-    closeIdentVerfPop() {
-      // Add your logic for closeIdentVerfPop here
-    },
-    closeAlertPop() {
-      // Add your logic for closeAlertPop here
-    },
-    confirmEvent() {
-      // Add your logic for confirmEvent here
-    },
-    cancelEvent() {
-      // Add your logic for cancelEvent here
-    },
-    cancelEventOne() {
-      // Add your logic for cancelEventOne here
+const identVerfPop = async () => {
+    popUpAlertInfo.toggle = true
+        popUpAlertInfo.text='번호변경하는 vue.'
+}
+const submitForm = async () => {
+
+    if (true) {
+        popUpAlertInfo.toggle = true
+        popUpAlertInfo.text='저장되었습니다.'
+        
     }
-  }
-};
+    
+}
+const closeAlertPop = () => {
+    router.push({ name: 'mypage' });
+}
 </script>

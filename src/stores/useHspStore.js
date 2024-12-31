@@ -5,8 +5,25 @@ const useHspStore = defineStore(
   'hospital', // 스토어 이름
   () => {
     // 상태: 병원 정보를 저장할 리스트
-    const hospitalList = reactive({list: []});
+    const hospitalList = reactive({ list: [] });
 
+
+    const hospital = reactive({
+      name: "",
+      type: "",
+      info: "",
+      hNumber: ""
+    });
+
+    function setHsp(h) {
+      hospital.name = h.name;
+      hospital.type = h.type;
+      hospital.info = h.info;
+      hospital.hNumber = h.hNumber;
+    }
+    function getHsp() {
+      return hospital;
+    }
     // 병원 추가 함수
     function addHospital(hospital) {
       hospitalList.list.push(hospital);
@@ -25,17 +42,20 @@ const useHspStore = defineStore(
     function resetHospitalList() {
       hospitalList.list = []; // 배열을 초기화
     }
-    function getHospital () {
+    function getHospital() {
       return hospitalList.list;
     }
 
     return {
       hospitalList,
+      hospital,
       addHospital,
       removeHospital,
       resetHospitalList,
       getLength,
-      getHospital
+      getHospital,
+      setHsp,
+      getHsp
     };
   },
   {
@@ -44,7 +64,7 @@ const useHspStore = defineStore(
       strategies: [
         {
           storage: localStorage, // 데이터를 저장할 저장소
-          paths: ['hospitalList'] // 저장할 상태 항목
+          paths: ['hospitalList','hospital'] // 저장할 상태 항목
         }
       ]
     }

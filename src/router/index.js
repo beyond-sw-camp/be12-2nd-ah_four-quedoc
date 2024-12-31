@@ -25,6 +25,7 @@ import introment from '../components/intro/introment.vue';
 import quedocIntorduce from '../components/intro/quedoc-introduce.vue';
 import myHspRsv from '../components/mypage/my-hsp-rsv.vue'
 import myHspRv from '../components/mypage/my-hsp-rv.vue'
+import sch_pedi from '../components/sch/sch-pedi.vue'
 
 const routes = createRouter({ 
   history: createWebHistory(), //createWebHistory(), -> for browser history
@@ -36,7 +37,8 @@ const routes = createRouter({
       children: [
         { path: '', component:   main, name: 'home' },
       { path: 'search', component:   sch , name: 'search'},
-      { path: 'hi', component:   intro , name: 'hi'}
+      { path: 'hi', component:   intro , name: 'hi'},
+      { path: 'popular_pedi', component:  sch_pedi , name: 'pedi'}
       ]
     },
     // main container -> inner

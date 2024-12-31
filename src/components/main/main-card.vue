@@ -10,7 +10,7 @@
             <span class="card-text">병원예약을 손쉽게!</span>
             <v-icon>icon-card-arrow</v-icon>
         </v-btn>
-        <v-btn @click = 'pop' class="card-box">
+        <v-btn @click = "router.push({ name: 'pedi' })" class="card-box">
             <div class="title-area">
                 <span class="card-stit">인기있는</span>
                 <strong class="card-title">QUEDOC</strong>
@@ -43,12 +43,15 @@
 <script setup>
 import { onMounted, reactive, ref } from 'vue';
 import popUpAlert from '../etc/pop-up/pop-up-alert.vue';
+import { useRouter } from 'vue-router';
 
 let popUpAlertInfo = reactive({
     toggle: false,
     text: '준비중입니다',
     url: ''
 });
+
+const router = useRouter();
 
 const pop =  () => {
     // 메인 카드 누르면 나옴

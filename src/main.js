@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import { createNaverMap } from "vue3-naver-maps";
 import './styles/Main.css'
 import './styles/MemPsn.css'
 import './styles/myinpo.css'
@@ -27,4 +28,11 @@ app.use(router);
 app.use(pinia);
 app.use(createMetaManager);
 app.use(vuetify);
+app
+  .use(createNaverMap, {
+    clientId: "wgzhdbbhrd", // Required
+    category: "ncp", // Optional
+    subModules: [], // Optional
+	});
 app.mount('#app')
+

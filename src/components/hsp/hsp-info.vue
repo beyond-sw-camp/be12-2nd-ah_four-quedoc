@@ -46,9 +46,8 @@ const router = useRouter()
 
 const hspStore = useHspStore();
 
-const hInfo = hspStore.getHospital();
+const hInfo = hspStore.getHsp();
 
-console.log("hInfo" + hInfo);
 
 //기본 팝업 정보 객체
 let popUpAlertInfo = reactive({

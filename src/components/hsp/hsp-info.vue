@@ -35,6 +35,7 @@
 
 <script setup>
 import { onMounted, reactive, ref } from 'vue'
+import useHspStore from '../../stores/useHspStore'
 import { useRouter } from 'vue-router'
 import hspDtCard from './hsp-dt-card.vue'
 import popUpAlert from '../etc/pop-up/pop-up-alert.vue'
@@ -42,6 +43,10 @@ import hspDt from './hsp-dt.vue'
 import hspNotice from './hsp-dt-notice.vue'
 //라우터 정보 객체
 const router = useRouter()
+
+const hspStore = useHspStore();
+
+const hInfo = hspStore.getHsp();
 
 
 //기본 팝업 정보 객체

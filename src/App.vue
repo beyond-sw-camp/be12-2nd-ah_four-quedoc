@@ -1,14 +1,11 @@
+
+<template>
+  
+<RouterView/>
+</template>
+
 <script setup>
-import HealthMap from "./components/sch/area-sch.vue";
-import Header from "./components/main/main-header.vue";
-import Footer from "./components/main/main-footer.vue";
-import { NaverMap } from 'vue3-naver-maps'
-import { NaverMarker } from 'vue3-naver-maps'
-const mapOptions = {
-    latitude: 37.51347, // 지도 중앙 위도
-    longitude: 127.041722, // 지도 중앙 경도
-    zoom: 13,
-}
+import { RouterView } from "vue-router";
 
 </script>
 

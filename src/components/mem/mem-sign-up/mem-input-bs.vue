@@ -80,6 +80,18 @@
                     </div>
                     <p class="text-tip error">{{ memInfoErrorObject['pin2'].errorMessage }}</p>
                 </div>
+                <div class="form-group">
+                    <div class="ele-tit">
+                        <v-label>사업자번호</v-label>
+                    </div>
+                    <div class="input-wrap">
+                        <v-text-field v-model="memPsnInfoPutInfo.bsNum" :rules="bsNumChkRules" aria-label="사업자번호 입력"
+                            color="primary" density="comfortable" hide-details="none" maxlength="20" name="bsNum"
+                            placeholder="- 을 포함해서 입력해주세요" required title="사업자번호 입력" variant="outlined"
+                            @input="submitBtnAct()"></v-text-field>
+                    </div>
+                    <p class="text-tip error">{{ memInfoErrorObject['bsNum'].errorMessage }}</p>
+                </div>
             </div>
             <div class="btn-wrap">
                 <v-btn :disabled="formCntrObj['submitBtn'].disabled" class="default" color="primary" rounded="lg"
@@ -127,7 +139,8 @@ const memInfoErrorObject = reactive({
     dns: { errorMessage: null },
     ctsn: { errorMessage: null },
     pin1: { errorMessage: null },
-    pin2: { errorMessage: null }
+    pin2: { errorMessage: null },
+    bsNum: { errorMessage: null }
 })
 
 //회원가입(개인) 본인확인 정보 객체
@@ -137,6 +150,7 @@ const memPsnInfoPutInfo = reactive({
     ctsn: '', //인증번호
     pin1: '', //비밀번호1
     pin2: '', //비밀번호2
+    bsNum: '', //사업자번호 (사업자만)
     ctserverkeyem: '', //인증key(server) 이메일인증
     clnTcd: 'B', //고객유형코드(고객유형코드, U: 일반사용자, B: 사업자)
 })
@@ -257,7 +271,7 @@ const pinRules = [
     (value) => {
         if (value) {
             if (regexPin.test(value) === false) {
-                memInfoErrorObject['pin1'].errorMessage = '비밀번호는 형식이 올바르지않습니다.'
+                memInfoErrorObject['pin1'].errorMessage = '비밀번호 형식이 올바르지않습니다.'
                 return false;
             } else {
                 memInfoErrorObject['pin1'].errorMessage = null
@@ -295,6 +309,60 @@ const pinChkRules = [
     }
 ]
 
+
+/**
+ * 
+ * 사업자번호 유효성 룰
+ * 
+ * 사업자번호 유효성을 정의한다.
+ *  
+ * */ 
+ const regexBsNum = /^\d{3}-\d{2}-\d{5}$/;
+const bsNumChkRules = [
+    (value) => {
+        if (value) {
+            if (regexBsNum.test(value) === false) {
+                
+                memInfoErrorObject['bsNum'].errorMessage = '-를 포함한 올바른 사업자번호를 입력해주세요.'
+                return false;
+            } else {
+                if(isValidBusinessNumber(value)) {
+                    memInfoErrorObject['bsNum'].errorMessage = null
+                    return true;
+                } else {
+                    memInfoErrorObject['bsNum'].errorMessage = '올바른 사업자번호가 아닙니다.'
+                    return false;
+                }
+            }
+        } else {
+            memInfoErrorObject['bsNum'].errorMessage = '사업자번호를 입력해주세요.'
+            return false
+        }
+    }
+]
+
+const isValidBusinessNumber = (businessNumber) => {
+  // 하이픈 제거
+  const sanitized = businessNumber.replace(/-/g, "");
+  
+  // 숫자 10자리 확인
+  if (!/^\d{10}$/.test(sanitized)) return false;
+
+  // 검증 계산
+  const weights = [1, 3, 7, 1, 3, 7, 1, 3, 5];
+  let sum = 0;
+
+  for (let i = 0; i < 9; i++) {
+    sum += parseInt(sanitized[i]) * weights[i];
+  }
+
+  // 마지막 계산
+  const checkDigit = (10 - ((sum + Math.floor((parseInt(sanitized[8]) * 5) / 10)) % 10)) % 10;
+  console.log(checkDigit);
+  console.log(sanitized[9]);
+  // 마지막 자리와 검증 번호 비교
+  return checkDigit === parseInt(sanitized[9]);
+}
 /**
  * 이메일(아이디) 및 도메인명 입력 이벤트
  *
@@ -385,6 +453,12 @@ const submitBtnAct = async () => {
     } else {
         formCntrObj['submitBtn'].disabled = true;
     }
+    joinPsnCusStore.setJoinPsnCusStore(commonUtil.updateObejctValue(joinPsnInfo, memPsnInfoPutInfo))
+
+        //pinia 초기화전 로그찍기
+        const joinPsnInfoReq = joinPsnCusStore.getJoinPsnCusStore()
+
+        console.log('joinPsnInfoReq', joinPsnInfoReq);
 }
 
 /**
@@ -412,13 +486,11 @@ const submitForm = async () => {
         //pinia 초기화전 로그찍기
         const joinPsnInfoReq = joinPsnCusStore.getJoinPsnCusStore()
 
-
         const data = await api.signUp(proxy, joinPsnInfoReq);
 
         if (data.status === "ok") {
             
         console.log('joinPsnInfoReq', joinPsnInfoReq);
-            console.log("Qrqwqwr");
             console.log(data);
             emits('nextEvent', 2)
             return false

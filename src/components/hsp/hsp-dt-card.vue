@@ -32,21 +32,11 @@
         </div>
         <div class="middle-info">
             <div class="text">
-                <div :title="prodInfo.productNm" class="subtitle-22">{{ prodInfo.productNm }}</div>
+                <div :title="prodInfo.productNm" class="subtitle-22">{{ hInfo.name }}</div>
                 <div :title="prodInfo.productDesc" class="text-18">
-                    {{ prodInfo.productDesc }}
+                    {{ hInfo.info }}
                 </div>
             </div>
-            <template v-if="prodInfo.productIconImgPath">
-                <div class="img">
-                    <img src="../../assets/images/hospital.png" alt="썸네일이미지" />
-                </div>
-            </template>
-            <template v-else>
-                <div class="img">
-                    <img alt="썸네일이미지" src="../../assets/images/calm.png" />
-                </div>
-            </template>
         </div>
         <div class="bottom-info">
             <template v-if="prodInfo.productTagList">
@@ -75,10 +65,14 @@
 import { onMounted, reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import popUpAlert from '../etc/pop-up/pop-up-alert.vue'
-
+import useHspStore from '../../stores/useHspStore'
 //라우터 정보 객체
 const router = useRouter()
 
+
+const hspStore = useHspStore();
+
+const hInfo = hspStore.getHsp();
 
 
 //기본 팝업 정보 객체
@@ -163,4 +157,8 @@ const movePage = (link) => {
 </script>
 <style scoped>
 @import '../../styles/ServPdDetlCrd.css';
+.cur-rsv {
+    position: absolute !important;
+    margin-left: 50% !important;
+}
 </style>

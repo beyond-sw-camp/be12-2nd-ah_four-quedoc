@@ -10,13 +10,15 @@ const useAuthStore = defineStore('login',()=> {
         name: "",
         email: "",
         hon:"",
-        userType: ""
+        userType: "",
+        pw: ""
     });
     function setInfo(info) {
         uInfo.name = info.name;
         uInfo.email = info.email;
         uInfo.hon = info.phoneNumber;
         uInfo.userType = info.customerTypeCode;
+        uInfo.pw = info.password;
     }
     function getName() {
         return uInfo.name;
@@ -36,7 +38,10 @@ const useAuthStore = defineStore('login',()=> {
     function getLogin() {
         return loginOrNot.value;
     }   
-    return { loginOrNot,uInfo, getLogin,getName,getUserType,setInfo,getEmail,getHon,setLogin};
+    function getPw() {
+        return uInfo.pw;
+    }
+    return { loginOrNot,uInfo, getLogin,getName,getUserType,setInfo,getEmail,getHon,setLogin,getPw};
 },{
     persist: {
         enabled: true,  // 영속화 활성화

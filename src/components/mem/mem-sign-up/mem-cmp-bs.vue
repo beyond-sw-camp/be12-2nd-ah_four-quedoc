@@ -19,7 +19,7 @@
             <v-icon>icon-success</v-icon>
             <div class="complete-text">
                 <div>회원가입 완료</div>
-                <p>회원가입이 완료되었습니다.<br />Quedoc의 서비스를 경험해보세요.</p>
+                <p>회원가입이 완료되었습니다.<br />사업자회원은 관리자승인을 기다려주세요.<br />Quedoc의 서비스를 경험해보세요.</p>
             </div>
         </div>
         <div class="btn-wrap">

@@ -1,7 +1,7 @@
 <!-- 병원 간단정보 카드-->
 <template>
 
-                <v-card class="service-list cursor-pointer" variant="outlined" @click="router.push({ name: 'serv' })">
+                <v-card class="service-list cursor-pointer" variant="outlined" @click="showDt()">
                     <div class="top-area">
                         <div class="category-title text-16">{{ hspInfo.type }}</div>
                         <div class="icon-area">
@@ -56,10 +56,10 @@ const props = defineProps({
     hspInfo: {
       type: Object,
       default: {
-        name:"병원이름",
-        type:"병원타입",
-        info:"병원정보",
-        hNumber:"병원전화번호"
+        name:"꾸러기소아과",
+        type:"소아청소년과",
+        info:"장난꾸러기 의사선생님이 진료하는 소아과입니다.",
+        hNumber:"02-432-3414"
       },
       required: true,
     },
@@ -114,12 +114,17 @@ const updateFavoriteProduct = async (id) => {
     }*/
     toggle.value = !toggle.value;
     if(toggle.value) {
-        console.log(fav);
         //const a = await api.registerFav(proxy,fav);
-        console.log(a);
     }
     
 }
+
+const showDt = () => {
+    hspStore.setHsp(props.hspInfo);
+    router.push({ name: 'serv' });
+}
+
+
 onMounted(() => {
  
 })

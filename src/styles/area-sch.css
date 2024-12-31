@@ -1,0 +1,238 @@
+img:not(.kpd-image-button) {
+    max-width: 100%;
+}
+.searchArea2 a {
+    top: 123px;
+    position: absolute;
+    right: 20px;
+}
+
+.btn_search2 {
+    background: #4c4c4d;
+    border-radius: 100%;
+    width: 39px;
+    height: 40px;
+    line-height: 35px;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    margin: 300;
+}
+
+img, input, select, textarea, button {
+    vertical-align: middle;
+}
+img{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 16px;
+    line-height: 1.7;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    color: #333;
+    box-sizing: border-box;
+    letter-spacing: -0.8px;
+}
+
+.icon-search {
+    width: 15px;
+    height: 15px;
+    background-image: url(https://www.hira.or.kr/images/icon/search.png);
+}
+
+.hiraMenu > ul > li a {
+    color: #fff;
+    text-align: center;
+    display: block;
+    background-position: center 30px;
+    background-repeat: no-repeat;
+    padding: 66px 0 28px 0;
+    font-weight: 500;
+}
+a {
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.searchArea2 {
+    background-color: #e4f1fb;
+    border-bottom: #d9e5ef solid 1px;
+    padding: 15px 65px 14px 20px;
+}
+
+.searchArea2 input[type='text'] {
+    border-radius: 20px;
+    line-height: 38px;
+    padding: 0 15px;
+    width: 100%;
+}
+
+input[type='text'] {
+    display: inline-block;
+    max-width: 100%;
+    height: 40px;
+    border: 1px solid #d4d4d6;
+    color: #000;
+    box-sizing: border-box;
+}
+
+div{
+    margin: 0;
+    border: 0;
+    font-size: 16px;
+    line-height: 1.7;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    color: #333;
+    box-sizing: border-box;
+    letter-spacing: -0.8px;
+}
+
+a{
+    margin: 0;
+    border: 0;
+    font-size: 16px;
+    /* line-height: 26px; */
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    box-sizing: border-box;
+    letter-spacing: -0.8px;
+}
+
+a:-webkit-any-link {
+    cursor: pointer;
+}
+
+
+li{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 16px;
+    /* line-height: 26px; */
+    line-height: 1.7;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    color: #333;
+    box-sizing: border-box;
+    letter-spacing: -0.8px;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+}
+ul {
+    list-style-type: disc;
+}
+
+.hiraMenu > ul > li::after, .hiraMenu > ul > li::before {
+    position: absolute;
+    content: '';
+    display: block;
+    left: 9px;
+    width: 90px;
+    height: 1px;
+}
+.hiraMenu > ul > li a {
+    color: #fff;
+    text-align: center;
+    display: block;
+    background-position: center 30px;
+    background-repeat: no-repeat;
+    padding: 66px 0 28px 0;
+    font-weight: 500;
+}
+
+.hiraMenu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    /* height: calc(var(--vh, 1vh)* 100); */
+    z-index: 999;
+    border-right: #015fa4 solid 1px;
+    background-color: #0083e4;
+}
+
+.hiraMenu > ul > li:nth-child(1) a {
+    background-image: url(https://www.hira.or.kr/images/icon/hiraMap_01.png);
+}
+
+.hiraMenu > ul > li:nth-child(2) a {
+    background-image: url(https://www.hira.or.kr/images/icon/hiraMap_02.png);
+}
+
+.hiraMenu > ul > li:nth-child(3) a {
+    background-image: url(https://www.hira.or.kr/images/icon/hiraMap_03.png);
+}
+.hiraMenu > ul > li:nth-child(4) a {
+    background-image: url(https://www.hira.or.kr/images/icon/hiraMap_04.png);
+}
+
+.hiraMenu > ul > li a {
+    color: #fff;
+    text-align: center;
+    display: block;
+    background-position: center 30px;
+    background-repeat: no-repeat;
+    padding: 66px 0 28px 0;
+    font-weight: 500;
+}
+a {
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.hiraMenu > ul > li.on a, .hiraMenu > ul > li a:hover {
+    background-color: #005c9f;
+}
+
+.hiraCont > div:nth-child(1) .mScroll > * {
+    height: calc(100vh - 295px);
+    /* height: calc((var(--vh, 1vh)* 100) - 235px); */
+}
+.hiraCont .mScroll > * {
+    overflow-y: auto;
+    height: calc(100vh - 265px);
+}
+
+[class^="icon-"] {
+    text-indent: -999999999999999px;
+}
+
+[class^="icon-"] {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    vertical-align: middle;
+}
+
+.hiraCont {
+    left: 110px;
+    padding-top: 64px;
+}
+.hiraCont {
+    position: absolute;
+    z-index: 998;
+    top: 0;
+    width: 370px;
+    height: 100vh;
+    /* height: calc(var(--vh, 1vh)* 100); */
+    border-right: #cdcdcd solid 1px;
+    background-color: #fff;
+    box-shadow: rgb(0 0 0 / 12%) 2px 2px 2px;
+    transition-duration: .6s;
+    overflow: hidden;
+}
+.hiraCont .searchArea2 {
+    border-top: #d4d4d6 solid 1px;
+}
+
+@media screen and (max-width: 1023px) {
+    .hiraMap {
+        overflow: hidden;
+    }
+}
+

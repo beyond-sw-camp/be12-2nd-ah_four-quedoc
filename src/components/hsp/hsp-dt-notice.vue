@@ -35,9 +35,14 @@ const visibleCount = ref(3);
 // 더보기 버튼 클릭 시 추가 표시 개수
 const incrementCount = 2;
 
+// 최신 날짜순으로 정렬된 공지사항
+const sortedNotices = computed(() =>
+  [...noticeStore.notices].sort((a, b) => new Date(b.date) - new Date(a.date))
+);
+
 // 표시 중인 공지사항 계산
 const displayedNotices = computed(() =>
-  noticeStore.notices.slice(0, visibleCount.value)
+  sortedNotices.value.slice(0, visibleCount.value)
 );
 
 // "더보기" 버튼 클릭 핸들러

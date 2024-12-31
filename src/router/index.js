@@ -6,9 +6,9 @@ import mainMain from '../views/main-main.vue';
 
 import loginForm from '../components/login/login-form.vue';
 import main from '../components/main/main.vue';
-import memType from '../components/mem/mem-type.vue';
+import memType from '../components/mem/mem-type.vue';``
 import memSignUp from '../components/mem/mem-sign-up.vue';
-import memSignUpBs from '../components/mem/mem-sign-up-bs.vue;
+import memSignUpBs from '../components/mem/mem-sign-up-bs.vue';
 import sch from '../components/sch/sch.vue';  
 import recommend from '../components/sch/recommend.vue';
 import hspInfo from '../components/hsp/hsp-info.vue';
@@ -26,6 +26,7 @@ import introment from '../components/intro/introment.vue';
 import quedocIntorduce from '../components/intro/quedoc-introduce.vue';
 import myHspRsv from '../components/mypage/my-hsp-rsv.vue'
 import myHspRv from '../components/mypage/my-hsp-rv.vue'
+import sch_pedi from '../components/sch/sch-pedi.vue'
 
 const routes = createRouter({
   history: createWebHistory(), //createWebHistory(), -> for browser history
@@ -37,6 +38,7 @@ const routes = createRouter({
       children: [
         { path: '', component:   main, name: 'home' },
       { path: 'search', component:   sch , name: 'search'},
+      { path: 'popular_pedi', component:  sch_pedi , name: 'pedi'},
       { path: 'recommend', component:   recommend , name: 'recommend'},
       { path: 'hi', component:   intro , name: 'hi'}
       ]

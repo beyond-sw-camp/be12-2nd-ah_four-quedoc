@@ -120,7 +120,6 @@ const updateFavoriteProduct = async (id) => {
 }
 
 const showDt = () => {
-
     hspStore.setHsp(props.hspInfo);
     router.push({ name: 'serv' });
 }

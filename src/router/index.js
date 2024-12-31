@@ -9,7 +9,7 @@ import main from '../components/main/main.vue';
 import memType from '../components/mem/mem-type.vue';
 import memSignUp from '../components/mem/mem-sign-up.vue';
 import memSignUpBs from '../components/mem/mem-sign-up-bs.vue';
-import sch from '../components/sch/sch.vue';  
+import sch from '../components/sch/sch.vue';
 import hspInfo from '../components/hsp/hsp-info.vue';
 import hspRsv from '../components/reservation/hsp-rsv.vue';
 import rsvCmp from '../components/reservation/rsv-cmp.vue';
@@ -26,7 +26,7 @@ import quedocIntorduce from '../components/intro/quedoc-introduce.vue';
 import myHspRsv from '../components/mypage/my-hsp-rsv.vue'
 import myHspRv from '../components/mypage/my-hsp-rv.vue'
 
-const routes = createRouter({ 
+const routes = createRouter({
   history: createWebHistory(), //createWebHistory(), -> for browser history
   // main main
   routes: [
@@ -34,59 +34,72 @@ const routes = createRouter({
       path: '/',
       component: mainMain,
       children: [
-        { path: '', component:   main, name: 'home' },
-      { path: 'search', component:   sch , name: 'search'},
-      { path: 'hi', component:   intro , name: 'hi'}
+        { path: '', component: main, name: 'home' },
+        { path: 'search', component: sch, name: 'search' },
+        { path: 'hi', component: intro, name: 'hi' }
       ]
     },
     // main container -> inner
-  {
-    path: '/login',
-    component: innerMain,
-    children: [
-      { path: '', component: loginForm, name: 'login' },
-      { path: 'memType', component: memType, name: 'memType' },
-      { path: 'memPsn', component: memSignUp, name: 'memPsn' },
-      { path: 'memPsnBs', component:  memSignUpBs, name: 'memPsnBs' },
-      { path: 'serv', component: hspInfo, name: 'serv' },
-      { path: 'reserv', component: hspRsv, name: 'reserv' },
-      { path: 'comp', component: rsvCmp, name: 'comp' },  
-      { path: 'it', component:  introment , name: 'it'},
-      { path: 'qi', component: quedocIntorduce , name: 'qI'},
-      { path: 'mypage',
-        component:myPageHeader,
-        beforeEnter: (to, from, next) => {
-          const authStore = useAuthStore();  // Pinia 스토어에서 로그인 상태 확인
-          if (authStore.getLogin()) {
-            next();  // 로그인되어 있으면 mypage로 이동
-          } else {
-          next({ name: 'login' });  // 로그인 안 되어 있으면 로그인 페이지로 리디렉션
-          }
+    {
+      path: '/login',
+      component: innerMain,
+      children: [
+        { path: '', component: loginForm, name: 'login' },
+        { path: 'memType', component: memType, name: 'memType' },
+        { path: 'memPsn', component: memSignUp, name: 'memPsn' },
+        { path: 'memPsnBs', component: memSignUpBs, name: 'memPsnBs' },
+        { path: 'serv', component: hspInfo, name: 'serv' },
+        { path: 'reserv', component: hspRsv, name: 'reserv' },
+        { path: 'comp', component: rsvCmp, name: 'comp' },
+        { path: 'it', component: introment, name: 'it' },
+        { path: 'qi', component: quedocIntorduce, name: 'qI' },
+        {
+          path: 'mypage',
+          component: myPageHeader,
+          beforeEnter: (to, from, next) => {
+            const authStore = useAuthStore();  // Pinia 스토어에서 로그인 상태 확인
+            if (authStore.getLogin()) {
+              next();  // 로그인되어 있으면 mypage로 이동
+            } else {
+              next({ name: 'login' });  // 로그인 안 되어 있으면 로그인 페이지로 리디렉션
+            }
+          },
+          children: [
+            {
+              path: '',
+              beforeEnter: (to, from, next) => {
+                const authStore = useAuthStore();
+                if (authStore.getUserType() === 'U') {
+                  next({ name: 'myRsv' });  // 로그인되어 있으면 mypage로 이동
+                } else {
+
+                  next({ name: 'myHsp' });  // 로그인 안 되어 있으면 로그인 페이지로 리디렉션
+                }
+              }, name: 'mypage'
+            },
+            { path: 'changeInfo', component: myPageMain, name: 'changeInfo' },
+            { path: 'fv', component: myFv, name: 'fvHospital' },
+            { path: 'rv', component: myReview, name: 'myRv' },
+            { path: 'mh', component: myHsp, name: 'myHsp' },
+            { path: 'mr', component: myRsv, name: 'myRsv' },
+            { path: 'ms', component: myHspRsv, name: 'myHspRsv' },
+            { path: 'mrv', component: myHspRv, name: 'myHspRv' }
+          ]
         },
-        children: [
-          {path: '', 
-            beforeEnter: (to, from, next) => {
-              const authStore = useAuthStore(); 
-              if (authStore.getUserType() === 'U') {
-                next({ name: 'myRsv' });  // 로그인되어 있으면 mypage로 이동
-              } else {
-                
-              next({ name: 'myHsp' });  // 로그인 안 되어 있으면 로그인 페이지로 리디렉션
-              }
-            }, name: 'mypage'},
-      { path: 'changeInfo', component: myPageMain, name: 'changeInfo' },
-      { path: 'fv', component: myFv, name: 'fvHospital' },
-      { path: 'rv', component:   myReview, name: 'myRv' },
-      { path: 'mh', component:   myHsp, name: 'myHsp' },
-      { path: 'mr', component:   myRsv, name: 'myRsv' },
-      { path: 'ms', component:   myHspRsv, name: 'myHspRsv' },
-      { path: 'mrv', component:   myHspRv, name: 'myHspRv' }
-        ] },
-        { path: 'detail', component:   myRsvDt, name: 'reservDetail' },
-    ]
+        { path: 'detail', component: myRsvDt, name: 'reservDetail' },
+      ]
+    }
+
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      // 이전 위치로 이동 (뒤로 가기/앞으로 가기 할 때)
+      return savedPosition;
+    } else {
+      // 항상 맨 위로 이동
+      return { top: 0 };
+    }
   }
-  
-],
 });
 
 

@@ -1,34 +1,14 @@
 <template>
     <div class="hiraMap">
-        <div class="hiraMenu">
-            <h1>
-                <img src="https://www.hira.or.kr/images/contents/hiraMap.png" alt="HIRA 건강지도" />
-            </h1>
-            <ul class="tabList">
-                <li :class="{ on: activeTab === 1 }">
-                    <a href="#" @click="setActiveTab(1)" title="선택됨">건강지도 홈</a>
-                </li>
-                <li :class="{ on: activeTab === 2 }">
-                    <a href="#" @click="setActiveTab(2)">병원·약국 찾기</a>
-                </li>
-                <li :class="{ on: activeTab === 3 }">
-                    <a href="#" @click="setActiveTab(3)">좋은병원 찾기</a>
-                </li>
-                <li :class="{ on: activeTab === 4 }">
-                    <a href="#" @click="setActiveTab(4)">전문병원 찾기</a>
-                </li>
-            </ul>
-        </div>
-
         <div class="hiraCont" v-if="activeTab === 1">
-            <h2>지역으로 찾기</h2>
+            <h2 class="nav-link">지역으로 찾기</h2>
             <div class="searchArea2">
                 <input type="text"  v-model="searchQuery"
                     @keypress.enter="searchHospital" placeholder="병원명 또는 약국명 입력" class="input" />
-                <a href="https://www.hira.or.kr/ra/hosp/getHealthMap.do#none" class="btn_search2"
+                <a href="http://www.quedoc.kro.kr/" class="btn_search2"
                     id="btnHelthMapSearch"><i class="icon-search">검색</i></a>
             </div>
-            <div class="tot">
+            <div class="search-results">
                 검색결과 (총 <span class="fcR2">{{ searchResultCount }}</span>건)
             </div>
             <div class="map-around-list">
@@ -41,7 +21,7 @@
         </div>
     </div>
 
-    <naver-map style="width: 100%; height: 400px" :map-options="mapOptions">
+    <naver-map style="width: 100vw; height: 100vh;" :map-options="mapOptions">
         <naver-marker latitude="37.51347" longitude="127.041722" />
     </naver-map>
 </template>
@@ -86,4 +66,5 @@ const mapOptions = {
 
 <style scoped>
 @import '../../styles/area-sch.css';
+
 </style>

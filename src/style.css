@@ -1070,3 +1070,6 @@ input, textarea, div[contenteditable=true], code {
   color: #e5e5e5;
   opacity: 1;
 }
+.map {
+  position: relative;
+}

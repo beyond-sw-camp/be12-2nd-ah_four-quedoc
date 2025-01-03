@@ -35,7 +35,7 @@
 
 ## 🎨 Prototype
 프로젝트 설계를 확인할 수 있습니다.  
-🌈 <a href= 'https://www.figma.com/design/YpDRCaAzeEMd8AUxfkHWls/Quedoc-prototype?node-id=39-2&t=7szC74JCvJ0ffjx6-1'>피그마링크</a>
+🌈 <a href= 'https://www.figma.com/design/YpDRCaAzeEMd8AUxfkHWls/Quedoc-prototype?node-id=39-2&t=n8ppCervBLJDCeY5-1'>피그마링크</a>
 
 ---
 

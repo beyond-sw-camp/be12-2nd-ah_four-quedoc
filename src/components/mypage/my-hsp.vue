@@ -1,11 +1,10 @@
-<!-- 개인 회원정보 조회 -->
+<!-- 병원 정보 -->
 <template>
     <div class ="sub-group my-page">
    <v-divider class="svc-divide" />
-   <!-- 회원정보 -->
    <div class="my-info">
        <div class="title">
-           <v-icon class="icon-member" size="md" />
+           <v-icon class="icon-hsp" size="md" />
            병원정보
        </div>
        <div class="member">
@@ -15,7 +14,15 @@
                        <v-label>병원 이름</v-label>
                    </div>
                    <div class="data-wrap">
-                       <div id = 'hspname'>아주대학교병원</div>
+                    <span class="data">아주대학교병원</span>
+                   </div>
+               </div>
+               <div class="form-group">
+                   <div class="ele-tit">
+                       <v-label>병원 종류</v-label>
+                   </div>
+                   <div class="data-wrap">
+                    <span class="data">대형병원</span>
                    </div>
                </div>
                <div class="form-group">
@@ -23,7 +30,7 @@
                        <v-label>주소</v-label>
                    </div>
                    <div class="data-wrap">
-                       <div id = 'hspaddress'>경기도 수원시 영통구 월드컵로 164</div>
+                    <span class="data">병원주소 서울특별시 강남구 부타동</span>
                    </div>
                </div>
                <div class="form-group">
@@ -31,106 +38,68 @@
                        <v-label>병원 번호</v-label>
                    </div>
                    <div class="data-wrap">
-                    <div id = 'hspnum'>1688-6114</div>
+                    <span class="data">02-444-4444</span>
+                   </div>
+               </div>
+               <div class="form-group">
+                   <div class="ele-tit">
+                       <v-label>진료과목</v-label>
+                   </div>
+                   <div class="data-wrap">
+                    <span class="data">진료과목들</span>
+                   </div>
+               </div>
+               <div class="form-group">
+                   <div class="ele-tit">
+                       <v-label>영업시간</v-label>
+                   </div>
+                   <div class="data-wrap">
+                    <span class="data">영업시간</span>
                    </div>
                </div>
            </div>
        </div>
+       
    </div>
    <div class="bottom-btn">
-       <v-btn variant="text" @click="pwdConfPopBtn('memCncl')">
-           회원탈퇴
+       <v-btn variant="text" @click="pwdConfPopBtn()">
+            병원 정보변경
            <v-icon class="btn-arrow" />
        </v-btn>
    </div>
 </div>
-   <pwdChange :dialog-info="PwdUpdPopInfo" @confirm-event="closeUpdPop" />
    <pwdCon :dialog-info="PwdConfPopCnclInfo" @confirm-event="closePwdConfCnclPop" />
-   <pwdCon :dialog-info="PwdConfPopChgInfo" @confirm-event="closePwdConfChgPop" />
 </template>
 
 <script setup>
-import { onMounted, reactive, ref } from 'vue'
-import pwdChange from '../etc/pwd/pwd-change.vue'
+import { reactive, ref } from 'vue'
+import { useRouter } from 'vue-router'
 import pwdCon from '../etc/pwd/pwd-con.vue'
-import useAuthStore from '../../stores/useAuthStore'
 
-const loginStore = useAuthStore();
+//라우터 객체 생성
+const router = useRouter();
 
-//회원정보
-const memInfo = ref({
-   email: loginStore.getEmail(),
-   name: loginStore.getName(),
-   hon: loginStore.getHon()
-})
-
-
-//마케팅동의 문구
-const mktGeTxt = ref('')
-
-const emits = defineEmits(['nextEvent'])
-
-
-//비밀번호변경 팝업 정보 객체
-let PwdUpdPopInfo = reactive({
-   toggle: false,
-   text: ''
-})
-
-//패드워드 확인 팝업 정보 객체(회원탈퇴시 사용)
+//패드워드 확인 팝업 정보 객체(병원 정보변경시 사용)
 let PwdConfPopCnclInfo = reactive({
    toggle: false,
    text: ''
 })
 
-//패드워드 확인 팝업 정보 객체(정보변경시 사용)
-let PwdConfPopChgInfo = reactive({
-   toggle: false,
-   text: ''
-})
-
-/**
-* 비밀번호변경 팝업
-*/
-const pwdUpdPopBtn = () => {
-   PwdUpdPopInfo.toggle = true
-}
 
 /**
 * 정보변경화면/회원탈퇴 비밀번호 확인 팝업
 */
-const pwdConfPopBtn = (code) => {
-   if (code === 'memInfoChg') {
-       //정보변경화면 이동
-       PwdConfPopChgInfo.toggle = true
-   } else if (code === 'memCncl') {
-       //회원탈퇴 화면 이동
+const pwdConfPopBtn = () => {
        PwdConfPopCnclInfo.toggle = true
-   }
 }
 
 /**
-* 비밀번호 변경 후처리
-*/
-const closeUpdPop = () => {
-   PwdUpdPopInfo.toggle = false
-}
-
-/**
-* 회원탈퇴 화면 이동 위한 비밀번호 확인 팝업 후처리
+* 병원 정보 변경 페이지 이동 위한 비밀번호 확인 팝업 후처리
 */
 const closePwdConfCnclPop = () => {
-   PwdConfPopCnclInfo.toggle = false
-   //회원탈퇴 화면 이동
-   emits('nextEvent', 2)
+   PwdConfPopCnclInfo.toggle = false;
+   // 병원 정보 변경 페이지로 이동
+   router.push({ name: 'hspInfoChange' });
 }
 
-/**
-* 정보변경 화면 이동 위한 비밀번호 확인 팝업 후처리
-*/
-const closePwdConfChgPop = (v) => {
-   PwdConfPopChgInfo.toggle = false
-   //회원변경 화면 이동
-   emits('nextEvent', 1, v)
-}
 </script>

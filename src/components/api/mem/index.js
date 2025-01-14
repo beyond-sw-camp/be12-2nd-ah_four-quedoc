@@ -1,5 +1,6 @@
 
 import { getCurrentInstance } from 'vue';
+
 const login = async (proxy, ui) => {
     const loginUserInfo = {
         acc: ui.acc, //이메일주소
@@ -7,9 +8,11 @@ const login = async (proxy, ui) => {
         ecrPin: '', //암호화비밀번호
     }
     let data = {}
+    console.log(loginUserInfo.acc);
+    console.log(loginUserInfo.pin);
    
     await proxy.$axios
-        .post('http://122.40.225.54:3333/api/user/login', loginUserInfo)
+        .post('http://222.112.156.89:107/user/login', loginUserInfo)
         .then((res) => {
             //성공
             data = res.data
@@ -18,7 +21,7 @@ const login = async (proxy, ui) => {
             //실패
             data = error.data
         })
-
+        console.log(data);
     return data
 }
 const signUp = async (proxy, ui) => {
@@ -55,11 +58,11 @@ const update = async (proxy, ui) => {
         newpass: ui.pin1
     }
     let data = {}
-   
+    
     await proxy.$axios
         .post('http://122.40.225.54:3333/api/user/update', updateInfo)
         .then((res) => {
-            //성공
+            //성공:
             data = res.data
         })
         .catch((error) => {
@@ -69,11 +72,12 @@ const update = async (proxy, ui) => {
 
     return data
 }
+
 const getHsp = async (proxy) => {
     let data= {};
 
     await proxy.$axios
-    .get('http://122.40.225.54:3333/hospitals')
+    .get('http://192.168.219.144:8080/hospitals')
     .then((res)=>{
         data=res.data;
     })

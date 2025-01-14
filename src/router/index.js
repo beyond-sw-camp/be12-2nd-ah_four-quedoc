@@ -27,6 +27,8 @@ import quedocIntorduce from '../components/intro/quedoc-introduce.vue';
 import myHspRsv from '../components/mypage/my-hsp-rsv.vue'
 import myHspRv from '../components/mypage/my-hsp-rv.vue'
 import sch_pedi from '../components/sch/sch-pedi.vue'
+import hspInfoChange from '../components/mypage/hsp-info-change.vue';
+import hspNotice from '../components/mypage/hsp-notice.vue';
 
 const routes = createRouter({
   history: createWebHistory(), //createWebHistory(), -> for browser history
@@ -87,7 +89,9 @@ const routes = createRouter({
             { path: 'mh', component: myHsp, name: 'myHsp' },
             { path: 'mr', component: myRsv, name: 'myRsv' },
             { path: 'ms', component: myHspRsv, name: 'myHspRsv' },
-            { path: 'mrv', component: myHspRv, name: 'myHspRv' }
+            { path: 'mrv', component: myHspRv, name: 'myHspRv' },
+            { path: 'hic', component: hspInfoChange, name: 'hspInfoChange' },
+            { path: 'hn', component: hspNotice, name: 'hspNotice' }
           ]
         },
         { path: 'detail', component: myRsvDt, name: 'reservDetail' },

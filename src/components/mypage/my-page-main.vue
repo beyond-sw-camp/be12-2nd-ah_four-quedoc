@@ -102,6 +102,7 @@ const currentTab = shallowRef({
 })
 
 const nextTab = (ind, v) => {
+    console.log('여기?')
     ctsN.value = v
     currentTab.value = tabs[ind]
 }

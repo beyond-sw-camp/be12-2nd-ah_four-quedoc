@@ -16,7 +16,7 @@
         <div class="case-btn">
             <!-- 승인 대기중 상태에서 정보 변경 불가 -->
             <v-btn variant="text" @click="moveInfoUpd">
-                정보변경
+                회원정보변경
                 <v-icon class="btn-arrow" />
             </v-btn>
         </div>
@@ -77,19 +77,19 @@ const items = ref([
     {
         link: loginStore.getUserType() === 'U' ? { name: 'myRv' } : {name:'myHspRv'},
         icon: 'my-target',
-        text: 'MY리뷰',
+        text: loginStore.getUserType() === 'U' ? 'MY리뷰' : '리뷰관리',
         select: ''
     },
     {
         link: loginStore.getUserType() === 'U' ? { name: 'fvHospital' } : {name:'myHspRsv'},
         icon: 'my-wishlist',
-        text: loginStore.getUserType() === 'U' ? '관심병원' : '예약현황',
+        text: loginStore.getUserType() === 'U' ? '관심병원' : '예약관리',
         select: ''
     },
     {
-        link: { name: 'home' },
+        link: loginStore.getUserType() === 'U' ? { name: 'home' } : {name:'hspNotice'},
         icon: 'my-qa',
-        text: 'MY문의',
+        text: loginStore.getUserType() === 'U' ? 'MY문의' : '공지사항',
         select: ''
     }
 ])

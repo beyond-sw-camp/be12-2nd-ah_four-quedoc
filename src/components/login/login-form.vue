@@ -120,9 +120,10 @@ const submitForm = async () => {
             //메인 페이지 이동
 
             console.log(data.user);
-            loginStore.setInfo(data.user);
+            /*loginStore.setInfo(data.user);
             console.log(loginStore.getName());
-            console.log(loginStore.getUserType());
+            console.log(loginStore.getUserType());*/
+            console.log(data.token);
 
 
             router.push({ name: 'home' })

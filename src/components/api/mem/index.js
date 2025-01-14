@@ -8,9 +8,11 @@ const login = async (proxy, ui) => {
         ecrPin: '', //암호화비밀번호
     }
     let data = {}
+    console.log(loginUserInfo.acc);
+    console.log(loginUserInfo.pin);
    
     await proxy.$axios
-        .post('http://122.40.225.54:3333/api/user/login', loginUserInfo)
+        .post('http://222.112.156.89:107/user/login', loginUserInfo)
         .then((res) => {
             //성공
             data = res.data
@@ -19,7 +21,7 @@ const login = async (proxy, ui) => {
             //실패
             data = error.data
         })
-
+        console.log(data);
     return data
 }
 const signUp = async (proxy, ui) => {

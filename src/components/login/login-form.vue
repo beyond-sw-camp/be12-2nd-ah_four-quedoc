@@ -106,13 +106,16 @@ const accRules = [
     (v) => /.+@.+\..+/.test(v) || '이메일 형식으로 입력해주세요.'
 ]
 const submitForm = async () => {
+    console.log('submitForm')
+    console.log(loginUserInfo.acc);
+    console.log(loginUserInfo.pin);
     const { valid } = await loginUserForm.value.validate()
 
     const data = await api.login(proxy,loginUserInfo);
     //폼 유효성 및 api pending으로 인한 로그인 중복오류 방지
     /*if (valid && !loginTry.value) {
         loginTry.value = true*/
-        if (data.status === "ok") {
+        if (data.code === 200) {
             //로그인
             const s = loginStore.getLogin();
             console.log(s.value);

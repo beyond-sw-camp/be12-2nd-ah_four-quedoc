@@ -417,7 +417,9 @@ const submitForm = async () => {
 
         const data = await api.signUp(proxy, joinPsnInfoReq);
 
-        if (data.status === "ok") {
+        console.log(data);
+
+        if (data.code === 200) {
 
             console.log('joinPsnInfoReq', joinPsnInfoReq);
             emits('nextEvent', 2)

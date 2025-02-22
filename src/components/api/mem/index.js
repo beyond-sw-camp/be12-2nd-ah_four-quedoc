@@ -1,18 +1,17 @@
 
-import { getCurrentInstance } from 'vue';
+import axios from 'axios';
 
 const login = async (proxy, ui) => {
     const loginUserInfo = {
-        acc: ui.acc, //이메일주소
-        pin: ui.pin, //비밀번호
-        ecrPin: '', //암호화비밀번호
+        email: ui.acc, //이메일주소
+        password: ui.pin, //비밀번호
     }
     let data = {}
-    console.log(loginUserInfo.acc);
-    console.log(loginUserInfo.pin);
+    console.log("er"+loginUserInfo.email);
+    console.log(loginUserInfo.password);
    
-    await proxy.$axios
-        .post('http://222.112.156.89:107/user/login', loginUserInfo)
+    await axios
+        .post('api/user/testLogin', loginUserInfo)
         .then((res) => {
             //성공
             data = res.data
@@ -38,8 +37,8 @@ const signUp = async (proxy, ui) => {
     }
     let data = {}
    
-    await proxy.$axios
-        .post('http://122.40.225.54:3333/api/user/register', signUpUserInfo)
+    await axios
+        .post('api/user/signup', signUpUserInfo)
         .then((res) => {
             //성공
             data = res.data
@@ -59,8 +58,8 @@ const update = async (proxy, ui) => {
     }
     let data = {}
     
-    await proxy.$axios
-        .post('http://122.40.225.54:3333/api/user/update', updateInfo)
+    await axios
+        .post('api/user/update', updateInfo)
         .then((res) => {
             //성공:
             data = res.data
@@ -76,8 +75,8 @@ const update = async (proxy, ui) => {
 const getHsp = async (proxy) => {
     let data= {};
 
-    await proxy.$axios
-    .get('http://192.168.219.144:8080/hospitals')
+    await axios
+    .get('api/hospitals')
     .then((res)=>{
         data=res.data;
     })
@@ -89,8 +88,8 @@ const getHsp = async (proxy) => {
 const registerFav = async (proxy,fav) => {
     let data = {};
     console.log(fav);
-    await proxy.$axios
-    .post('http://122.40.225.54:3333/fav/register',fav)
+    await axios
+    .post('api/fav/register',fav)
     .then((res)=>{
         data = res.data;
     })

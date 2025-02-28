@@ -62,25 +62,24 @@ const routes = createRouter({
         {
           path: 'mypage',
           component: myPageHeader,
-          beforeEnter: (to, from, next) => {
-            const authStore = useAuthStore();  // Pinia 스토어에서 로그인 상태 확인
-            if (authStore.getLogin()) {
-              next();  // 로그인되어 있으면 mypage로 이동
-            } else {
-              next({ name: 'login' });  // 로그인 안 되어 있으면 로그인 페이지로 리디렉션
-            }
-          },
           children: [
             {
               path: '',
               beforeEnter: (to, from, next) => {
                 const authStore = useAuthStore();
-                if (authStore.getUserType() === 'U') {
-                  next({ name: 'myRsv' });  // 로그인되어 있으면 mypage로 이동
-                } else {
-
-                  next({ name: 'myHsp' });  // 로그인 안 되어 있으면 로그인 페이지로 리디렉션
+                const isLoggedIn = authStore.getLogin();
+                const isException = to.name === 'hspInfoChange';
+              
+                if (!isLoggedIn && !isException) {
+                  return next({ name: 'login' });
                 }
+              
+                // 기본 페이지 리디렉션
+                if (to.path === '/mypage') {
+                  return authStore.getUserType() === 'U' ? next({ name: 'myRsv' }) : next({ name: 'myHsp' });
+                }
+              
+                next();
               }, name: 'mypage'
             },
             { path: 'changeInfo', component: myPageMain, name: 'changeInfo' },
@@ -101,11 +100,11 @@ const routes = createRouter({
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
-      // 이전 위치로 이동 (뒤로 가기/앞으로 가기 할 때)
-      return savedPosition;
+      return savedPosition; // 기존 위치로 이동 (뒤로 가기/앞으로 가기)
+    } else if (to.hash) {
+      return { el: to.hash, behavior: 'smooth' }; // 해시(anchor) 이동 시 부드럽게 스크롤
     } else {
-      // 항상 맨 위로 이동
-      return { top: 0 };
+      return { top: 0, behavior: 'smooth' }; // 기본적으로 최상단 이동
     }
   }
 });

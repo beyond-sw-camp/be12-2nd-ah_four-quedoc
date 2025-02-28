@@ -70,9 +70,7 @@
 import { ref, reactive } from 'vue';
 import { useRouter } from 'vue-router';
 import api from '../api/mem';
-import { getCurrentInstance } from 'vue';
 import useAuthStore from '../../stores/useAuthStore';
-const { proxy } = getCurrentInstance();
 
 //라우터 정보 객체
 const router = useRouter()
@@ -117,15 +115,9 @@ const submitForm = async () => {
         if (data.code === 200) {
             //로그인
             const s = loginStore.getLogin();
-            console.log(s.value);
             loginStore.setLogin(!s);
             //메인 페이지 이동
-
-            console.log(data.user);
-            /*loginStore.setInfo(data.user);
-            console.log(loginStore.getName());
-            console.log(loginStore.getUserType());*/
-            console.log(data.token);
+            loginStore.setInfo(data.data);
 
 
             router.push({ name: 'home' })

@@ -1,7 +1,8 @@
 
 import axios from 'axios';
+import HspDt from '../../hsp/hsp-dt.vue';
 
-const login = async (proxy, ui) => {
+const login = async (ui) => {
     const loginUserInfo = {
         email: ui.acc, //이메일주소
         password: ui.pin, //비밀번호
@@ -23,7 +24,8 @@ const login = async (proxy, ui) => {
         console.log(data);
     return data
 }
-const signUp = async (proxy, ui) => {
+const signUp = async (ui) => {
+    console.log(ui);
     const signUpUserInfo = {
         email: ui.em+"@"+ui.dns,
         name: ui.nm,
@@ -38,7 +40,7 @@ const signUp = async (proxy, ui) => {
     let data = {}
    
     await axios
-        .post('api/user/signup', signUpUserInfo)
+        .post('/api/user/signup', signUpUserInfo)
         .then((res) => {
             //성공
             data = res.data
@@ -50,7 +52,7 @@ const signUp = async (proxy, ui) => {
 
     return data
 }
-const update = async (proxy, ui) => {
+const update = async (ui) => {
     const updateInfo = {
         email: ui.email,
         pass: ui.curPin,
@@ -72,7 +74,7 @@ const update = async (proxy, ui) => {
     return data
 }
 
-const getHsp = async (proxy) => {
+const getHsp = async () => {
     let data= {};
 
     await axios
@@ -85,7 +87,7 @@ const getHsp = async (proxy) => {
     })
     return data;
 }
-const registerFav = async (proxy,fav) => {
+const registerFav = async (fav) => {
     let data = {};
     console.log(fav);
     await axios
@@ -98,4 +100,17 @@ const registerFav = async (proxy,fav) => {
     })
     return data;
 }
-export default { login,signUp,update,getHsp,registerFav} 
+const registerHsp = async (Hsp) => {
+    let data = {};
+    console.log(Hsp);
+    await axios
+    .post('/api/hospital/registerTest',Hsp)
+    .then((res)=>{
+        data = res.data;
+    })
+    .catch((error)=>{
+        data=error.data;
+    })
+    return data;
+}
+export default { login,signUp,update,getHsp,registerFav,registerHsp} 

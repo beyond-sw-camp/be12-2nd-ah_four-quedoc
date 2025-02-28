@@ -145,6 +145,9 @@ onMounted(() => {
                   <li class="item">
                     <RouterLink @click='pop' @click.stop="show = false" :to="{ name: '' }">소통해요 </RouterLink>
                   </li>
+                  <li class="item">
+                    <RouterLink @click.stop="show = false" :to="{ name: 'hspInfoChange' }">테스트 </RouterLink>
+                  </li>
                 </ul>
               </div>
             </div>

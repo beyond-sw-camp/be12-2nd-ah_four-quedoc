@@ -486,9 +486,9 @@ const submitForm = async () => {
         //pinia 초기화전 로그찍기
         const joinPsnInfoReq = joinPsnCusStore.getJoinPsnCusStore()
 
-        const data = await api.signUp(proxy, joinPsnInfoReq);
+        const data = await api.signUp(joinPsnInfoReq);
 
-        if (data.status === "ok") {
+        if (data.data === "ok") {
             
         console.log('joinPsnInfoReq', joinPsnInfoReq);
             console.log(data);

@@ -11,7 +11,7 @@
           fast-fail
           validate-on="blur lazy"
           @keypress.enter.prevent
-           @submit.prevent="submitForm"
+        @submit.prevent="submitForm"
       >
           <div class="form-group">
               <v-label>아이디</v-label>
@@ -67,10 +67,9 @@
   </div>
 </template>
 <script setup>
-import { ref, reactive } from 'vue'
-import { useRouter } from 'vue-router'
-import api from '../api/mem'
-
+import { ref, reactive } from 'vue';
+import { useRouter } from 'vue-router';
+import api from '../api/mem';
 import { getCurrentInstance } from 'vue';
 import useAuthStore from '../../stores/useAuthStore';
 const { proxy } = getCurrentInstance();
@@ -111,7 +110,7 @@ const submitForm = async () => {
     console.log(loginUserInfo.pin);
     const { valid } = await loginUserForm.value.validate()
 
-    const data = await api.login(proxy,loginUserInfo);
+    const data = await api.login(loginUserInfo);
     //폼 유효성 및 api pending으로 인한 로그인 중복오류 방지
     /*if (valid && !loginTry.value) {
         loginTry.value = true*/

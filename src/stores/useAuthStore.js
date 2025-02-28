@@ -9,16 +9,14 @@ const useAuthStore = defineStore('login',()=> {
     const uInfo =reactive({
         name: "",
         email: "",
-        hon:"",
-        userType: "",
-        pw: ""
+        nickname:"",
+        userType: "U"
     });
     function setInfo(info) {
         uInfo.name = info.name;
         uInfo.email = info.email;
-        uInfo.hon = info.phoneNumber;
-        uInfo.userType = info.customerTypeCode;
-        uInfo.pw = info.password;
+        uInfo.nickname = info.nickname;
+        uInfo.userType = "U";
     }
     function getName() {
         return uInfo.name;

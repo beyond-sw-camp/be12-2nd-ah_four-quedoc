@@ -29,6 +29,7 @@ import myHspRv from '../components/mypage/my-hsp-rv.vue'
 import sch_pedi from '../components/sch/sch-pedi.vue'
 import hspInfoChange from '../components/mypage/hsp-info-change.vue';
 import hspNotice from '../components/mypage/hsp-notice.vue';
+import error from '../components/etc/error/error.vue';
 
 const routes = createRouter({
   history: createWebHistory(), //createWebHistory(), -> for browser history
@@ -42,7 +43,8 @@ const routes = createRouter({
       { path: 'search', component:   sch , name: 'search'},
       { path: 'popular_pedi', component:  sch_pedi , name: 'pedi'},
       { path: 'recommend', component:   recommend , name: 'recommend'},
-      { path: 'hi', component:   intro , name: 'hi'}
+      { path: 'hi', component:   intro , name: 'hi'},
+      { path: 'error', component:   error , name: 'error'},
       ]
     },
     // main container -> inner

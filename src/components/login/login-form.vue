@@ -82,14 +82,6 @@ const loginStore = useAuthStore();
 //로딩상태(토글)
 const loginTry = ref(false)
 const loginUserForm = ref();
-const NOS_COMPONENT = ref(null);
-const state = reactive({
-    dynamicFields: false,
-    modelValues: {},
-    decryptDebug: '',
-    NOS_SERIALIZED: '',
-    NOS_INSTANCE: {}
-})
 const loginUserInfo = reactive({
     acc: '', //이메일주소
     pin: '', //비밀번호
@@ -108,27 +100,24 @@ const submitForm = async () => {
     console.log(loginUserInfo.pin);
     const { valid } = await loginUserForm.value.validate()
 
-    const data = await api.login(loginUserInfo);
     //폼 유효성 및 api pending으로 인한 로그인 중복오류 방지
-    /*if (valid && !loginTry.value) {
-        loginTry.value = true*/
+    if (valid && !loginTry.value) {
+        loginTry.value = true
+        const data = await api.login(loginUserInfo);
         if (data.code === 200) {
             //로그인
             const s = loginStore.getLogin();
             loginStore.setLogin(!s);
             //메인 페이지 이동
             loginStore.setInfo(data.data);
-
-
             router.push({ name: 'home' })
         } else {
             //에러 처리
-            
-
-            console.log(data);
+            console.log("error");
             //오류 메시지 출력
+            router.push({ name: 'error' })
         }
-    //}
+    }
     loginTry.value = false
 }
 

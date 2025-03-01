@@ -31,11 +31,9 @@ const signUp = async (ui) => {
         name: ui.nm,
         password: ui.pin1,
         nickname: ui.nick,
-        birthDate: "010101",
-        gender: ui.sex,
+        birthDate: ui.bdy,
         phoneNumber: ui.hon,
-        customerTypeCode: ui.clnTcd,
-        emailDomain: ui.dns
+        customerTypeCode: ui.clnTcd
     }
     let data = {}
    

@@ -148,6 +148,9 @@ onMounted(() => {
                   <li class="item">
                     <RouterLink @click.stop="show = false" :to="{ name: 'hspInfoChange' }">테스트 </RouterLink>
                   </li>
+                  <li class="item">
+                    <RouterLink @click.stop="show = false" :to="{ name: 'error' }">에러테스트 </RouterLink>
+                  </li>
                 </ul>
               </div>
             </div>

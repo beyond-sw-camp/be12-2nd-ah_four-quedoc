@@ -15,7 +15,6 @@ const useJoinPsnCusStore = defineStore('joinPsn', () => {
         nm: '', //이름(1단계)
         nick: '', //닉네임(1단계)
         bdy: '', //생년월일(주민등록번호 앞6자리)(1단계)
-        sex: '', //성별(주민등록번호 뒤1자리)(1단계)
         hon: '', //휴대전화번호(1단계)
 
         em: '', //이메일(3단계)(공통)
@@ -25,7 +24,7 @@ const useJoinPsnCusStore = defineStore('joinPsn', () => {
 
         bsNum: '', //사업자번호(사업자만)
 
-        clnTcd: '', //고객유형코드(고객유형코드, U: 일반사용자, B: 개인사업자, C: 법인사업자)
+        clnTcd: '', //고객유형코드(고객유형코드, U: 일반사용자, B: 개인사업자)
     }
 
     /**

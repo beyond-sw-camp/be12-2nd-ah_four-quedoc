@@ -134,12 +134,9 @@ const memInfoErrorObject = reactive({
 const memPsnInfoPutInfo = reactive({
     em: '', //이메일(아이디)
     dns: '', //도메인명
-    ctsn: '', //인증번호
     pin1: '', //비밀번호1
     pin2: '', //비밀번호2
-    ctserverkeyem: '', //인증key(server) 이메일인증
-    clnTcd: 'U', //고객유형코드(고객유형코드, U: 일반사용자, B: 개인사업자, C: 법인사업자)
-    emType: 'L' //메일타입. 회원가입:L, 사업자전환:C
+    clnTcd: 'U', //고객유형코드(고객유형코드, U: 일반사용자, B: 사업자)
 })
 
 //인증번호 전송 여부

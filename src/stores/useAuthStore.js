@@ -10,13 +10,13 @@ const useAuthStore = defineStore('login',()=> {
         name: "",
         email: "",
         nickname:"",
-        userType: "U"
+        userType: ""
     });
     function setInfo(info) {
         uInfo.name = info.name;
         uInfo.email = info.email;
         uInfo.nickname = info.nickname;
-        uInfo.userType = "U";
+        uInfo.userType = info.type;
     }
     function getName() {
         return uInfo.name;

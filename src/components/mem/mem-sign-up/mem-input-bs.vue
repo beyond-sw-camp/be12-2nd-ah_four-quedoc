@@ -488,9 +488,8 @@ const submitForm = async () => {
 
         const data = await api.signUp(joinPsnInfoReq);
 
-        if (data.data === "ok") {
-            
-        console.log('joinPsnInfoReq', joinPsnInfoReq);
+        if (data.data === "Signup success") {
+            console.log('joinPsnInfoReq', joinPsnInfoReq);
             console.log(data);
             emits('nextEvent', 2)
             return false

@@ -72,19 +72,31 @@ const update = async (ui) => {
     return data
 }
 
-const getHsp = async () => {
-    let data= {};
+// const getHsp = async () => {
+//     let data= {};
 
-    await axios
-    .get('api/hospitals')
-    .then((res)=>{
-        data=res.data;
-    })
-    .catch((error) => {
-        data=error.data
-    })
-    return data;
-}
+//     await axios
+//     .get('api/hospitals')
+//     .then((res)=>{
+//         data=res.data;
+//     })
+//     .catch((error) => {
+//         data=error.data
+//     })
+//     return data;
+// }
+
+const getHsp = async () => {
+    try {
+        const response = await axios.get('/api/hospital/list'); // ✅ 올바른 엔드포인트 사용
+        console.log("✅ API 응답:", response.data);
+        return response.data; // ✅ 배열 반환
+    } catch (error) {
+        console.error("❌ 병원 목록 가져오기 실패:", error);
+        return []; // ✅ 오류 발생 시 빈 배열 반환
+    }
+};
+
 const registerFav = async (fav) => {
     let data = {};
     console.log(fav);
